@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+
+<!-- <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.managerUI.PresentForSumController"> -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+  <!--  <fx:include source="Stockman.fxml" /> -->
+      <Pane prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="会员促销">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="215.0" layoutY="159.0" prefHeight="435.0" prefWidth="706.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <TextField fx:id="rebateField" editable="false" layoutX="343.0" layoutY="254.0" prefHeight="37.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+            <Label layoutX="483.0" layoutY="21.0" />
+            <ImageView fitHeight="228.0" fitWidth="215.0" layoutY="2.0">
+               <image>
+                  <Image url="@../../img/lamp1.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="254.0" layoutY="21.0" text="开始时间" textFill="#000000a1" />
+            <Label layoutX="254.0" layoutY="263.0" text="折让金额" textFill="#000000a1" />
+            <Label layoutX="497.0" layoutY="263.0" text="赠券金额" textFill="#000000a1" />
+            <Label layoutX="254.0" layoutY="120.0" text="结束时间" textFill="#000000a1" />
+            <TextField fx:id="startYearField" editable="false" layoutX="343.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishYearField" editable="false" layoutX="343.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+            <Button fx:id="deleteBtn" layoutX="593.0" layoutY="323.0" mnemonicParsing="false" onAction="#delete" prefHeight="27.0" prefWidth="65.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="删除" textFill="WHITE" />
+            <TextField fx:id="startMonthField" editable="false" layoutX="457.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishMonthField" editable="false" layoutX="461.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="startDayField" editable="false" layoutX="581.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishDayField" editable="false" layoutX="581.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="424.0" layoutY="21.0" text="年" />
+            <Label layoutX="424.0" layoutY="120.0" text="年" />
+            <Label layoutX="546.0" layoutY="21.0" text="月" />
+            <Label layoutX="546.0" layoutY="120.0" text="月" />
+            <Label layoutX="658.0" layoutY="21.0" text="日" />
+            <Label layoutX="658.0" layoutY="120.0" text="日" />
+            <Button fx:id="editBtn" layoutX="497.0" layoutY="323.0" mnemonicParsing="false" onAction="#edit" prefHeight="27.0" prefWidth="65.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="编辑" textFill="WHITE" />
+            <TextField fx:id="voucherField" editable="false" layoutX="581.0" layoutY="255.0" prefHeight="41.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="totalField" editable="false" layoutX="343.0" layoutY="320.0" prefHeight="37.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="254.0" layoutY="329.0" text="总额" textFill="#000000a1" />
+            <Label layoutX="3.0" layoutY="297.0" text="会员等级" textFill="#000000a1" />
+  <!--   <ChoiceBox fx:id="gradeChoiceBox" layoutX="83.0" layoutY="291.0" prefWidth="150.0" /> -->        
+      <ChoiceBox fx:id="gradeChoiceBox" disable="true" layoutX="83.0" layoutY="291.0" prefWidth="150.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #9f353a; -fx-background-color: white;" value="">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="1" />
+                      <String fx:value="2" />
+                      <String fx:value="3" />
+                      <String fx:value="4" />
+                      <String fx:value="5" />
+                  </FXCollections>
+              </items>
+      </ChoiceBox>
+         </children>
+      </Pane>
+      <Pane fx:id="presentListPane" layoutY="159.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="62.0" layoutY="14.0" text="赠品清单" />
+            <ScrollPane layoutY="44.0" prefHeight="393.0" prefViewportHeight="391.0" prefViewportWidth="196.0" prefWidth="196.0">
+               <content>
+                  <VBox fx:id="presentListVBox" layoutY="44.0" prefHeight="391.0" prefWidth="200.0" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
+   </children>
+</AnchorPane>

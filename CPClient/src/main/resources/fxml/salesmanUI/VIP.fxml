@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.salesmanUI.VIPController">
+   <children>
+      <fx:include source="Sale.fxml" />
+      <ScrollPane fx:id="scrollPane" layoutX="430.0" layoutY="310.0" prefHeight="435.0" prefWidth="707.0" style="-fx-background-color: #FFB5B5;">
+         <content>
+            <VBox fx:id="vipVBox" minHeight="435.0" minWidth="707.0">
+               <children>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="703.0" style="-fx-background-color: #FFB5B5;">
+                     <children>
+                        <GridPane layoutX="36.0" layoutY="42.0" prefHeight="352.0" prefWidth="612.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="44.0" prefWidth="129.0" text="姓名" textFill="#938c8c" GridPane.rowIndex="1" />
+                              <Label prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="电话" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="3" />
+                              <Label text="     客户信息">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="145.0" text="业务员" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="8" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="分类" textFill="#938c8c" GridPane.rowIndex="2" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="地址" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="vipName" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="vipCategory" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="vipPhoneNumber" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="vipEmail" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="collection" opacity="0.61" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="编号" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="vipID" opacity="0.65" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="电子邮箱" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="4" />
+                              <TextField fx:id="vipAddress" opacity="0.61" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="级别" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="邮编" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <TextField fx:id="vipPostCode" opacity="0.65" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <TextField fx:id="vipGrade" opacity="0.61" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" GridPane.rowIndex="6" />
+                              <Label text="     应收应付" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="45.0" prefWidth="145.0" text="应收额度" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="7" />
+                              <TextField fx:id="collectionLimit" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="应收" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <TextField fx:id="clerk" opacity="0.65" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="应付" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <TextField fx:id="payment" opacity="0.61" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                              <ImageView fx:id="editBtn" fitHeight="25.0" fitWidth="25.0" GridPane.columnIndex="4">
+                                 <image>
+                                    <Image url="@../../img/edit.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+
+       <Pane layoutX="216.0" layoutY="148.0" prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+           <children>
+               <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+               <Label layoutX="55.0" layoutY="23.0" text="客户管理">
+                   <font>
+                       <Font size="18.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="searchField" layoutX="625.0" layoutY="74.0" prefHeight="32.0" prefWidth="167.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" />
+               <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="764.0" layoutY="81.0">
+                   <image>
+                       <Image url="@../../img/search.png" />
+                   </image>
+               </ImageView>
+            <JFXButton fx:id="vipNameSearchBtn" buttonType="RAISED" layoutX="40.0" layoutY="76.0" onAction="#onVIPNameSearchBtnClicked" prefHeight="29.0" prefWidth="65.0" ripplerFill="#e4040f" style="-fx-border-color: #9f353a; -fx-border-radius: 22;" text="客户名" textFill="#9f353a" />
+            <JFXButton fx:id="vipIDSearchBtn" buttonType="RAISED" layoutX="118.0" layoutY="76.0" onAction="#onVIPIDSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#e4040f" style="-fx-border-color: #9f353a; -fx-border-radius: 22;" text="客户ID" textFill="#9f353a" />
+            <JFXButton fx:id="vipPhoneNumberSearchBtn" buttonType="RAISED" layoutX="206.0" layoutY="76.0" onAction="#onVIPPhoneNumberSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#e4040f" style="-fx-border-color: #9f353a; -fx-border-radius: 22;" text="客户电话" textFill="#9f353a" />
+            <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="819.0" layoutY="77.0" onAction="#setSearchBtn" prefHeight="27.0" prefWidth="65.0" style="-fx-background-color: #ff7575; -fx-background-radius: 22;" text="查询" textFill="#f8f6f6" />
+           </children></Pane>
+
+       <Pane layoutX="216.0" layoutY="310.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
+           <children>
+               <VBox fx:id="vBox" layoutX="7.0" layoutY="54.0" prefHeight="369.0" prefWidth="182.0" style="-fx-border-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 15;" />
+               <Pane layoutX="8.0" layoutY="6.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #ff7575; -fx-border-radius: 12;">
+                   <children>
+                       <Label fx:id="presentLocation" layoutX="40.0" layoutY="10.0" prefHeight="20.0" prefWidth="132.0" />
+                       <Label layoutX="11.0" layoutY="10.0" prefHeight="23.0" prefWidth="31.0" text="提示" textFill="#9f353a" />
+                   </children>
+               </Pane>
+           </children></Pane>
+
+       <Pane fx:id="notice" layoutX="363.0" layoutY="243.0" prefHeight="317.0" prefWidth="471.0" style="-fx-background-color: #fffafe; -fx-background-radius: 15; -fx-border-color: #ffefef; -fx-border-radius: 15; -fx-border-width: 3;" visible="false">
+           <children>
+               <Button fx:id="sureBtn" layoutX="145.0" layoutY="205.0" mnemonicParsing="false" onAction="#onSureBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="确认" textFill="WHITE" />
+               <TextField fx:id="name" layoutX="153.0" layoutY="122.0" promptText="请输入名称" />
+               <Label fx:id="noticeLabel" layoutX="180.0" layoutY="48.0" prefHeight="37.0" prefWidth="113.0" text="新建" textAlignment="CENTER" textFill="#682d1e">
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </Label>
+               <Button fx:id="cancelBtn" layoutX="264.0" layoutY="205.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="取消" textFill="WHITE" />
+           </children>
+       </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="PO.SalesmanItemPO">
+	      <id name="autoId">  
+	      <!-- 自动生成的id -->
+         <generator class="native" />  
+      </id>  
+      <!-- 已知的商品id -->
+      <property name="id"/>
+      <property name="name"/>
+      <property name="type"/>
+      <property name="price"/>
+      <property name="amount"/>
+      <property name="sum"/>  
+      <property name="notes"/>         
+   </class> 
+</hibernate-mapping>   

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="PO.PresentPO">
+		<id name="id">
+			<!-- 对于销售策略，主键的生成采用了简单的增长模式 -->
+			<generator class="native" />
+		</id>
+		<property name="startTime" />
+		<property name="finishTime" />
+					<!-- 组分中包括的集合 -->
+			<list name="presentList" cascade ="all" lazy = "false">
+				<key column="presentStrategyid" />
+				<index column="index_"></index><!-- 注意index是数据库中的关键字要避免与其冲突，此处index_对应元素在List中的索引 -->  
+				<one-to-many class="PO.GoodsInSalePO"/>
+			</list>
+		<property name="state"/>
+		<!-- 体现了子类的继承关系 -->
+		<joined-subclass name="PO.PresentForMembershipPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+			<property name="grade" />
+			<property name="sum" />
+			<property name="rebateInPresentForMembership" />
+			<property name="voucher" />
+		</joined-subclass>
+
+		<joined-subclass name="PO.PresentForSpecialPackagePO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+			<property name="priceReduction" />
+		</joined-subclass>
+
+		<joined-subclass name="PO.PresentForSumPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+			<property name="sum" />
+			<property name="voucher" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

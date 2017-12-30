@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.managerUI.PresentForSumController"> -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+  <!--  <fx:include source="Stockman.fxml" /> -->
+      <Pane prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="满减促销">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="215.0" layoutY="159.0" prefHeight="435.0" prefWidth="706.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <TextField fx:id="totalField" layoutX="343.0" layoutY="261.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+            <Label layoutX="483.0" layoutY="21.0" />
+            <ImageView fitHeight="228.0" fitWidth="215.0" layoutY="2.0">
+               <image>
+                  <Image url="@../../img/lamp1.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="254.0" layoutY="21.0" text="开始时间" textFill="#000000a1" />
+            <Label layoutX="254.0" layoutY="274.0" text="总额" textFill="#000000a1" />
+            <Label layoutX="457.0" layoutY="274.0" text="赠券金额" textFill="#000000a1" />
+            <Label layoutX="254.0" layoutY="120.0" text="结束时间" textFill="#000000a1" />
+            <TextField fx:id="startYearField" layoutX="343.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishYearField" layoutX="343.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
+            <Button fx:id="saveBtn" layoutX="584.0" layoutY="352.0" mnemonicParsing="false" onAction="#save" prefHeight="27.0" prefWidth="65.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="保存" textFill="WHITE" />
+            <TextField fx:id="startMonthField" layoutX="457.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishMonthField" layoutX="461.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="startDayField" layoutX="581.0" layoutY="8.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="finishDayField" layoutX="581.0" layoutY="107.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="424.0" layoutY="21.0" text="年" />
+            <Label layoutX="424.0" layoutY="120.0" text="年" />
+            <Label layoutX="546.0" layoutY="21.0" text="月" />
+            <Label layoutX="546.0" layoutY="120.0" text="月" />
+            <Label layoutX="658.0" layoutY="21.0" text="日" />
+            <Label layoutX="658.0" layoutY="120.0" text="日" />
+            <Button fx:id="cancelBtn" layoutX="464.0" layoutY="352.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="65.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="取消" textFill="WHITE" />
+            <TextField fx:id="searchField" layoutX="243.0" layoutY="193.0" prefHeight="37.0" prefWidth="290.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" />
+            <Button fx:id="searchBtn" layoutX="566.0" layoutY="194.0" mnemonicParsing="false" onAction="#search" prefHeight="36.0" prefWidth="101.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="查询商品" textFill="WHITE" />
+            <TextField fx:id="voucherField" layoutX="581.0" layoutY="261.0" prefHeight="50.0" prefWidth="72.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label fx:id="dateErrorMessage" layoutX="267.0" layoutY="70.0" />
+            <Label fx:id="totalErrorMessage" layoutX="247.0" layoutY="316.0" prefHeight="24.0" prefWidth="110.0" />
+            <Label fx:id="voucherErrorMessage" layoutX="451.0" layoutY="316.0" prefHeight="24.0" prefWidth="164.0" />
+            <Label fx:id="nullErrorMessage" layoutX="254.0" layoutY="358.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="presentListPane" layoutY="159.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="62.0" layoutY="14.0" text="赠品清单" />
+            <ScrollPane layoutY="44.0" prefHeight="393.0" prefViewportHeight="391.0" prefViewportWidth="196.0" prefWidth="196.0">
+               <content>
+                  <VBox fx:id="presentListVBox" layoutY="44.0" prefHeight="391.0" prefWidth="198.0" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
+   </children>
+</AnchorPane>

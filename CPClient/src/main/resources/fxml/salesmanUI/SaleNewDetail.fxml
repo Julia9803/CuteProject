@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="saleUI.SaleNewController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutX="-4.0" prefHeight="97.0" prefWidth="1207.0" style="-fx-background-color: #FFECEC;">
+         <children>
+            <Label layoutX="206.0" layoutY="20.0" text="CuteProject" textFill="#9f353a">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="1160.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../img/logOut.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+              <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <MenuButton fx:id="newBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: #C48888;" text="      新建" textFill="#9f353a">
+              <items>
+                <MenuItem fx:id="aaa" mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
+                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+              </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton fx:id="lookBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      查看" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="lookBtn1" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
+               </items>
+            </MenuButton>
+            <Button fx:id="draftBtn" mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="草稿" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
+         </effect>
+      </Circle>
+      <ScrollPane layoutX="200.0" layoutY="148.0" prefHeight="615.0" prefWidth="935.0" style="-fx-background-color: #FFB5B5;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="915.0" style="-fx-background-color: #FFB5B5;">
+               <children>
+                  <Label layoutX="89.0" layoutY="39.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+                  <Label layoutX="116.0" layoutY="46.0" text="销售单">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="89.0" layoutY="97.0" prefHeight="446.0" prefWidth="614.0">
+                     <children>
+                        <Separator layoutX="162.0" layoutY="14.0" opacity="0.0" orientation="VERTICAL" prefHeight="397.0" prefWidth="3.0" />
+                        <VBox layoutX="-3.0" layoutY="2.0" prefHeight="457.0" prefWidth="131.0">
+                           <children>
+                              <Label prefHeight="45.0" prefWidth="145.0" text="客户" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="操作员" textAlignment="CENTER" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="日期" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="商品列表" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" textFill="#938c8c" />
+                              <Label prefHeight="59.0" prefWidth="131.0" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="优惠策略" textFill="#938c8c" />
+                              <Label prefHeight="45.0" prefWidth="145.0" text="总价" textFill="#938c8c" />
+                           </children>
+                        </VBox>
+                        <TextField layoutX="162.0" layoutY="14.0" opacity="0.65" />
+                        <TextField layoutX="162.0" layoutY="94.0" opacity="0.61" />
+                        <TableView layoutX="158.0" layoutY="136.0" opacity="0.68" prefHeight="189.0" prefWidth="342.0" style="-fx-background-color: #FFB5B5;">
+                          <columns>
+                            <TableColumn prefWidth="62.0" style="-fx-background-color: #FFF7FB;" text="商品" />
+                            <TableColumn prefWidth="68.0" text="单价" />
+                              <TableColumn prefWidth="71.0" text="数量" />
+                              <TableColumn prefWidth="68.0" text="小计" />
+                              <TableColumn prefWidth="73.0" text="操作" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="162.0" layoutY="336.0" mnemonicParsing="false" style="-fx-background-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 23;" text="促销策略" textFill="#fff7fb" />
+                        <Button layoutX="245.0" layoutY="336.0" mnemonicParsing="false" style="-fx-background-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 23;" text="促销策略" textFill="#fff7fb" />
+                        <Button layoutX="329.0" layoutY="336.0" mnemonicParsing="false" style="-fx-background-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 23;" text="促销策略" textFill="#fff7fb" />
+                        <Button layoutX="416.0" layoutY="336.0" mnemonicParsing="false" style="-fx-background-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 23;" text="促销策略" textFill="#fff7fb" />
+                        <TextField layoutX="162.0" layoutY="53.0" opacity="0.65" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="684.0" layoutY="544.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="71.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #a15858;" text="提交" textFill="#9f353a">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

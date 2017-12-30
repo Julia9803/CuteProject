@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.mainUI.accountantUI.AccountantWinController">
+   <children>
+      <fx:include source="../commonUI/Background.fxml" />
+         
+      <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" textFill="#9f353a" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="124.0" textFill="#9f353a" />
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" text="      新建">
+               <items>
+	               <MenuItem fx:id="newCollectionList" mnemonicParsing="false" onAction="#onNewCollectionListBtnClicked" text="收款单" />
+	               <MenuItem fx:id="newPaymentList" mnemonicParsing="false" onAction="#onNewPaymentListBtnClicked" text="付款单" />
+	               <MenuItem fx:id="newCashExpenseList" mnemonicParsing="false" onAction="#onNewCashExpenseListBtnClicked" text="现金费用单" />
+               </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" text="      查看">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem fx:id="openCollectionCommitted" mnemonicParsing="false" onAction="#onOpenCollectionCommittedBtnClicked" text="收款单" />
+                  <MenuItem fx:id="openPaymentCommitted" mnemonicParsing="false" onAction="#onOpenPaymentCommittedBtnClicked" text="付款单" />
+                  <MenuItem fx:id="openCashExpenseCommitted" mnemonicParsing="false" onAction="#onOpenCashExpenseCommittedBtnClicked" text="现金费用单" />
+               </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" text="      草稿">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem fx:id="openCollectionDraft" mnemonicParsing="false" onAction="#onOpenCollectionDraftBtnClicked" text="收款单" />
+                  <MenuItem fx:id="openPaymentDraft" mnemonicParsing="false" onAction="#onOpenPaymentDraftBtnClicked" text="付款单" />
+                  <MenuItem fx:id="openCashExpenseDraft" mnemonicParsing="false" onAction="#onOpenCashExpenseDraftBtnClicked" text="现金费用单" />
+               </items>
+            </MenuButton>
+            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" text="期初建账">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" text="账户" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" text="红冲" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" text="日志" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="127.0" text="消息" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="127.0" text="个人" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
+         </effect>
+      </Circle>
+      <BorderPane fx:id="centerPane" layoutX="193.0" layoutY="136.0" prefHeight="644.0" prefWidth="982.0" />
+   </children>
+</AnchorPane>

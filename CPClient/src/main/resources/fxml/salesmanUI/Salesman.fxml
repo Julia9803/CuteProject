@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.managerUI.SalesmanController">
+    <children>
+      <fx:include source="../commonUI/Background.fxml" />
+      <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      新建" textFill="#9f353a">
+              <items>
+                <MenuItem fx:id="newSaleListBtn" mnemonicParsing="false" onAction="#newSaleList" style="-fx-background-color: transparent;" styleClass="ui.saleUI.Sale.css" text="销售单" />
+                <MenuItem fx:id="newSaleReturnListBtn" mnemonicParsing="false" onAction="#newSaleReturnList" style="-fx-background-color: transparent;" text="销售退货单" />
+                  <MenuItem fx:id="newStockListBtn" mnemonicParsing="false" onAction="#newStockList" style="-fx-background-color: transparent;" text="进货单" />
+                  <MenuItem fx:id="newStockReturnListBtn" mnemonicParsing="false" onAction="#newStockReturnList" style="-fx-background-color: transparent;" text="进货退货单" />
+              </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton layoutX="10.0" layoutY="228.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      草稿" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem fx:id="draftSaleListBtn" mnemonicParsing="false" onAction="#showDraftSaleList" style="-fx-background-color: transparent;" text="销售单" />
+                  <MenuItem fx:id="draftSaleReturnListBtn" mnemonicParsing="false" onAction="#showDraftSaleReturnList" style="-fx-background-color: transparent;" text="销售退货单" />
+                  <MenuItem fx:id="draftStockListBtn" mnemonicParsing="false" onAction="#showDraftStockList" style="-fx-background-color: transparent;" text="进货单" />
+                  <MenuItem fx:id="draftStockReturnList" mnemonicParsing="false" onAction="#showDraftStockReturnList" style="-fx-background-color: transparent;" text="进货退货单" />
+               </items>
+            </MenuButton>
+            <MenuButton layoutX="10.0" layoutY="285.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      客户" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="日志" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
+               </items>
+            </MenuButton>
+         </children>
+      </VBox>
+      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
+         </effect>
+      </Circle>
+      <BorderPane fx:id="titlePane" layoutX="140.0" layoutY="102.0" prefHeight="131.0" prefWidth="1054.0" style="-fx-background-color: #FFB5B5;" />
+      <BorderPane fx:id="centerPane" layoutX="142.0" layoutY="240.0" prefHeight="560.0" prefWidth="1054.0" />
+   </children>
+</AnchorPane>

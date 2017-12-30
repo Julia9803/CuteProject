@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" stylesheets="@../../css/forms/ListOfForms.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.ReportListController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="921.0" style="-fx-background-color: #eecde0;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label fx:id="title" layoutX="55.0" layoutY="23.0" text="Title(ListType)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="15.0" layoutY="116.0" prefHeight="463.0" prefWidth="892.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="42.0" layoutY="26.0" prefHeight="24.0" prefWidth="112.0" text="单据编号：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="listID" layoutX="179.0" layoutY="26.0" prefHeight="24.0" prefWidth="230.0" text="2017-2323565-56564">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="81.0" prefHeight="24.0" prefWidth="112.0" text="操作员：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="operator" layoutX="156.0" layoutY="81.0" prefHeight="24.0" prefWidth="178.0" text="王瑞华">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="81.0" prefHeight="24.0" prefWidth="112.0" text="操作时间：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="time" layoutX="496.0" layoutY="81.0" prefHeight="24.0" prefWidth="230.0" text="2017-12-26  23：59：26">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="135.0" prefHeight="24.0" prefWidth="112.0" text="商品编号：" textFill="#f03c1f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="goodsID" layoutX="179.0" layoutY="132.0" prefHeight="30.0" prefWidth="230.0" />
+            <Button fx:id="GoodsInfoBtn" layoutX="481.0" layoutY="132.0" mnemonicParsing="false" onAction="#getGoodsInfo" prefHeight="30.0" prefWidth="126.0" text="获取商品信息" />
+            <Label layoutX="42.0" layoutY="197.0" prefHeight="24.0" prefWidth="112.0" text="商品名称：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="GoodsName" layoutX="156.0" layoutY="197.0" prefHeight="24.0" prefWidth="178.0" text="请先输入编号">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="197.0" prefHeight="24.0" prefWidth="112.0" text="库存数量：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="num" layoutX="522.0" layoutY="197.0" prefHeight="24.0" prefWidth="178.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="252.0" prefHeight="24.0" prefWidth="112.0" text="实际数量：" textFill="#f53b1d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="actualNum" layoutX="179.0" layoutY="249.0" prefHeight="30.0" prefWidth="230.0" />
+            <Label fx:id="deltaLabel" layoutX="42.0" layoutY="307.0" prefHeight="24.0" prefWidth="112.0" text="差值    ：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="delta" layoutX="156.0" layoutY="307.0" prefHeight="24.0" prefWidth="178.0" text="请先输入编号">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rm" layoutX="572.0" layoutY="415.0" prefHeight="24.0" prefWidth="219.0" text="ResultMessage" textFill="#4d0bdb">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn1" layoutX="447.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action1" prefHeight="30.0" prefWidth="99.0" text="Btn1" />
+            <Button fx:id="btn2" layoutX="583.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action2" prefHeight="30.0" prefWidth="99.0" text="Btn2" />
+            <Button fx:id="btn3" layoutX="726.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action3" prefHeight="30.0" prefWidth="99.0" text="Btn3" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

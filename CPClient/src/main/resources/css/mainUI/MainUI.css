@@ -1,0 +1,35 @@
+
+.root{
+	-fx-background-color: #FFF7FB
+}
+
+.vbox {
+	-fx-background-color: #ff7575;
+}
+.button {
+     -fx-background-color: transparent;
+     -fx-text-fill: #9f353a
+}
+
+.button:hover {
+	-fx-text-fill: white;
+}
+
+.menu-button {
+	-fx-background-color: transparent;
+	-fx-text-fill: #9f353a
+}
+
+.menu-button:hover {
+	-fx-text-fill: white;
+}
+
+.menu-item {
+	-fx-text-fill: #9f353a;
+	-fx-background-color:  #ff7575
+}
+
+.label:hover {
+	-fx-text-fill: white;
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" stylesheets="@../../css/forms/ListOfForms.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.PresentListController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="921.0" style="-fx-background-color: #eecde0;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="库存赠送单">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="15.0" layoutY="123.0" prefHeight="463.0" prefWidth="892.0">
+         <children>
+            <Label layoutX="42.0" layoutY="26.0" prefHeight="24.0" prefWidth="112.0" text="单据编号：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="listID" layoutX="179.0" layoutY="26.0" prefHeight="24.0" prefWidth="230.0" text="2017-2323565-56564">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="81.0" prefHeight="24.0" prefWidth="112.0" text="操作员：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="operator" layoutX="156.0" layoutY="81.0" prefHeight="24.0" prefWidth="178.0" text="王瑞华">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="81.0" prefHeight="24.0" prefWidth="112.0" text="操作时间：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="time" layoutX="496.0" layoutY="81.0" prefHeight="24.0" prefWidth="230.0" text="2017-12-26  23：59：26">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="135.0" prefHeight="24.0" prefWidth="112.0" text="添加商品：" textFill="#f03c1f">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="addGoodsBtn" layoutX="168.0" layoutY="132.0" mnemonicParsing="false" onAction="#addGoods" prefHeight="30.0" prefWidth="126.0" text="查找商品" />
+            <Label layoutX="42.0" layoutY="195.0" prefHeight="24.0" prefWidth="112.0" text="商品名称：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="251.0" prefHeight="24.0" prefWidth="99.0" text="商品编号：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="307.0" prefHeight="24.0" prefWidth="112.0" text="赠送对象：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="VIP" layoutX="156.0" layoutY="307.0" prefHeight="24.0" prefWidth="178.0" text="尊贵的VIP—高高">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rm" layoutX="572.0" layoutY="415.0" prefHeight="24.0" prefWidth="219.0" text="ResultMessage" textFill="#4d0bdb">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn1" layoutX="447.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action1" prefHeight="30.0" prefWidth="99.0" text="Btn1" />
+            <Button fx:id="btn2" layoutX="583.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action2" prefHeight="30.0" prefWidth="99.0" text="Btn2" />
+            <Button fx:id="btn3" layoutX="726.0" layoutY="359.0" mnemonicParsing="false" onAction="#Action3" prefHeight="30.0" prefWidth="99.0" text="Btn3" />
+            <ComboBox fx:id="goodsName" layoutX="174.0" layoutY="192.0" prefHeight="30.0" prefWidth="142.0" />
+            <ComboBox fx:id="goodsID" layoutX="174.0" layoutY="248.0" prefWidth="150.0" />
+            <Label layoutX="378.0" layoutY="251.0" prefHeight="24.0" prefWidth="112.0" text="商品数量：" textFill="#1c24f5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="goodsNum" layoutX="513.0" layoutY="248.0" prefHeight="30.0" prefWidth="119.0" />
+            <Button fx:id="deleteGoodsBtn" layoutX="390.0" layoutY="192.0" mnemonicParsing="false" onAction="#deleteGoods" prefHeight="30.0" prefWidth="126.0" text="删除对应商品" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

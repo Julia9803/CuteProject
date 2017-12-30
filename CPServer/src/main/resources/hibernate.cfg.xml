@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.cj.jdbc.Driver
+		</property>
+		<property name="connection.useUnicode">true</property> 
+        <property name="connection.characterEncoding">UTF-8</property>
+		<!-- Assume CPdb is the database name -->
+		<property name="hibernate.connection.url">
+<!--		<![CDATA[jdbc:mysql://localhost:3306/CPdb?useUnicode=true&characterEncoding=utf8&amp;serverTimezone=UTC]]>-->
+		jdbc:mysql://localhost:3306/CPdb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="hibernate.connection.password">
+			root
+		</property>
+		<property name="hibernate.show_sql">
+			true
+		</property>
+		<property name="hibernate.use_sql_comments">
+			false
+		</property>
+		<property name="hbm2ddl.auto">
+			update
+		</property>
+		<!-- List of XML mapping files -->
+		<mapping resource="OperationPO.hbm.xml" />
+		<mapping resource="PresentPO.hbm.xml" />
+		<mapping resource="GoodsInSalePO.hbm.xml" />
+
+		<mapping resource="SalesmanItemPO.hbm.xml" />
+
+<!-- 	<mapping resource="SalesmanListPO.hbm.xml" /> -->	
+
+
+        <mapping resource="GoodsPO.hbm.xml" />
+		<mapping resource="GoodsCategoryPO.hbm.xml"/>
+        <mapping resource="VIPPO.hbm.xml" />
+
+		
+		<!-- for package account -->
+		<mapping resource="TransferItemPO.hbm.xml" />
+
+
+		<mapping resource="ListPO.hbm.xml" />
+		
+
+	</session-factory>
+</hibernate-configuration>

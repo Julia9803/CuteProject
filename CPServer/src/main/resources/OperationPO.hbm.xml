@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-30 15:39:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="PO.OperationPO">
+    <!-- id的增长模式没有写，如果id是自增的，可能需要在po里去掉id这一项 -->
+    <!-- 没有设置一些notnull属性 -->
+        <id name="opID"> 
+     <!--   <generator class="increment"></generator>
+     -->  
+        </id>
+        <property name="time"/>
+        <property name="operator"/>
+        <property name="opCategory"/>
+        <property name="operation"/>
+    </class>
+</hibernate-mapping>

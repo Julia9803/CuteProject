@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" stylesheets="@../../css/forms/Forms.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="79.0" prefWidth="921.0">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="收款单">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="listID" layoutX="574.0" layoutY="26.0" prefHeight="27.0" prefWidth="177.0" text="SKD-yyyymmdd-00000">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="operator" layoutX="802.0" layoutY="28.0" prefHeight="23.0" prefWidth="105.0" text="操作员名字">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="118.0" prefHeight="476.0" prefWidth="921.0">
+         <children>
+            <Pane layoutY="6.0" prefHeight="59.0" prefWidth="921.0">
+               <children>
+                  <Label layoutX="70.0" layoutY="19.0" prefHeight="23.0" prefWidth="41.0" text="客户" textFill="#938c8c">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="selectVIPBtn" layoutX="128.0" layoutY="17.0" mnemonicParsing="false" text="选择" />
+                  <Label fx:id="VIPName" layoutX="210.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="客户名字">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="VIPID" layoutX="322.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="客户编号">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="accountLabel" layoutX="479.0" layoutY="18.0" prefHeight="23.0" prefWidth="78.0" text="银行账户" textFill="#938c8c">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="AccountComboBox" layoutX="580.0" layoutY="16.0" onAction="#OnAccountSelected" prefHeight="27.0" prefWidth="167.0" />
+               </children>
+            </Pane>
+            <ScrollPane hbarPolicy="NEVER" layoutX="87.0" layoutY="90.0" prefHeight="287.0" prefWidth="697.0">
+              <content>
+                <AnchorPane prefHeight="276.0" prefWidth="696.0">
+                	<children>
+                        <TableView fx:id="TransferListTableView" layoutX="2.0" opacity="0.68" prefHeight="276.0" prefWidth="693.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="account" prefWidth="292.0" text="银行账户" />
+                              <TableColumn fx:id="amount" prefWidth="180.0" text="转账金额" />
+                              <TableColumn fx:id="note" prefWidth="170.0" text="备注" />
+                              <TableColumn fx:id="deleted" prefWidth="50.0" text="删除" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Pane layoutY="379.0" prefHeight="97.0" prefWidth="921.0">
+               <children>
+                  <Button fx:id="saveBtn" layoutX="610.0" layoutY="34.0" mnemonicParsing="false" onAction="#onSaveBtnClicked" text="保存">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Button fx:id="commitBtn" layoutX="738.0" layoutY="35.0" mnemonicParsing="false" onAction="#onCommitBtnClicked" text="提交">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Label layoutX="193.0" layoutY="39.0" prefHeight="26.0" prefWidth="54.0" text="总额">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalAmount" layoutX="293.0" layoutY="39.0" prefHeight="26.0" prefWidth="105.0" text="0" textFill="#e12121">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="closeBtn" layoutX="480.0" layoutY="34.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" text="关闭">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.lookAlarmListController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutX="-4.0" prefHeight="97.0" prefWidth="1207.0" style="-fx-background-color: #FFECEC;">
+         <children>
+            <Label layoutX="206.0" layoutY="20.0" text="CuteProject" textFill="#9f353a">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="1161.0" layoutY="17.0">
+               <image>
+                  <Image url="@/img/logOut.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="220.0" layoutY="123.0" prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="库存报警单">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="25.0" layoutY="78.0" mnemonicParsing="false" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #9f353a;" text="全部" textFill="#9f353a" />
+            <TextField layoutX="580.0" layoutY="79.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" />
+            <Button layoutX="812.0" layoutY="79.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="查询" textFill="WHITE" />
+         </children></Pane>
+      <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <MenuButton fx:id="newBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      新建" textFill="#9f353a">
+              <items>
+                <MenuItem fx:id="aaa" mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
+                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+              </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton fx:id="lookBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: #C48888;" text="      查看" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="lookBtn1" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
+               </items>
+            </MenuButton>
+            <Button fx:id="draftBtn" mnemonicParsing="false" prefHeight="62.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="草稿" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
+         </effect>
+      </Circle>
+      <Pane fx:id="pane2" layoutX="214.0" layoutY="515.0" prefHeight="200.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="263.0" layoutY="21.0" text="单据编号：" textFill="#000000a1" />
+            <Label layoutX="483.0" layoutY="21.0" />
+            <Label fx:id="listID2" layoutX="350.0" layoutY="21.0" prefHeight="20.0" prefWidth="149.0" text="ss555664646213" textFill="#000000a1" />
+            <Label layoutX="267.0" layoutY="55.0" text="商品名">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="num2" layoutX="361.0" layoutY="94.0" text="1004" textFill="#e12121">
+               <font>
+                  <Font name="AdobeHebrew-Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="name2" layoutX="361.0" layoutY="55.0" prefHeight="22.0" prefWidth="97.0" text="小灯" textFill="#d06d21">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
+               <image>
+                  <Image url="@/img/lamp1.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="488.0" layoutY="55.0" prefHeight="24.0" prefWidth="70.0" text="商品ID">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="goodsID2" layoutX="578.0" layoutY="55.0" prefHeight="22.0" prefWidth="160.0" text="A1000756479522" textFill="#d06d21">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="488.0" layoutY="98.0" prefHeight="24.0" prefWidth="70.0" text="警戒线">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="267.0" layoutY="98.0" prefHeight="24.0" prefWidth="79.0" text="当前数量">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="alarm2" layoutX="578.0" layoutY="94.0" prefHeight="24.0" prefWidth="70.0" text="2000">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="delete2" layoutX="800.0" layoutY="134.0" mnemonicParsing="false" onAction="#delete2" prefHeight="30.0" prefWidth="83.0" text="删除本条" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane1" layoutX="214.0" layoutY="300.0" prefHeight="200.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="263.0" layoutY="21.0" text="单据编号：" textFill="#000000a1" />
+            <Label fx:id="listID1" layoutX="350.0" layoutY="21.0" prefHeight="20.0" prefWidth="149.0" text="ss200465697521" textFill="#000000a1" />
+            <Label layoutX="267.0" layoutY="55.0" text="商品名">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="num1" layoutX="361.0" layoutY="94.0" text="1004" textFill="#e12121">
+               <font>
+                  <Font name="AdobeHebrew-Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="name1" layoutX="361.0" layoutY="55.0" prefHeight="22.0" prefWidth="97.0" text="小灯" textFill="#d06d21">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="2.0">
+               <image>
+                  <Image url="@/img/lamp1.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="488.0" layoutY="55.0" prefHeight="24.0" prefWidth="70.0" text="商品ID">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="goodsID1" layoutX="578.0" layoutY="55.0" prefHeight="22.0" prefWidth="160.0" text="A1000756479522" textFill="#d06d21">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="488.0" layoutY="98.0" prefHeight="24.0" prefWidth="70.0" text="警戒线">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="267.0" layoutY="98.0" prefHeight="24.0" prefWidth="79.0" text="当前数量">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="alarm1" layoutX="578.0" layoutY="94.0" prefHeight="24.0" prefWidth="70.0" text="2000">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="delete1" layoutX="800.0" layoutY="134.0" mnemonicParsing="false" onAction="#delete1" prefHeight="30.0" prefWidth="83.0" text="删除本条" />
+         </children>
+      </Pane>
+      <Button fx:id="nextPage" layoutX="1076.0" layoutY="737.0" mnemonicParsing="false" onAction="#toNext" text="下一页" />
+      <Button fx:id="backPage" layoutX="977.0" layoutY="737.0" mnemonicParsing="false" onAction="#goBack" text="上一页" />
+      <Label fx:id="InfoLabel" layoutX="784.0" layoutY="742.0" prefHeight="20.0" prefWidth="149.0" text="没有下一页了哦！" />
+   </children>
+</AnchorPane>

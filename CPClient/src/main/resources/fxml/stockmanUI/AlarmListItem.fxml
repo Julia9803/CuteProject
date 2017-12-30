@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="147.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.AlarmListItemController">
+   <children>
+      <Pane fx:id="pane" layoutX="22.0" layoutY="-27.0" minHeight="145.0" prefHeight="150.0" prefWidth="702.0" style="-fx-background-color: pink; -fx-border-color: grey; -fx-background-radius: 3px; -fx-border-radius: 3px; -fx-border-width: 3px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="32.0" layoutY="14.0" prefHeight="28.0" prefWidth="92.0" text="单据编号：" textFill="#7a65c2">
+               <font>
+                  <Font name="Bell MT Bold" size="17.0" />
+               </font></Label>
+            <Label fx:id="listID" layoutX="140.0" layoutY="18.0" prefHeight="20.0" prefWidth="203.0" text="XXXX-YYYYY-zzzz" />
+            <Label layoutX="33.0" layoutY="53.0" prefHeight="20.0" prefWidth="84.0" text="商品名称：">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="goodsName" layoutX="140.0" layoutY="53.0" prefHeight="20.0" prefWidth="119.0" text="name" />
+            <Label layoutX="312.0" layoutY="53.0" prefHeight="20.0" prefWidth="84.0" text="商品编号：">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="goodsID" layoutX="412.0" layoutY="53.0" prefHeight="20.0" prefWidth="214.0" text="XXXX-YYYYY-zzzz" />
+            <Label layoutX="32.0" layoutY="93.0" prefHeight="20.0" prefWidth="127.0" text="商品警戒数量：" textFill="#73d1a6">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="alarmNum" layoutX="169.0" layoutY="93.0" prefHeight="20.0" prefWidth="76.0" text="0" />
+            <Label layoutX="312.0" layoutY="93.0" prefHeight="20.0" prefWidth="119.0" text="商品当前数量：" textFill="#d01717">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="currentNum" layoutX="450.0" layoutY="93.0" prefHeight="20.0" prefWidth="139.0" text="0" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="S_RESIZE" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>

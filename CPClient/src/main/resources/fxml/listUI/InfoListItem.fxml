@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="172.0" prefWidth="609.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane layoutX="-169.0" layoutY="-47.0" prefHeight="164.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="26.0" layoutY="50.0" prefHeight="20.0" prefWidth="84.0" text="单据类型：" />
+            <Label fx:id="type" layoutX="133.0" layoutY="50.0" prefHeight="20.0" prefWidth="116.0" text="ListType" />
+            <Label layoutX="293.0" layoutY="50.0" prefHeight="20.0" prefWidth="70.0" text="操作员：" />
+            <Label fx:id="operator" layoutX="375.0" layoutY="50.0" prefHeight="20.0" prefWidth="146.0" text="Operator" />
+            <Label layoutX="26.0" layoutY="20.0" prefHeight="20.0" prefWidth="84.0" text="单据编号 ：" />
+            <Label fx:id="id" layoutX="133.0" layoutY="20.0" prefHeight="20.0" prefWidth="221.0" text="List_ID" />
+            <CheckBox fx:id="isChosen" layoutX="529.0" layoutY="97.0" mnemonicParsing="false" text="选中" />
+            <Label layoutX="26.0" layoutY="87.0" prefHeight="20.0" prefWidth="84.0" text="备注信息：" />
+            <TextArea fx:id="note" layoutX="121.0" layoutY="93.0" prefHeight="48.0" prefWidth="345.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

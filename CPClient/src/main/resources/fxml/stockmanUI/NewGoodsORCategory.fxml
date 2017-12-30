@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+
+<AnchorPane fx:id="root" prefHeight="300.0" prefWidth="520.0" style="-fx-background-color: FFECEC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.NewGoodsORCategoryController">
+   <children>
+       <Button fx:id="sureBtn" layoutX="172.0" layoutY="205.0" mnemonicParsing="false" onAction="#onSureBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="确认" textFill="WHITE" />
+       <TextField fx:id="name" layoutX="260.0" layoutY="122.0" promptText="请输入名称" />
+      <ChoiceBox fx:id="nameType" layoutX="163.0" layoutY="121.0" prefHeight="27.0" prefWidth="80.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #9f353a; -fx-background-color: white;" value="商品">
+              <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="商品" />
+                      <String fx:value="商品分类" />
+                  </FXCollections>
+              </items>
+      </ChoiceBox>
+      <Label layoutX="232.0" layoutY="38.0" text="新建" textFill="#9f353a">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelBtn" layoutX="288.0" layoutY="205.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="取消" textFill="WHITE" />
+   </children>
+
+</AnchorPane>

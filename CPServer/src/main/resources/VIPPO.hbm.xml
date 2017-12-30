@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="PO.VIPPO">
+        <id name="autoId">
+            <generator class="native"></generator>
+        </id>
+        <property name="address"/>
+        <property name="category"/>
+        <property name="collection"/>
+        <property name="collectionLimit"/>
+        <property name="email"/>
+        <property name="clerk"/>
+        <property name="grade"/>
+        <property name="id"/>
+        <property name="postCode"/>
+        <property name="name"/>
+        <property name="payment"/>
+        <property name="phoneNumber"/>
+        <property name="state"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.GoodsController">
+   <children>
+  <fx:include source="Stockman.fxml" />
+      <ScrollPane fx:id="goodsList" layoutX="431.0" layoutY="310.0" prefHeight="435.0" prefWidth="710.0" style="-fx-background-color: transparent;">
+         <content>
+            <VBox fx:id="goodsVBox" minHeight="435.0" minWidth="706.0">
+               <children>
+                  <Pane fx:id="goodsPane" prefHeight="435.0" prefWidth="663.0" style="-fx-background-color: #FFB5B5;">
+                     <children>
+                        <Label layoutX="483.0" layoutY="21.0" />
+                        <ImageView fx:id="editBtn" fitHeight="25.0" fitWidth="25.0" layoutX="631.0" layoutY="23.0">
+                           <image>
+                              <Image url="@../../img/edit.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="233.0" layoutY="41.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+                        <TextField fx:id="goodsName" editable="false" layoutX="251.0" layoutY="48.0" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20;" text="商品名">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="goodsType" editable="false" layoutX="364.0" layoutY="62.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: transparent;" text="商品型号">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="245.0" layoutY="119.0" text="商品编号" textFill="#000000a1" />
+                        <TextField fx:id="goodsID" editable="false" layoutX="311.0" layoutY="114.0" prefHeight="17.0" prefWidth="213.0" style="-fx-background-color: transparent;" text="XSD-yyyyMMdd-xxxxx" />
+                        <Label layoutX="245.0" layoutY="161.0" text="库存数量" textFill="#000000a1" />
+                        <TextField fx:id="goodsStoreNum" editable="false" layoutX="337.0" layoutY="154.0" prefHeight="32.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20;" text="5">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="258.0" layoutY="238.0" text="进价" textFill="#000000a1" />
+                        <TextField fx:id="goodsBuyPrice" editable="false" layoutX="331.0" layoutY="224.0" prefHeight="45.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20;" text="250">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="462.0" layoutY="238.0" text="最近进价" textFill="#000000a1" />
+                        <TextField fx:id="recentBuyPrice" editable="false" layoutX="556.0" layoutY="224.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20;" text="250">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="251.0" layoutY="300.0" prefHeight="36.0" prefWidth="39.0" text="销售价" textFill="#000000a1" />
+                        <TextField fx:id="goodsSellPrice" editable="false" layoutX="331.0" layoutY="297.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-border-radius: 20; -fx-background-radius: 20;" text="2350">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="463.0" layoutY="311.0" text="最近销售价" textFill="#000000a1" />
+                        <TextField fx:id="recentSellPrice" editable="false" layoutX="556.0" layoutY="297.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20;" text="2350">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="200.0" fitWidth="200.0">
+                           <image>
+                              <Image url="@../../img/lamp1.JPG" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="goodsCategory" editable="false" layoutX="470.0" layoutY="62.0" prefHeight="17.0" prefWidth="89.0" style="-fx-background-color: transparent;" text="商品分类">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </content></ScrollPane>
+      <Pane layoutX="216.0" layoutY="148.0" prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label fx:id="magic" layoutX="55.0" layoutY="23.0" text="商品管理">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchField" layoutX="625.0" layoutY="74.0" prefHeight="32.0" prefWidth="167.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" />
+            <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="764.0" layoutY="81.0">
+               <image>
+                  <Image url="@../../img/search.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="822.0" layoutY="78.0" onAction="#setSearchBtn" prefHeight="27.0" prefWidth="63.0" ripplerFill="#d30f0f" style="-fx-background-radius: 23; -fx-background-color: #ff7575;" text="查询" textFill="#f7e9e9" />
+            <JFXButton fx:id="goodsNameSearchBtn" buttonType="RAISED" layoutX="34.0" layoutY="77.0" onAction="#onGoodsNameSearchBtnClicked" prefHeight="29.0" prefWidth="63.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品名" textFill="#9f353a" />
+            <JFXButton fx:id="goodsTypeSearchBtn" buttonType="RAISED" layoutX="115.0" layoutY="77.0" onAction="#onGoodsTypeSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品型号" textFill="#9f353a" />
+            <JFXButton fx:id="goodsIDSearchBtn" buttonType="RAISED" layoutX="203.0" layoutY="77.0" onAction="#onGoodsIDSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品编号" textFill="#9f353a" />
+         </children></Pane>
+      <Pane layoutX="216.0" layoutY="310.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <VBox fx:id="vBox" layoutX="7.0" layoutY="54.0" prefHeight="369.0" prefWidth="182.0" style="-fx-border-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 15;" />
+            <Pane layoutX="8.0" layoutY="6.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #ff7575; -fx-border-radius: 12;">
+               <children>
+                  <Label fx:id="presentLocation" layoutX="49.0" layoutY="13.0" prefHeight="17.0" prefWidth="113.0" text="右键进行操作" />
+                  <Label layoutX="11.0" layoutY="10.0" prefHeight="23.0" prefWidth="31.0" text="提示" textFill="#9f353a" />
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane fx:id="notice" layoutX="363.0" layoutY="243.0" prefHeight="317.0" prefWidth="471.0" style="-fx-background-color: #fffafe; -fx-background-radius: 15; -fx-border-color: #ffefef; -fx-border-radius: 15; -fx-border-width: 3;" visible="false">
+      <children>
+         <Button fx:id="sureBtn" layoutX="145.0" layoutY="205.0" mnemonicParsing="false" onAction="#onSureBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="确认" textFill="WHITE" />
+         <TextField fx:id="name" layoutX="153.0" layoutY="122.0" promptText="请输入名称" />
+         <Label fx:id="noticeLabel" layoutX="180.0" layoutY="48.0" prefHeight="37.0" prefWidth="113.0" text="新建" textAlignment="CENTER" textFill="#682d1e">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <Button fx:id="cancelBtn" layoutX="264.0" layoutY="205.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="取消" textFill="WHITE" />
+      </children>
+      </Pane>
+      <JFXDialogLayout fx:id="dialogLayout" layoutX="389.0" layoutY="713.0" prefHeight="87.0" prefWidth="533.0">
+         <children>
+            <JFXDialog fx:id="dialog" />
+         </children>
+      </JFXDialogLayout>
+   </children>
+</AnchorPane>

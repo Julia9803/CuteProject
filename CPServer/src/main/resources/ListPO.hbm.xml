@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="PO.ListPO" dynamic-insert= "true" dynamic-update= "true" lazy = "false">
+		<id name="id" >
+		<generator class="assigned" />
+		<!--  以单据编号为主键	-->
+		</id>
+		<property name="operator"/>
+		<property name="operatorId"/>
+		<property name="state"/>
+		<property name="day"/>
+			<joined-subclass name="PO.SalesmanListPO">
+	<key column = "salesmanListId"/>
+		<property name="operatorGrade"/>
+		<property name="memberID" />
+		<property name="memberName" />
+		<property name="realOperator"/>
+		<property name="warehouse"/>
+		<property name="notes"/>
+					<!-- 组分中包括的集合 -->
+			<list name="SaleListItems" cascade ="all">
+				<key column="salesmanListid" />
+				<index column="index_"></index><!-- 注意index是数据库中的关键字要避免与其冲突，此处index_对应元素在List中的索引 -->  
+				<one-to-many class="PO.SalesmanItemPO" />
+			</list>
+		<property name="sum"/>
+		<!-- 体现了子类的继承关系 -->
+		<!-- 注意每种单据的id是在子类里单独存储的，而父类的id只在数据库里使用 -->
+		<joined-subclass name="PO.SaleListPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+			<property name="sumBeforeRebate" />
+			<property name="rebate" />
+			<property name="voucher" />
+		</joined-subclass>
+
+		<joined-subclass name="PO.SaleReturnListPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+			<property name="sumBeforeRebate" />
+			<property name="rebate" />
+			<property name="voucher" />
+		</joined-subclass>
+
+		<joined-subclass name="PO.StockListPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+		</joined-subclass>
+		
+		<joined-subclass name="PO.StockReturnListPO">
+			<!-- 注意这里表明了子类和父类的共有属性 -->
+			<key column="parentId" />
+		</joined-subclass>
+	</joined-subclass>
+		<joined-subclass name="PO.account.FinanceListPO">
+			<key column="listId"/>
+			<property name="totalAmount"/>
+			
+			<joined-subclass name="PO.account.CollectionListPO">
+				<key column="listId" />
+				<property name="VIPID"/>
+				<property name="VIPName"/>
+				
+				<list name="transferItem" cascade ="all" lazy = "false">
+					<key column="collectionListId" />
+					<index column="indexInList" />
+					<one-to-many class="PO.account.TransferItemPO" />
+				</list>
+				
+			</joined-subclass>
+			
+		</joined-subclass>
+		
+	</class>
+</hibernate-mapping>

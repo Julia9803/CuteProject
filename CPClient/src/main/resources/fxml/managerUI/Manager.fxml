@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.managerUI.ManagerController">
+    <children>
+      <fx:include source="../commonUI/Background.fxml" />
+      <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      审批" textFill="#9f353a">
+              <items>
+                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="ui.saleUI.Sale.css" text="单据1" />
+                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+              </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      查看" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+               </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="日志" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
+                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
+               </items>
+            </MenuButton>
+            <MenuButton layoutX="10.0" layoutY="228.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      策略" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <items>
+                  <Menu mnemonicParsing="false" style="-fx-background-color: transparent;" text="新建">
+                    <items>
+                      <MenuItem fx:id="newPresentForMembership" mnemonicParsing="false" onAction="#onNewPresentForMembershipClicked" style="-fx-background-color: transparent;" text="会员促销" />
+                        <MenuItem fx:id="newPresentForSpecialPackage" mnemonicParsing="false" onAction="#onNewPresentForSpecialPackageClicked" style="-fx-background-color: transparent;" text="特价包促销" />
+                        <MenuItem fx:id="newPresentForSum" mnemonicParsing="false" onAction="#onNewPresentForSumClicked" style="-fx-background-color: transparent;" text="满减促销" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" style="-fx-background-color: transparent;" text="查看">
+                     <items>
+                        <MenuItem fx:id="showPresentForMembership" mnemonicParsing="false" onAction="#onShowPresentForMembershipClicked" style="-fx-background-color: transparent;" text="会员促销" />
+                        <MenuItem fx:id="showPresentForSpecialPackage" mnemonicParsing="false" onAction="#onShowPresentForSpecialPackageClicked" style="-fx-background-color: transparent;" text="特价包促销" />
+                        <MenuItem fx:id="showPresentForSum" mnemonicParsing="false" onAction="#onShowPresentForSumClicked" style="-fx-background-color: transparent;" text="满减促销" />
+                     </items>
+                  </Menu>
+               </items>
+            </MenuButton>
+         </children>
+      </VBox>
+      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
+         </effect>
+      </Circle>
+      <BorderPane fx:id="centerPane" layoutX="121.0" layoutY="95.0" prefHeight="705.0" prefWidth="1066.0" />
+   </children>
+</AnchorPane>

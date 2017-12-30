@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="707.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.salesmanUI.VIPInfoEditController">
+    <children>
+        <ScrollPane fx:id="scrollPane" prefHeight="435.0" prefWidth="707.0" style="-fx-background-color: #FFB5B5;">
+            <content>
+                <VBox fx:id="vipVBox" prefHeight="435.0" prefWidth="707.0">
+                    <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="703.0" style="-fx-background-color: #FFB5B5;">
+                            <children>
+                                <GridPane layoutX="36.0" layoutY="42.0" prefHeight="352.0" prefWidth="612.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label prefHeight="44.0" prefWidth="129.0" text="姓名" textFill="#938c8c" GridPane.rowIndex="1" />
+                                        <Label prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="电话" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="3" />
+                                        <Label text="     客户信息">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="默认业务员" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="8" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="分类" textFill="#938c8c" GridPane.rowIndex="2" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="地址" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="编号" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="电子邮箱" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="4" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="级别" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="邮编" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                        <Label prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" GridPane.rowIndex="6" />
+                                        <Label text="     应收应付" GridPane.rowIndex="6">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="应收额度" textAlignment="CENTER" textFill="#938c8c" GridPane.rowIndex="7" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="应收" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                        <Label prefHeight="45.0" prefWidth="145.0" text="应付" textAlignment="CENTER" textFill="#938c8c" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                              <JFXTextField fx:id="name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="id" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="category" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="grade" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="address" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="postcode" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="collectionLimit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <JFXTextField fx:id="collection" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                              <JFXTextField fx:id="clerk" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <JFXTextField fx:id="payment" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                                    </children>
+                                </GridPane>
+                        <JFXButton fx:id="saveVIPInfoBtn" buttonType="RAISED" layoutX="522.0" layoutY="409.0" onAction="#setSaveVIPInfoBtn" prefHeight="26.0" prefWidth="62.0" ripplerFill="#f20707" style="-fx-background-color: #ff7575; -fx-border-radius: 22; -fx-background-radius: 22;" text="保存" textFill="#f5f4f4" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
