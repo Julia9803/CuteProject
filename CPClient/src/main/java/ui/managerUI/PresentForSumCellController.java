@@ -129,7 +129,6 @@ public class PresentForSumCellController implements SinglePresentController{
 	}
 	public void refresh() {
 		presentListVBox.getChildren().clear();
-		// TODO Auto-generated method stub
 		for(GoodsInSaleVO vo : presentList){
    		 PresentNoEditCellController controller = 
    				    new PresentNoEditCellController(this,vo);

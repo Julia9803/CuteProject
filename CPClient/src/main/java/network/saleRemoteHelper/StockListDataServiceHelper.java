@@ -20,7 +20,8 @@ public class StockListDataServiceHelper implements DataServiceHelper{
     private StockListDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	StockListDataService = (StockListDataService)remote;
     }
     

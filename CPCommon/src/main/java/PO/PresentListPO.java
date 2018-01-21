@@ -3,14 +3,19 @@ package PO;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import util.State;
-import  javax.persistence.*;
 
 @Entity
 @Table(name="PresentListPO")
-public class PresentListPO extends StockListPO implements Serializable{
+public class PresentListPO implements Serializable{
 
-	@Id @GeneratedValue
+	@Id 
 	@Column(name="listID")
 	public String listID;  //单据编号
 
@@ -34,5 +39,7 @@ public class PresentListPO extends StockListPO implements Serializable{
 	public String time;//操作时间
 	@Column(name="operator")
 	public String operator;//操作员
+
+	public PresentListPO(){}
 
 }

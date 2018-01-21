@@ -40,8 +40,8 @@
             <JFXTextField fx:id="goodsStoreNum" labelFloat="true" layoutX="240.0" layoutY="182.0" prefHeight="36.0" prefWidth="152.0" promptText="商品库存数量" />
             <JFXTextField fx:id="goodsBuyPrice" labelFloat="true" layoutX="155.0" layoutY="243.0" prefHeight="37.0" prefWidth="143.0" promptText="商品进价" />
             <JFXTextField fx:id="goodsSellPrice" labelFloat="true" layoutX="155.0" layoutY="316.0" prefHeight="37.0" prefWidth="143.0" promptText="商品销售价" />
-            <JFXTextField fx:id="recentBuyPrice" labelFloat="true" layoutX="361.0" layoutY="243.0" prefHeight="37.0" prefWidth="143.0" promptText="商品进价" />
-            <JFXTextField fx:id="recentSellPrice" labelFloat="true" layoutX="365.0" layoutY="317.0" prefHeight="36.0" prefWidth="143.0" promptText="商品进价" />
+            <JFXTextField fx:id="recentBuyPrice" labelFloat="true" layoutX="361.0" layoutY="243.0" prefHeight="37.0" prefWidth="143.0" promptText="最近进价" />
+            <JFXTextField fx:id="recentSellPrice" labelFloat="true" layoutX="365.0" layoutY="317.0" prefHeight="36.0" prefWidth="143.0" promptText="最近售价" />
             <JFXButton fx:id="saveGoodsInfoBtn" buttonType="RAISED" layoutX="532.0" layoutY="370.0" onAction="#setSaveGoodsInfoBtn" prefHeight="25.0" prefWidth="68.0" ripplerFill="#f20909" style="-fx-background-color: #ff7575; -fx-border-radius: 22;" text="保存" textFill="#f2ecec" />
                </children>
            </Pane>

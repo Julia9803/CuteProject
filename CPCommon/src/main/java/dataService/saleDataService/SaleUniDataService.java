@@ -47,5 +47,13 @@ public interface SaleUniDataService extends Remote,Serializable{
 	public DataRM approve(SalesmanListPO po) throws RemoteException;
 	
 	public DataRM refuse(SalesmanListPO po) throws RemoteException;
+	
+	/**
+	 * 根据id得到对应的单据
+	 * @param id
+	 * @return 不存在时返回null
+	 * @throws RemoteException
+	 */
+	public SalesmanListPO get(String id) throws RemoteException;
 
 }

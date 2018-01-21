@@ -9,6 +9,10 @@ import java.io.Serializable;
 */
 public class StockmanItemPO  implements Serializable{
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2356299182446987344L;
+	/**
 	 * 商品编号	
 	 */
 	String id;

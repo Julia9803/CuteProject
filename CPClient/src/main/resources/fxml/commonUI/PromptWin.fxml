@@ -11,7 +11,7 @@
    <children>
       <Label fx:id="promptText" alignment="CENTER" layoutX="39.0" layoutY="50.0" prefHeight="49.0" prefWidth="243.0" textFill="#f25959">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </Label>
    </children>

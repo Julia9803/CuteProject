@@ -1,8 +1,8 @@
 package PO;
 
-import util.GoodsUtil;
-
 import java.io.Serializable;
+
+import util.GoodsUtil;
 
 /**     
 * @author 李安迪

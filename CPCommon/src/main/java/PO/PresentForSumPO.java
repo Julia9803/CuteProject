@@ -1,7 +1,6 @@
 package PO;
 
 import java.io.Serializable;
-import java.rmi.Remote;
 import java.util.Date;
 import java.util.List;
 

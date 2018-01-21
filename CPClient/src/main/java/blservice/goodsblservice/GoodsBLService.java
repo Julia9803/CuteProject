@@ -3,7 +3,6 @@ package blservice.goodsblservice;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import PO.GoodsCategoryPO;
 import VO.goodsVO.GoodsCategoryVO;
 import VO.goodsVO.GoodsVO;
 import resultmessage.ResultMessage;

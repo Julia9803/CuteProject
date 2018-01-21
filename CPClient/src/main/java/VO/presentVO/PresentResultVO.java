@@ -10,6 +10,7 @@ import VO.GoodsInSaleVO;
 * @description 销售中返回给界面的赠送结果
 */
 public class PresentResultVO {
+	int id;
 	/**
 	 * 策略id列表,点击id可以查看详情
 	 */
@@ -49,6 +50,12 @@ public class PresentResultVO {
 	public double getVoucher() {
 		return voucher;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setVoucher(double voucher) {
 		this.voucher = voucher;
 	}
@@ -72,6 +79,11 @@ public class PresentResultVO {
 		this.voucher = voucher;
 		this.presentList = presentList;
 		this.sum = sum;
+	}
+	@Override
+	public String toString() {
+		return "PresentResultVO [id=" + id + ", presentId=" + presentId + ", voucher=" + voucher + ", presentList="
+				+ presentList + ", sum=" + sum + "]";
 	}
 	
 	

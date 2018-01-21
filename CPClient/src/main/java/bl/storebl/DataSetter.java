@@ -1,5 +1,7 @@
 package bl.storebl;
 
+import java.rmi.RemoteException;
+
 import PO.AlarmListPO;
 import PO.PresentListPO;
 import PO.ReportListPO;
@@ -13,13 +15,16 @@ import VO.storeVO.StoreLogVO;
 import VO.storeVO.StoreVO;
 import VO.storeVO.storeRM;
 import dataService.storeDataService.StoreDataService;
-import dataService.storeDataService.StoreDataService_Stub;
+//import dataService.storeDataService.StoreDataService_Stub;
+import network.storeRemoteHelper.StoreDataServiceHelper;
 
 public class DataSetter {
    //用于调用数据层接口中的方法，向数据层插入数据
 	//工具类，为方便测试和优化结构写的。
 	//王瑞华 2017年12月3日
-	StoreDataService sds=new StoreDataService_Stub();
+	//StoreDataService sds=new StoreDataService_Stub();
+	StoreDataServiceHelper helper=StoreDataServiceHelper.getInstance();
+	StoreDataService sds=helper.getStoreDataService();
 	DataGetter dg=new DataGetter();
 	public storeRM insertStoreVO(StoreVO vo){
 	//向数据库中插入一个库存项目，若该ID不存在，则允许插入，否则不允许。
@@ -31,10 +36,16 @@ public class DataSetter {
 		po.ID=vo.ID;
 		po.name=vo.name;
 		po.Num=vo.Num;
-		if(sds.insertStoreItem(po)){
-		return storeRM.SUCCESS;
-		}else {
+		try {
+			if(sds.insertStoreItem(po)){
+			return storeRM.SUCCESS;
+			}else {
+				
+				return storeRM.ID_EXIST;
+			}
+		} catch (RemoteException e) {
 			
+			e.printStackTrace();
 			return storeRM.ID_EXIST;
 		}
 		
@@ -52,11 +63,17 @@ public class DataSetter {
 		po.name=vo.name;
 		vo.calcAveragePrice(vo.Num, adder, vo.averagePrice, price);
 		po.averagePrice=vo.averagePrice;
-		po.Num=vo.Num;
-		if(sds.replaceStoreItem(po)){
-		    return storeRM.SUCCESS;
-		}else{
-			return storeRM.ID_NOT_EXIST;
+		po.Num=vo.Num+adder;
+		
+		try {
+			if(sds.replaceStoreItem(po)){
+			    return storeRM.SUCCESS;
+			}else{
+				return storeRM.ID_NOT_EXIST;
+			}
+		} catch (RemoteException e) {
+						e.printStackTrace();
+						return storeRM.ID_EXIST;
 		}
 		
 	}
@@ -72,10 +89,16 @@ public class DataSetter {
 		po.name=vo.name;
 		po.averagePrice=vo.averagePrice;//商品在减少时均价不会变化。
 		po.Num=vo.Num-subber;
-		if(sds.replaceStoreItem(po)){
-		    return storeRM.SUCCESS;
-		}else{
-			return storeRM.ID_NOT_EXIST;
+		try {
+			if(sds.replaceStoreItem(po)){
+			    return storeRM.SUCCESS;
+			}else{
+				return storeRM.ID_NOT_EXIST;
+			}
+		} catch (RemoteException e) {
+			
+			e.printStackTrace();
+			return storeRM.ID_EXIST;
 		}
 	}
 	
@@ -85,9 +108,15 @@ public class DataSetter {
 		po.alarmNum=vo.alarmNum;
 		po.currentNum=vo.currentNum;
 		po.goodsID=vo.goodsID;
-		po.listID=vo.listID;
+		po.id=vo.listID;
+	
 		po.goodsName=vo.goodsName;
-		sds.addAlarmList(po);
+		try {
+			sds.addAlarmList(po);
+		} catch (RemoteException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	public ListRM insertReportListVO(ReportListVO vo){
@@ -102,10 +131,16 @@ public class DataSetter {
 		po.Num=vo.Num;
 		po.operator=vo.operator;
 		po.listID=vo.listID;
-		if(sds.insertReportList(po)){
-			
-			return ListRM.SUCCESS;
-		}else {
+		try {
+			if(sds.insertReportList(po)){
+				
+				return ListRM.SUCCESS;
+			}else {
+				return ListRM.WRONG_LISTTYPE;
+			}
+		} catch (RemoteException e) {
+
+			e.printStackTrace();
 			return ListRM.WRONG_LISTTYPE;
 		}
 		//向数据库中插入库存报告单的值对象（保存状态为草稿）
@@ -120,10 +155,16 @@ public class DataSetter {
 		po.time=vo.time;
 		po.statetype=vo.statetype;
 		po.VIPname=vo.VIPname;
-           if(sds.insertPresentList(po)){
+           try {
+			if(sds.insertPresentList(po)){
+				
+				return ListRM.SUCCESS;
+			}else {
+				return ListRM.WRONG_LISTTYPE;
+			}
+		} catch (RemoteException e) {
 			
-			return ListRM.SUCCESS;
-		}else {
+			e.printStackTrace();
 			return ListRM.WRONG_LISTTYPE;
 		}
 	}
@@ -140,10 +181,16 @@ public class DataSetter {
 		po.Num=vo.Num;
 		po.operator=vo.operator;
 		po.listID=vo.listID;
-		if(sds.replaceReportList(po)){
+		try {
+			if(sds.replaceReportList(po)){
+				
+				return ListRM.SUCCESS;
+			}else {
+				return ListRM.WRONG_LISTTYPE;
+			}
+		} catch (RemoteException e) {
 			
-			return ListRM.SUCCESS;
-		}else {
+			e.printStackTrace();
 			return ListRM.WRONG_LISTTYPE;
 		}
 		
@@ -159,10 +206,16 @@ public class DataSetter {
 		po.time=vo.time;
 		po.statetype=vo.statetype;
 		po.VIPname=vo.VIPname;
-           if(sds.replacePresentList(po)){
+           try {
+			if(sds.replacePresentList(po)){
+				
+				return ListRM.SUCCESS;
+			}else {
+				return ListRM.WRONG_LISTTYPE;
+			}
+		} catch (RemoteException e) {
 			
-			return ListRM.SUCCESS;
-		}else {
+			e.printStackTrace();
 			return ListRM.WRONG_LISTTYPE;
 		}
 	}
@@ -174,6 +227,11 @@ public class DataSetter {
 		po.time=vo.time;
 		po.type=vo.type;
 		po.price=vo.price;
-		sds.addStoreLogPO(po);
+		try {
+			sds.addStoreLogPO(po);
+		} catch (RemoteException e) {
+	
+			e.printStackTrace();
+		}
 	}
 }

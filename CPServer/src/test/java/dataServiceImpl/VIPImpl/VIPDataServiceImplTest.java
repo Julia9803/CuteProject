@@ -1,20 +1,19 @@
 package dataServiceImpl.VIPImpl;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import PO.VIPPO;
-import resultmessage.ResultMessage;
 import util.VIPUtil;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by julia98 on 2017/12/27.
  */
 public class VIPDataServiceImplTest {
-	VIPPO po = new VIPPO("00000001"
-            ,"分类1"
-            ,"级别1"
+	VIPPO po1 = new VIPPO("00000001"
+            ,"供货商"
+            ,"1"
             ,"姓名1"
             ,"18800000000"
             ,"123456789@qq.com"
@@ -26,8 +25,8 @@ public class VIPDataServiceImplTest {
             ,"业务员1",VIPUtil.EXIST);
 	
 	VIPPO po2 = new VIPPO("00000002"
-            ,"分类2"
-            ,"级别2"
+            ,"经销商"
+            ,"2"
             ,"姓名2"
             ,"18800000002"
             ,"123456789@qq.com"
@@ -41,18 +40,19 @@ public class VIPDataServiceImplTest {
 
     @Test
     public void newVIPID() throws Exception {
-        //assertEquals("",new VIPDataServiceImpl().newVIPID(po2));
+    	po2.setName("经销商" + 1);
+       assertEquals("2",new VIPDataServiceImpl().newVIPID(po2));
     }
 
     @Test
     public void findVIP() throws Exception {
-    	//assertEquals(po,new VIPDataServiceImpl().findVIP("姓名1", "name").get(0));
+    	//assertEquals(po,new VIPDataServiceImpl().findVIP("", "name").get(0));
     }
-
-    @Test
-    public void getVIP() throws Exception {
-    	assertEquals(po,new VIPDataServiceImpl().getVIP("姓名2"));
-    }
+//
+//    @Test
+//    public void getVIP() throws Exception {
+//    	assertEquals(po,new VIPDataServiceImpl().getVIP("姓名2"));
+//    }
 
     @Test
     public void deleteVIP() throws Exception {

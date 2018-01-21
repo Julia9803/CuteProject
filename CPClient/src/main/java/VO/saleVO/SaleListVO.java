@@ -2,8 +2,10 @@ package VO.saleVO;
 
 import java.util.List;
 
+import VO.presentVO.PresentResultVO;
 import util.State;
 import util.UserGrade;
+import util.VIPGrade;
 
 /**     
 * @author 李安迪
@@ -24,7 +26,21 @@ public class SaleListVO extends SalesmanListVO{
 	 * 使用代金券金额
 	 */
 	double voucher;
+	 /**
+	  * 客户等级
+	  */
+	 VIPGrade memberGrade;
+	/**
+	 * 赠品情况
+	 */
+	PresentResultVO presentResultVO;
 
+	public PresentResultVO getPresentResultVO() {
+		return presentResultVO;
+	}
+	public void setPresentResultVO(PresentResultVO presentResultVO) {
+		this.presentResultVO = presentResultVO;
+	}
 	public double getSumBeforeRebate() {
 		return sumBeforeRebate;
 	}
@@ -40,16 +56,24 @@ public class SaleListVO extends SalesmanListVO{
 	public double getVoucher() {
 		return voucher;
 	}
+	public VIPGrade getGrade() {
+		return memberGrade;
+	}
+	public void setGrade(VIPGrade grade) {
+		this.memberGrade = grade;
+	}
 	public void setVoucher(double voucher) {
 		this.voucher = voucher;
 	}
 	public SaleListVO(String id, String operator, String operatorId, State state,UserGrade operatorGrade,String memberID, String memberName,
-			String operator2, String warehouse, String notes, List<SalesmanItemVO> saleListItems, double sum,
-			double sumBeforeRebate, double rebate, double voucher) {
+			VIPGrade grade,String operator2, String warehouse, String notes, List<SalesmanItemVO> saleListItems, double sum,
+			double sumBeforeRebate, double rebate, double voucher,PresentResultVO vo) {
 		super(id, operator, operatorId, state, operatorGrade,memberID, memberName, operator2, warehouse, notes, saleListItems, sum);
 		this.sumBeforeRebate = sumBeforeRebate;
 		this.rebate = rebate;
 		this.voucher = voucher;
+		this.presentResultVO = vo;
+		this.memberGrade = grade;
 	}
 
 	

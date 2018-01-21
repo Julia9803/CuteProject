@@ -7,12 +7,13 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import VO.goodsVO.GoodsVO;
+import VO.storeVO.StoreVO;
 import bl.goodsbl.GoodsBLServiceImpl;
+import bl.storebl.Store_Interface;
+import bl.storebl.Store_InterfaceImpl;
 import blservice.goodsblservice.GoodsBLService;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -46,12 +47,46 @@ public class GoodsInfoEditController {
             }
         });
     }
+    
+    public boolean inputError(JFXTextField textField) {
+        	if (!isNumeric(textField.getText())) {
+            	textField.setText("请输入数字");
+            	return false;
+            }
+        	return true;
+    }
+
+    public static boolean isNumeric(String str) {
+     	if(str.contains(".")) {
+    		    str = str.substring(0, str.indexOf(".")) + str.substring(str.indexOf(".") + 1,str.length());
+     	}
+     	
+    	  for (int i = 0; i < str.length(); i++) {
+    	   //System.out.println(str.charAt(i));
+    	   if (!Character.isDigit(str.charAt(i))) {
+    		   System.out.println("输入字符不是数字");
+    	    return false;
+    	   }
+    	  }
+    	  System.out.println("输入字符是数字");
+    	  return true;
+    	 }
+    
+    public int getGoodsStore() {
+        Store_Interface store = new Store_InterfaceImpl();
+        try {
+        StoreVO storeVO = store.getStoreVO(goodsVO.getGoodsID());
+        return storeVO.Num; 
+        }catch(Exception e) {
+        	return 5;
+        }
+    }
+    
     @FXML
     public void initialize() throws RemoteException{
         
         init(goods);
-        goodsName.setEditable(true);
-        inputRequired(goodsName);
+        goodsName.setEditable(false);
         goodsType.setEditable(true);
         inputRequired(goodsType);
         goodsID.setEditable(false);
@@ -66,12 +101,11 @@ public class GoodsInfoEditController {
         recentSellPrice.setEditable(true);
         inputRequired(recentSellPrice);
 
-
         goodsName.setText(goodsVO.getGoodsName());
         goodsType.setText(goodsVO.getGoodsType());
         goodsID.setText(goodsVO.getGoodsID());
         goodsCategory.setText(goodsVO.getGoodsCategory());
-        goodsStoreNum.setText("5");
+        goodsStoreNum.setText("" + getGoodsStore());
         goodsSellPrice.setText(""+ goodsVO.getGoodsSellPrice());
         goodsBuyPrice.setText(""+ goodsVO.getGoodsBuyPrice());
         recentBuyPrice.setText(""+ goodsVO.recentBuyPrice());
@@ -86,7 +120,11 @@ public class GoodsInfoEditController {
 
     @FXML
     public void setSaveGoodsInfoBtn() throws RemoteException{
-        
+    	if( inputError(goodsBuyPrice)&&
+        inputError(goodsSellPrice)&&
+        inputError(recentBuyPrice)&&
+        inputError(recentSellPrice) == true) {
+       
         goodsVO.setGoodsName(goodsName.getText());
         goodsVO.setGoodsType(goodsType.getText());
         goodsVO.setGoodsCategory(goodsCategory.getText());
@@ -99,5 +137,6 @@ public class GoodsInfoEditController {
         Platform.runLater(()->{
             root.getScene().getWindow().hide();
         });
+    }
     }
 }

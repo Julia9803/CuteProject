@@ -1,14 +1,23 @@
 package PO;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import util.State;
 import util.StoreListType;
-import  javax.persistence.*;
 
 
 @Entity
 @Table(name="ReportListPO")
-public class ReportListPO {
-	@Id @GeneratedValue
+public class ReportListPO implements Serializable{
+	/**
+	 * 
+	 */
+		@Id 
 	@Column(name="listID")
 	public  String listID;
 
@@ -31,4 +40,6 @@ public class ReportListPO {
 	   public String time;//操作时间
 	@Column(name="operator")
 	   public String operator;//操作员
+
+	public ReportListPO (){}
 }

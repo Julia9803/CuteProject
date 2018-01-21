@@ -4,7 +4,6 @@ import java.util.List;
 
 import VO.presentVO.PresentForMembershipVO;
 import VO.presentVO.PresentResultVO;
-import VO.saleVO.SaleVO;
 import util.VIPGrade;
 
 /**     
@@ -26,7 +25,10 @@ public class PresentForMembershipHandler {
 		if(list != null && ! list.isEmpty()){
 		PresentForMembershipVO newPresent = list.get(0);
 		int id = newPresent.getId();
+		if(!result.getPresentId().contains(id)){
 		result.getPresentId().add(id);
+		System.out.println(id);
+		System.out.println(result.getPresentId());
 		result.getPresentList().addAll(newPresent.getPresentList());
 		double rebate = newPresent.getRebateInPresentForMembership();
 		if(result.getSum() - rebate > 0)
@@ -34,7 +36,7 @@ public class PresentForMembershipHandler {
 		double voucher = newPresent.getVoucher()+result.getVoucher();
 		result.setVoucher(voucher);
 		}
-		
+		}
 		return result;
 	}
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -9,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.managerUI.SalesmanController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFF7FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.salesmanUI.SalesmanController">
     <children>
       <fx:include source="../commonUI/Background.fxml" />
       <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
@@ -38,29 +39,19 @@
                   <MenuItem fx:id="draftStockReturnList" mnemonicParsing="false" onAction="#showDraftStockReturnList" style="-fx-background-color: transparent;" text="进货退货单" />
                </items>
             </MenuButton>
-            <MenuButton layoutX="10.0" layoutY="285.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      客户" textFill="#9f353a">
+            <JFXButton fx:id="vipBtn" onAction="#setVIPBtn" prefHeight="62.0" prefWidth="122.0" text="客户" textFill="#9f353a">
                <font>
                   <Font size="18.0" />
                </font>
-            </MenuButton>
-            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="日志" />
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
-               </items>
-            </MenuButton>
+            </JFXButton>
          </children>
       </VBox>
-      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+      <Circle fill="#d9683199" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
          <effect>
             <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
          </effect>
       </Circle>
-      <BorderPane fx:id="titlePane" layoutX="140.0" layoutY="102.0" prefHeight="131.0" prefWidth="1054.0" style="-fx-background-color: #FFB5B5;" />
-      <BorderPane fx:id="centerPane" layoutX="142.0" layoutY="240.0" prefHeight="560.0" prefWidth="1054.0" />
+      <AnchorPane fx:id="titlePane" layoutX="197.0" layoutY="140.0" prefHeight="121.0" prefWidth="931.0" />
+      <BorderPane fx:id="centerPane" layoutX="193.0" layoutY="296.0" prefHeight="456.0" prefWidth="927.0" />
    </children>
 </AnchorPane>

@@ -1,5 +1,7 @@
 package ui.stockmanUI;
 
+import java.io.IOException;
+
 import VO.storeVO.ReportListVO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +18,15 @@ public class ReportListItemController {
        ReportListVO reportListVO ;
        
       @FXML public void openList(){
-    	   System.out.println("打开一张具体单据");
+    	  // System.out.println("打开一张具体单据");
+    	  try {
+			ReportListWin win=new ReportListWin();
+			win.controller.set(reportListVO);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+    	  
        }
       
       public void set(ReportListVO vo){
@@ -24,7 +34,8 @@ public class ReportListItemController {
     	  listID.setText(vo.listID);
     	  goodsID.setText(vo.goodsID);
     	  goodsName.setText(vo.GoodsName);
-    	  state.setText("待审批单据");
+    	  if(vo.statetype==null){System.out.println("没有初始化状态");}
+    	  state.setText(vo.statetype.toString());
     	  num.setText(Integer.toString(vo.Num));
     	  actualNum.setText(Integer.toString(vo.actualNum));
       }

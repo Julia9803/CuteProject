@@ -1,6 +1,3 @@
-import java.rmi.RemoteException;
-
-import dataServiceImpl.presentImpl.PresentForSumDataServiceImpl;
 import util.State;
 
 public class TestCase{

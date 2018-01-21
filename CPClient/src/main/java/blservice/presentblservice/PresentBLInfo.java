@@ -10,4 +10,5 @@ import VO.saleVO.SaleVO;
 */
 public interface PresentBLInfo {
 	public PresentResultVO findPresent(SaleVO vo);
+//	public String showPresentDetail(int id);
 }

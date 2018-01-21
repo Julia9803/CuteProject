@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="789.0" stylesheets="@../../css/mainUI/MessageList.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.mainUI.message.MessageWinController">
+   <children>
+      <Pane prefHeight="97.0" prefWidth="789.0" style="-fx-background-color: #FFB5B5;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="我的消息">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="closeBtn" layoutX="666.0" layoutY="49.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" text="关闭" />
+         </children>
+      </Pane>
+      <ScrollPane hbarPolicy="NEVER" layoutY="129.0" prefHeight="451.0" prefWidth="789.0">
+        <content>
+             <VBox fx:id="vBox" prefHeight="448.0" prefWidth="795.0" style="-fx-background-color: #FFB5B5;" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

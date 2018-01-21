@@ -55,5 +55,12 @@ public class PresentForSpecialPackageVO extends PresentVO{
 	}
 
 
+	@Override
+	public String toString() {
+		
+		return super.toString() + "PresentForSpecialPackageVO [presentList=" + presentList + ", priceReduction=" + priceReduction + "]";
+	}
+
+
 	
 }

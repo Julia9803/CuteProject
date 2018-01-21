@@ -24,6 +24,7 @@ public abstract class OpenListWinController implements SonController{
 	@FXML protected Label title;
 	@FXML protected TextField searchTextField;
 	@FXML protected Button searchBtn;
+	@FXML protected Button closeBtn;
 	
 	@Override
 	public void setParentController(ParentController controller) {
@@ -32,6 +33,11 @@ public abstract class OpenListWinController implements SonController{
 	
 	public void setTitle(String title){
 		this.title.setText(title);
+	}
+	
+	@FXML 
+	public void onCloseBtnClicked(){
+		ParentController.CloseSonWin();
 	}
 	
 	@FXML

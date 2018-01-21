@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.collections.*?>
@@ -13,7 +14,7 @@
       <Pane prefHeight="79.0" prefWidth="921.0">
          <children>
             <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
-            <Label layoutX="55.0" layoutY="23.0" text="收款单">
+            <Label fx:id="titleLabel" layoutX="55.0" layoutY="23.0" text="收款单">
                <font>
                   <Font size="18.0" />
                </font>
@@ -23,7 +24,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="operator" layoutX="802.0" layoutY="28.0" prefHeight="23.0" prefWidth="105.0" text="操作员名字">
+            <Label fx:id="operator" layoutX="802.0" layoutY="28.0" prefHeight="23.0" prefWidth="105.0" text="">
                <font>
                   <Font size="15.0" />
                </font>
@@ -34,28 +35,24 @@
          <children>
             <Pane layoutY="6.0" prefHeight="59.0" prefWidth="921.0">
                <children>
-                  <Label layoutX="70.0" layoutY="19.0" prefHeight="23.0" prefWidth="41.0" text="客户" textFill="#938c8c">
+                  <Label layoutX="76.0" layoutY="18.0" prefHeight="23.0" prefWidth="41.0" text="客户" textFill="#938c8c">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="selectVIPBtn" layoutX="128.0" layoutY="17.0" mnemonicParsing="false" text="选择" />
-                  <Label fx:id="VIPName" layoutX="210.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="客户名字">
+                  <Button fx:id="searchVIPBtn" layoutX="526.0" layoutY="15.0" mnemonicParsing="false" onAction="#onSearchVIPBtnClicked" text="查找" />
+                  <Label fx:id="VIPName" layoutX="128.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="会员名称">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="VIPID" layoutX="322.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="客户编号">
+                  <Label fx:id="VIPID" layoutX="220.0" layoutY="16.0" prefHeight="27.0" prefWidth="92.0" text="会员编号">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="accountLabel" layoutX="479.0" layoutY="18.0" prefHeight="23.0" prefWidth="78.0" text="银行账户" textFill="#938c8c">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="AccountComboBox" layoutX="580.0" layoutY="16.0" onAction="#OnAccountSelected" prefHeight="27.0" prefWidth="167.0" />
+                  <ComboBox fx:id="AccountComboBox" layoutX="635.0" layoutY="16.0" onAction="#OnAccountSelected" prefHeight="27.0" prefWidth="167.0" promptText="银行账户" />
+                  <TextField fx:id="searchVIPTextField" layoutX="312.0" layoutY="16.0" />
                </children>
             </Pane>
             <ScrollPane hbarPolicy="NEVER" layoutX="87.0" layoutY="90.0" prefHeight="287.0" prefWidth="697.0">

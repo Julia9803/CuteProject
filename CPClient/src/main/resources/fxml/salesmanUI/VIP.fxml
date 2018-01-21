@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.salesmanUI.VIPController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.salesmanUI.vip.VIPController">
    <children>
-      <fx:include source="Sale.fxml" />
+      <fx:include source="Salesman.fxml" />
       <ScrollPane fx:id="scrollPane" layoutX="430.0" layoutY="310.0" prefHeight="435.0" prefWidth="707.0" style="-fx-background-color: #FFB5B5;">
          <content>
             <VBox fx:id="vipVBox" minHeight="435.0" minWidth="707.0">
@@ -89,7 +89,7 @@
          </content>
       </ScrollPane>
 
-       <Pane layoutX="216.0" layoutY="148.0" prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
+       <Pane fx:id="vip1" layoutX="216.0" layoutY="148.0" prefHeight="131.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;">
            <children>
                <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
                <Label layoutX="55.0" layoutY="23.0" text="客户管理">
@@ -109,12 +109,12 @@
             <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="819.0" layoutY="77.0" onAction="#setSearchBtn" prefHeight="27.0" prefWidth="65.0" style="-fx-background-color: #ff7575; -fx-background-radius: 22;" text="查询" textFill="#f8f6f6" />
            </children></Pane>
 
-       <Pane layoutX="216.0" layoutY="310.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
+       <Pane fx:id="vip2" layoutX="216.0" layoutY="310.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
            <children>
                <VBox fx:id="vBox" layoutX="7.0" layoutY="54.0" prefHeight="369.0" prefWidth="182.0" style="-fx-border-color: #ff7575; -fx-background-radius: 23; -fx-border-radius: 15;" />
                <Pane layoutX="8.0" layoutY="6.0" prefHeight="42.0" prefWidth="180.0" style="-fx-border-color: #ff7575; -fx-border-radius: 12;">
                    <children>
-                       <Label fx:id="presentLocation" layoutX="40.0" layoutY="10.0" prefHeight="20.0" prefWidth="132.0" />
+                       <Label fx:id="presentLocation" layoutX="40.0" layoutY="11.0" prefHeight="20.0" prefWidth="132.0" text="右键进行操作" />
                        <Label layoutX="11.0" layoutY="10.0" prefHeight="23.0" prefWidth="31.0" text="提示" textFill="#9f353a" />
                    </children>
                </Pane>
@@ -132,5 +132,10 @@
                <Button fx:id="cancelBtn" layoutX="264.0" layoutY="205.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="取消" textFill="WHITE" />
            </children>
        </Pane>
+      <JFXDialogLayout fx:id="dialogLayout" layoutX="381.0" layoutY="710.0" prefHeight="112.0" prefWidth="576.0">
+         <children>
+            <JFXDialog fx:id="dialog" prefHeight="109.0" prefWidth="575.0" />
+         </children>
+      </JFXDialogLayout>
    </children>
 </AnchorPane>

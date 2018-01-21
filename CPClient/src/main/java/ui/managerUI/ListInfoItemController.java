@@ -5,8 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import util.GreatListType;
 
 public class ListInfoItemController {
       @FXML public Label ID;

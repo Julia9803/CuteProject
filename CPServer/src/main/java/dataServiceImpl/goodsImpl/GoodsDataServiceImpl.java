@@ -1,17 +1,20 @@
 package dataServiceImpl.goodsImpl;
 
-import PO.GoodsCategoryPO;
-import PO.GoodsPO;
-import dataHelper.*;
-import dataService.goodsDataService.GoodsDataService;
-import resultmessage.ResultMessage;
-import util.GoodsUtil;
-
-import java.io.UnsupportedEncodingException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
+
+import PO.GoodsCategoryPO;
+import PO.GoodsPO;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.CriterionClauseGenerator;
+import dataHelper.serviceImpl.CriterionClause;
+import dataHelper.serviceImpl.HibernateCriterionClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
+import dataService.goodsDataService.GoodsDataService;
+import resultmessage.ResultMessage;
+import util.GoodsUtil;
 
 /**
  * Created by julia98 on 2017/12/13.
@@ -70,21 +73,24 @@ public class GoodsDataServiceImpl extends UnicastRemoteObject implements GoodsDa
     @Override
     public GoodsPO getGoods(String name, String category) throws RemoteException {
         List<CriterionClause> l = new ArrayList<CriterionClause>();
-        criterionClauseGenerator.generateFuzzyCriterion(l,"goodsName",name);
-        criterionClauseGenerator.generateFuzzyCriterion(l,"goodsCategory",category);
+        criterionClauseGenerator.generateExactCriterion(l,"goodsName",name);
+        criterionClauseGenerator.generateExactCriterion(l,"goodsCategory",category);
         criterionClauseGenerator.generateExactCriterion(l,"state",GoodsUtil.EXIST);
+        
         GoodsPO po = goodsUtil.Query(l).get(goodsUtil.Query(l).size()-1);
         System.out.println(po.getState());
         return po;
+        
     }
 
     @Override
     public ResultMessage deleteGoods(String category, String name) throws RemoteException {
         List<CriterionClause> l = new ArrayList<CriterionClause>();
-        criterionClauseGenerator.generateFuzzyCriterion(l,"goodsName",name);
-        criterionClauseGenerator.generateFuzzyCriterion(l,"goodsCategory",category);
+        criterionClauseGenerator.generateExactCriterion(l,"goodsName",name);
+        criterionClauseGenerator.generateExactCriterion(l,"goodsCategory",category);
         criterionClauseGenerator.generateExactCriterion(l,"state",GoodsUtil.EXIST);
-        GoodsPO po = goodsUtil.Query(l).get(goodsUtil.Query(l).size()-1);
+        GoodsPO po = goodsUtil.Query(l).get(0);
+        //GoodsPO po = goodsUtil.Query(l).get(goodsUtil.Query(l).size()-1);
         po.setState(GoodsUtil.DELETE);
         modifyGoods(po);
         return ResultMessage.SUCCESS;

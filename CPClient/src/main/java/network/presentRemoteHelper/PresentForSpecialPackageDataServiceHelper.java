@@ -17,7 +17,8 @@ public class PresentForSpecialPackageDataServiceHelper implements DataServiceHel
     private PresentForSpecialPackageDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	presentForSpecialPackageDataService = (PresentForSpecialPackageDataService)remote;
     }
     

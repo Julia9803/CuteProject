@@ -8,6 +8,10 @@ import java.io.Serializable;
 * @description 销售人员狐狸的单据中的商品项
 */
 public class SalesmanItemPO  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2380188927425678776L;
 	int autoId;
 	/**
 	 * 商品编号
@@ -48,9 +52,11 @@ public class SalesmanItemPO  implements Serializable{
 		this.sum = sum;
 		this.notes = notes;
 	}
+	@SuppressWarnings("unused")
 	private int getAutoId() {
 		return autoId;
 	}
+	@SuppressWarnings("unused")
 	private void setAutoId(int autoId) {
 		this.autoId = autoId;
 	}

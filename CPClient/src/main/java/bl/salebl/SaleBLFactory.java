@@ -1,6 +1,9 @@
 package bl.salebl;
 
-import blservice.saleblservice.SaleUniBLService;
+import blservice.saleblservice.SaleListBLService;
+import blservice.saleblservice.SaleReturnListBLService;
+import blservice.saleblservice.StockListBLService;
+import blservice.saleblservice.StockReturnListBLService;
 
 /**     
 * @author 李安迪
@@ -8,16 +11,16 @@ import blservice.saleblservice.SaleUniBLService;
 * @description
 */
 public class SaleBLFactory {
-	public static SaleUniBLService getSaleListBLService(){
+	public static SaleListBLService getSaleListBLService(){
 		return new SaleListBLServiceImpl();
 	}
-	public static SaleUniBLService getSaleReturnListBLService(){
+	public static SaleReturnListBLService getSaleReturnListBLService(){
 		return new SaleReturnListBLServiceImpl();
 	}
-	public static SaleUniBLService getStockListBLService(){
+	public static StockListBLService getStockListBLService(){
 		return new StockListBLServiceImpl();
 	}
-	public static SaleUniBLService getStockReturnListBLService(){
+	public static StockReturnListBLService getStockReturnListBLService(){
 		return new StockReturnListBLServiceImpl();
 	}
 }

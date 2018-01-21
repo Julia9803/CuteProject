@@ -30,4 +30,7 @@ public class ReportListVO {
             this.delta=Num-actualNum;
         }
     }
+   public ReportListVO(){}
 }
+
+

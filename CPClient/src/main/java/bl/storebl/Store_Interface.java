@@ -1,12 +1,12 @@
 
 package bl.storebl;
 
+import java.util.List;
+
 import VO.storeVO.PresentListVO;
 import VO.storeVO.StoreVO;
 import VO.storeVO.storeRM;
 import util.GreatListType;
-
-import java.util.List;
 
 public interface Store_Interface {
     // 库存包对层内各包提供的接口，包括三个基本接口：增加库存项、修改库存、检查操作正确性

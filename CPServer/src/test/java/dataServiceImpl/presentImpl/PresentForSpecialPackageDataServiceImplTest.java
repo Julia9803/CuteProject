@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -17,7 +14,6 @@ import org.junit.runners.MethodSorters;
 
 import PO.GoodsInSalePO;
 import PO.PresentForSpecialPackagePO;
-import PO.PresentForSumPO;
 import dataService.presentDataService.PresentForSpecialPackageDataService;
 import resultmessage.DataRM;
 import util.PresentState;
@@ -28,10 +24,11 @@ import util.PresentState;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PresentForSpecialPackageDataServiceImplTest {
     List<GoodsInSalePO> gpolist = new ArrayList<>();
-	PresentForSpecialPackagePO po = new PresentForSpecialPackagePO(2, Date.from(Instant.EPOCH), new Date(117,11,29),gpolist, PresentState.SAVE,1);
+    @SuppressWarnings("deprecation")
+    PresentForSpecialPackagePO po = new PresentForSpecialPackagePO(2, Date.from(Instant.EPOCH), new Date(117,11,29),gpolist, PresentState.SAVE,1);
     GoodsInSalePO gpo = new GoodsInSalePO("1","abc",100);
 
- //   PresentForSpecialPackagePO po = new PresentForSpecialPackagePO(1, Date.from(Instant.EPOCH), new Date(117,11,29),gpolist, PresentState.SAVE,1);
+
     List<PresentForSpecialPackagePO> ppo = new ArrayList<>();
     int id = 0;
 	

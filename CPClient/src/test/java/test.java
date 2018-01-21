@@ -1,19 +1,15 @@
 
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
-import PO.GoodsInSalePO;
 import PO.PresentForSumPO;
-import VO.GoodsInSaleVO;
-import VO.presentVO.PresentForSumVO;
-import bl.utility.GoodsInSaleVoTransPo;
-import blservice.presentblservice.PresentForSumBLService;
+import VO.saleVO.SaleListVO;
+import bl.salebl.SaleBLFactory;
+import blservice.saleblservice.SaleListBLService;
 import dataService.presentDataService.PresentForSumDataService;
+import dataService.saleDataService.SaleListDataService;
 import network.ServerConnector;
 import network.presentRemoteHelper.PresentForSumDataServiceHelper;
-import resultmessage.DataRM;
-import util.PresentState;
+import network.saleRemoteHelper.SaleListDataServiceHelper;
 
 /**     
 * @author 李安迪
@@ -127,19 +123,15 @@ public class test{
 		PresentForSumDataService presentForSumDataService = PresentForSumDataServiceHelper.getInstance().getPresentForSumDataService();
 
 		List<PresentForSumPO> polist;
-		
-		try {
+		SaleListDataService s =  SaleListDataServiceHelper.getInstance().getSaleListDataService();
+		SaleListBLService b = SaleBLFactory.getSaleListBLService();
+
 			
 //			System.out.println(presentForSumDataService);
 //			System.out.println(presentForSumDataService.deletePresentForSum(45));
 //			presentForSumDataService.getPresentForSum();
-			System.out.println(presentForSumDataService.getPresentForSum());
-//			presentForSumDataService.foo();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("remote exception");
-	//		return volist;
-		}
+//			System.out.println(presentForSumDataService.getPresentForSum());
+			System.out.println("r"+((SaleListVO)b.openAllDraft().get(0)).getPresentResultVO());
+
 	}
 }

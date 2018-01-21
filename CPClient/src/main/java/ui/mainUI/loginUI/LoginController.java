@@ -63,11 +63,15 @@ public class LoginController {
 			break;
 		}
 		case WRONG_PASSWORD:{
-			System.out.println("password wrong");
 			passwordLabel.setText("密码输错啦～");
 			passwordTxt.setText("");
 			passwordTxt.requestFocus();
 			clearLabel(passwordLabel);
+			break;
+		}
+		case NETWORK_ERROR:{
+			usernameLabel.setText("网络异常");
+			clearLabel(usernameLabel);
 			break;
 		}
 		}
@@ -85,7 +89,7 @@ public class LoginController {
 					break;
 				}
 				case Salesman:{
-					new ui.salesmanUI.SaleWin();
+					new ui.salesmanUI.SalesmanWin();
 					break;
 				}
 				case Accountant:{
@@ -97,7 +101,7 @@ public class LoginController {
 					break;
 				}
 				case Administrator:{
-					new ui.AdministratorUI.AdministratorWin();
+					new ui.mainUI.administratorUI.AdministratorWin();
 					break;
 				}
 				}
@@ -109,6 +113,7 @@ public class LoginController {
 	
 	private void clearLabel(Label label){
 		new Timer().schedule(new TimerTask(){
+			@Override
 			public void run(){
 				Platform.runLater(new Runnable() {
 			        @Override

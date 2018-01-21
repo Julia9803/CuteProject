@@ -5,4 +5,5 @@ public enum ListRM {
     SUCCESS,
     REFUSED,
     STORE_NOT_ENOUGH
+
 }

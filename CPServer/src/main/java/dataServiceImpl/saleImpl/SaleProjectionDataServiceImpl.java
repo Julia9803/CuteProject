@@ -7,11 +7,11 @@ import PO.SaleListPO;
 import PO.SaleReturnListPO;
 import PO.StockListPO;
 import PO.StockReturnListPO;
-import dataHelper.BasicUtil;
-import dataHelper.HibernateProjectionClauseGenerator;
-import dataHelper.HibernateUtil;
-import dataHelper.ProjectionClause;
-import dataHelper.ProjectionClauseGenerator;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.ProjectionClauseGenerator;
+import dataHelper.serviceImpl.HibernateProjectionClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
+import dataHelper.serviceImpl.ProjectionClause;
 import dataService.saleDataService.SaleProjectionDataService;
 
 /**     
@@ -21,6 +21,10 @@ import dataService.saleDataService.SaleProjectionDataService;
 */
 public class SaleProjectionDataServiceImpl extends UnicastRemoteObject implements SaleProjectionDataService {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5462307776539975797L;
 	BasicUtil<SaleListPO> saleListUtil;
 	BasicUtil<SaleReturnListPO> saleReturnListUtil;
 	BasicUtil<StockListPO> stockListUtil;

@@ -49,6 +49,7 @@ public interface AccountBLService extends FinanceListService{
 	public ResultMessage modifyAccount(AccountVO vo);
 	
 	//得到所有账户信息
+	@Override
 	public List<AccountVO> findAccount();
 	
 	/*
@@ -61,6 +62,7 @@ public interface AccountBLService extends FinanceListService{
 	public String newCashExpenseList();
 	
 	//打开草稿单
+	@Override
 	public List<FinanceListVO> openDraft();
 	public List<CollectionListVO> openCollectionDraft();
 	public List<PaymentListVO> openPaymentDraft();

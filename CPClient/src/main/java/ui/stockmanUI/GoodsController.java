@@ -1,23 +1,5 @@
 package ui.stockmanUI;
 
-import VO.goodsVO.GoodsCategoryVO;
-import VO.goodsVO.GoodsVO;
-import bl.goodsbl.GoodsBLServiceImpl;
-import blservice.goodsblservice.GoodsBLService;
-import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.stage.PopupWindow.AnchorLocation;
-import ui.mainUI.BackgroundController;
-
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -26,18 +8,32 @@ import java.util.Stack;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXPopup;
-import com.jfoenix.controls.JFXPopup.*;
-import com.jfoenix.controls.JFXPopup.PopupHPosition;
-import com.jfoenix.controls.JFXPopup.PopupVPosition;
-import com.jfoenix.controls.JFXRippler;
-import com.jfoenix.controls.JFXRippler.RipplerMask;
-import com.jfoenix.controls.JFXRippler.RipplerPos;
-import com.jfoenix.controls.JFXSnackbar;
-import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
 import com.jfoenix.controls.JFXTextField;
+
+import VO.goodsVO.GoodsCategoryVO;
+import VO.goodsVO.GoodsVO;
+import VO.storeVO.StoreVO;
+import bl.goodsbl.GoodsBLServiceImpl;
+import bl.storebl.Store_Interface;
+import bl.storebl.Store_InterfaceImpl;
+import blservice.goodsblservice.GoodsBLService;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import ui.mainUI.BackgroundController;
 
 public class GoodsController extends BackgroundController{
 	@FXML public AnchorPane root;
@@ -86,6 +82,7 @@ public class GoodsController extends BackgroundController{
 
     //初始化节点的方法
     private void setNode(TreeItem<String> node) throws RemoteException {
+    	System.out.println(node.getValue().toString().substring(3));
         ArrayList<GoodsCategoryVO> listVO = (ArrayList<GoodsCategoryVO>) goodsBLService.getAllCategory(node.getValue().toString().substring(3));
         ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < listVO.size(); i++) {
@@ -109,7 +106,10 @@ public class GoodsController extends BackgroundController{
 
     //初始TreeView 加载所有商品和分类
     private void initTreeView() throws RemoteException{
-
+   
+      	//LoadingFXController loading = new LoadingFXController();
+        //loading.setLoadingTxt("正在初始化商品列表...");
+    	
         presentLocation.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> System.out.println("标签被点击"));
         //在ScrollPane上配置并加入TreeView
         rootTreeItem = new TreeItem<String>("分类：根目录");
@@ -117,6 +117,9 @@ public class GoodsController extends BackgroundController{
 
         setNode(rootTreeItem);
         System.out.println("init TreeView Succeeded!");
+        
+        //loading.close();
+        
         //以下为demo
 /*
         for(int i =0;i<5;i++) {
@@ -137,18 +140,28 @@ public class GoodsController extends BackgroundController{
         treeView.addEventHandler(MouseEvent.MOUSE_CLICKED,event ->
                 {
                     TreeItem<String> goodsItem = treeView.getSelectionModel().getSelectedItem();
-                    System.out.println(goodsItem.getValue().toString() + "被点击");
+                 
 
-                    if(goodsItem.getValue().toString().contains("商品")) {
+                    if(goodsItem!=null&&goodsItem.getValue().toString().contains("商品")) {
                         System.out.println("是商品项 可以进行下一步操作");
                         goodsVBox.getChildren().clear();
-                        //为了测试运行结果 先注释下面一行从数据库获取对应商品信息的语句
+                        
+                    	//开启加载窗口
+              //      	try {
+               // 			new LoadingFXWin();
+                	//	} catch (IOException e2) {
+                			// TODO Auto-generated catch block
+                	//		e2.printStackTrace();
+                	//	}
+                //        loading.setLoadingTxt("正在加载商品...");
+                        
                         try {
 							newGoodsPane(goodsBLService.getGoods(goodsItem.getValue().toString().substring(3),goodsItem.getParent().getValue().substring(3)));
 						} catch (RemoteException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
+							
+							//e1.printStackTrace();
 						}
+                  //      loading.close();
                     }
 
                 }
@@ -167,7 +180,7 @@ public class GoodsController extends BackgroundController{
             //通过命名来区分商品项和分类项 除此之外有别的方法则可用别的方法替换 （比如分类有文件夹图片区分）
             //命名格式： 商品：小台灯 分类：彩灯
             //判断当前节点是否可添加商品
-            TreeItem<String> selectItem = (TreeItem<String>) treeView.getSelectionModel().getSelectedItem();
+            TreeItem<String> selectItem = treeView.getSelectionModel().getSelectedItem();
 
             System.out.println("选中项文字 " + selectItem.getValue().toString());
             System.out.println("选中项子节点文字" + selectItem.getChildren().toString());
@@ -196,7 +209,7 @@ public class GoodsController extends BackgroundController{
                 //通过命名来区分商品项和分类项 除此之外有别的方法则可用别的方法替换 （比如分类有文件夹图片区分）
                 //命名格式： 商品：小台灯 分类：彩灯
                 //判断当前节点是否可添加分类
-                TreeItem selectItem = (TreeItem) treeView.getSelectionModel().getSelectedItem();
+                TreeItem selectItem = treeView.getSelectionModel().getSelectedItem();
 
             System.out.println("选中项文字 " + selectItem.getValue().toString());
             System.out.println("选中项子节点文字" + selectItem.getChildren().toString());
@@ -220,7 +233,7 @@ public class GoodsController extends BackgroundController{
         MenuItem deleteBar = new MenuItem("删除");
         deleteBar.setGraphic(new ImageView("img/delete.png"));
         deleteBar.setOnAction(e ->{
-            TreeItem selectItem = (TreeItem) treeView.getSelectionModel().getSelectedItem();
+            TreeItem selectItem = treeView.getSelectionModel().getSelectedItem();
            
             System.out.println("判断删除的是商品还是分类：" + selectItem.getValue().toString().substring(0,2));
 
@@ -255,7 +268,7 @@ public class GoodsController extends BackgroundController{
         refactorBar.setGraphic(new ImageView("img/survey.png"));
         refactorBar.setOnAction(e->{
 
-            TreeItem selectItem = (TreeItem) treeView.getSelectionModel().getSelectedItem();
+            TreeItem selectItem = treeView.getSelectionModel().getSelectedItem();
             stack.push(selectItem);
             noticeLabel.setText("修改名称");
             notice.setVisible(true);
@@ -273,7 +286,8 @@ public class GoodsController extends BackgroundController{
      * 清除商品搜索项goodsVBox中的商品项
      * @throws RemoteException 
      */
-    @FXML
+    @Override
+	@FXML
     public void initialize() throws RemoteException{
         notice.setVisible(false);
         initTreeView();
@@ -318,11 +332,24 @@ public class GoodsController extends BackgroundController{
                     this.goodsTypeSearch = "goodsID";
                     break;
             }
+	    	//开启加载窗口
+	        /*
+	        LoadingFXController loading = new LoadingFXController();
+	        loading.setLoadingTxt("正在初始化商品列表...");
+	    	try {
+				new LoadingFXWin();
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}*/
+	        
             goodsVOArrayList = (ArrayList<GoodsVO>)goodsBLService.findGoods(searchField.getText(),this.goodsTypeSearch);
 	        goodsVBox.getChildren().clear();
 	        for(int i =0;i<goodsVOArrayList.size();i++){
 	            newGoodsPane(goodsVOArrayList.get(i));
             }
+	        
+	       // loading.close();
         }
 	}
 	
@@ -358,6 +385,11 @@ public class GoodsController extends BackgroundController{
                 
                 goodsBLService.modifyGoods(vo);
                 //System.out.println("判断id是否改变：" + vo.getGoodsID());
+                
+                //修改库存
+                Store_Interface store_interface = new Store_InterfaceImpl();
+                store_interface.addStoreItem(voToStoreVO(vo));
+                
                 break;
 
             case "新建分类":
@@ -408,6 +440,7 @@ public class GoodsController extends BackgroundController{
 
     @FXML
     public void onCancelBtnClicked(){
+    	    stack.peek().getParent().getChildren().remove(stack.peek());
         notice.setVisible(false);
         name.clear();
         stack.pop();
@@ -546,7 +579,7 @@ public class GoodsController extends BackgroundController{
         newGoodsID.setStyle("-fx-border-radius: 20");
         newPane.getChildren().add(newGoodsID);
 
-        JFXTextField newGoodsInventory = new JFXTextField("5 "); //后期获取商品库存
+        JFXTextField newGoodsInventory = new JFXTextField("" + getGoodsStore(goodsVO.getGoodsID())); //后期获取商品库存
         newGoodsInventory.setLayoutX(337);
         newGoodsInventory.setLayoutY(154);
         newGoodsInventory.setPrefSize(39, 32);
@@ -618,8 +651,23 @@ public class GoodsController extends BackgroundController{
         newPane.getChildren().add(edit);
 
         newPane.setStyle("-fx-background-color: #FFB5B5");
-        System.out.println("new Pane init Success!");
+        System.out.println("new GoodsPane init Success!");
         goodsVBox.getChildren().add(newPane);
+    }
+    
+    public int getGoodsStore(String id) {
+        Store_Interface store = new Store_InterfaceImpl();
+        try {
+        StoreVO storeVO = store.getStoreVO(id);
+        return storeVO.Num; 
+        }catch(Exception e) {
+        	return 5;
+        }
+    }
+    
+    private StoreVO voToStoreVO(GoodsVO goodsVO){
+        StoreVO storeVO = new StoreVO(goodsVO.getGoodsName(),goodsVO.getGoodsID(),5,1);
+        return storeVO;
     }
    
 }

@@ -4,6 +4,7 @@ import VO.GoodsInSaleVO;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**     
 * @author 李安迪
@@ -16,6 +17,7 @@ public class GoodsSearchResultCellController {
 	
 	@FXML public Label id;
 	@FXML public Label name;
+	@FXML public TextField amountTextField;
 	@FXML public CheckBox checkBox;
 	
 	public GoodsSearchResultCellController(GoodsInSaleVO vo){

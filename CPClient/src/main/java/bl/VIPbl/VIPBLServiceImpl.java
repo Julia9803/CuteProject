@@ -1,17 +1,14 @@
 package bl.VIPbl;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
 import PO.VIPPO;
 import VO.VIPVO.VIPVO;
 import blservice.VIPblservice.VIPBLService;
 import dataService.VIPDataService.VIPDataService;
-import dataService.goodsDataService.GoodsDataService;
 import network.VIPRemoteHelper.VIPDataServiceHelper;
-import network.goodsRemoteHelper.GoodsDataServiceHelper;
 import resultmessage.ResultMessage;
-
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by julia98 on 2017/12/13.
@@ -22,7 +19,7 @@ public class VIPBLServiceImpl implements VIPBLService {
 
     VIPVO vipvo1 = new VIPVO("00000001"
             ,"分类1"
-            ,"级别1"
+            ,"1"
             ,"姓名1"
             ,"18800000000"
             ,"123456789@qq.com"
@@ -35,7 +32,7 @@ public class VIPBLServiceImpl implements VIPBLService {
 
     VIPVO vipvo2 = new VIPVO("00000002"
             ,"分类2"
-            ,"级别2"
+            ,"2"
             ,"姓名2"
             ,"18800000001"
             ,"223456789@qq.com"
@@ -73,12 +70,13 @@ public class VIPBLServiceImpl implements VIPBLService {
      */
     @Override
     public ArrayList<VIPVO> findVIP(String info, String type) throws RemoteException {
-        //ArrayList<VIPVO> vipvos = new ArrayList<>();
+        ArrayList<VIPVO> vipvos = new ArrayList<>();
         //vipvos.add(vipvo1);
         //vipvos.add(vipvo2);
         //return vipvos;//这个是假的
         //以下是真的
         
+        //TODO 返回值如果是null的话无法进行强制类型转换
         ArrayList<VIPPO> list = (ArrayList<VIPPO>) vipDataService.findVIP(info,type);
         ArrayList<VIPVO> ret = new ArrayList<>();
         for(int i =0;i<list.size();i++){
@@ -117,7 +115,7 @@ public class VIPBLServiceImpl implements VIPBLService {
     private VIPVO poToVO(VIPPO vipPO){
         VIPVO vo = new VIPVO(vipPO.getId()
                 ,vipPO.getCategory()
-                ,vipPO.getGrade()
+                ,vipPO.getGrade().toString()
                 ,vipPO.getName()
                 ,vipPO.getPhoneNumber()
                 ,vipPO.getEmail()
@@ -135,7 +133,7 @@ public class VIPBLServiceImpl implements VIPBLService {
     private VIPPO voToPO(VIPVO vipVO){
        VIPPO po = new VIPPO(vipVO.getId()
                 ,vipVO.getCategory()
-                ,vipVO.getGrade()
+                ,vipVO.getGrade().toString()
                 ,vipVO.getName()
                 ,vipVO.getPhoneNumber()
                 ,vipVO.getEmail()

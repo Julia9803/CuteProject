@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" prefHeight="298.0" prefWidth="459.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxWidth="459.0" minWidth="459.0" prefHeight="298.0" prefWidth="459.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane fx:id="notice" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #fffafe; -fx-background-radius: 15; -fx-border-color: #ffefef; -fx-border-radius: 15; -fx-border-width: 3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane fx:id="notice" prefWidth="457.0" style="-fx-background-color: #fffafe; -fx-background-radius: 15; -fx-border-color: #ffefef; -fx-border-radius: 15; -fx-border-width: 3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
          <Button fx:id="sureBtn" layoutX="141.0" layoutY="242.0" mnemonicParsing="false" onAction="#onSureBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="确认" textFill="WHITE" />
          <Label fx:id="noticeLabel" layoutX="172.0" layoutY="14.0" prefHeight="36.0" prefWidth="115.0" text="搜索结果" textFill="#682d1e">
@@ -17,9 +17,9 @@
             </font>
          </Label>
          <Button fx:id="cancelBtn" layoutX="265.0" layoutY="242.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" prefHeight="27.0" prefWidth="63.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-background-color: FF7575;" text="取消" textFill="WHITE" />
-            <ScrollPane layoutY="55.0" prefHeight="183.0" prefViewportHeight="181.0" prefViewportWidth="465.0" prefWidth="459.0">
+            <ScrollPane fitToWidth="true" layoutY="55.0" prefHeight="183.0" prefViewportHeight="181.0" prefViewportWidth="465.0" prefWidth="459.0" snapToPixel="false">
                <content>
-                  <VBox fx:id="vBox" layoutY="55.0" prefHeight="181.0" prefWidth="465.0" />
+                  <VBox fx:id="vBox" layoutY="55.0" minHeight="181.0" minWidth="457.0" />
                </content>
             </ScrollPane>
       </children>

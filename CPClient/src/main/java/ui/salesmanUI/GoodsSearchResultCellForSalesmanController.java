@@ -1,11 +1,10 @@
 package ui.salesmanUI;
 
-import VO.GoodsInSaleVO;
-import VO.goodsVO.GoodsVO;
 import VO.saleVO.SalesmanItemVO;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**     
 * @author 李安迪
@@ -19,12 +18,17 @@ SalesmanItemVO vo;
 	@FXML public Label id;
 	@FXML public Label name;
 	@FXML public CheckBox checkBox;
-	
+	@FXML public TextField amountTextField;
+	@FXML public TextField priceTextField;
+	@FXML public TextField notesTextField;
 	
 	@FXML
 	void initialize(){
 		id.setText(vo.getId()+"");
 		name.setText(vo.getName());
+		amountTextField.setText(vo.getAmount()+"");
+		priceTextField.setText(vo.getPrice()+"");
+		notesTextField.setText(vo.getNotes());
 	}
 	/**
 	 * @param vo

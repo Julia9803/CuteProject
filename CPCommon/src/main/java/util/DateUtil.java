@@ -89,6 +89,14 @@ public class DateUtil {
 		return df.format(date);
 	}
 	
+	/**
+	 * 
+	 * @param date Date类型的日期
+	 * @return	yyyyMMdd格式的日期
+	 */
+	public static String getStringDate(Date date){
+		return df.format(date);
+	}
 	
 	/**
 	 * 

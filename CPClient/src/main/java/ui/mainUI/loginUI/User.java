@@ -1,7 +1,10 @@
 package ui.mainUI.loginUI;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import VO.userVO.UserVO;
-import bl.userbl.UserBLService_Stub;
+import blservice.serviceFactory.UserBLFactory;
 import blservice.userblservice.PersonalInfoService;
 import resultmessage.LoginRM;
 import util.UserGrade;
@@ -12,9 +15,8 @@ public class User {
 	private PersonalInfoService service;
 	private static User user;
 	
-	boolean loggedIn = false;		//是否登录，不知道有没有用。。re:按照现在的逻辑，如果在登出后getinstance的话，还是可以获得一个user对象的？
-									//re:re：是的，现在登出后也能。不过没有关系吧。user类的含义是提供user相关的服务，不是一个用户。如果没有问题了就把注释删掉吧。
-	
+	boolean loggedIn = false;		
+									
 	private String id;
 	private	String name;
 	private	UserType type = UserType.Salesman;				
@@ -23,7 +25,7 @@ public class User {
 											//为了安全，密码不让界面层持有，不过userVO里是否要有密码？re：有密码的意义不是太大吧
 											//re:re:修改用户信息，注册新用户时是要有密码的，那个vo没想好要不要和这个uservo共用
 	private User(){
-		service = new UserBLService_Stub();
+		service = UserBLFactory.getPersonalInfoService();
 	}
 	
 	public static User getInstance(){
@@ -38,7 +40,7 @@ public class User {
 		if(loginrm == LoginRM.SUCCESS){
 			loggedIn = true;
 			UserVO uservo = service.getCurrentUserInfo();
-			this.id = uservo.getID();
+			this.id = uservo.getId();
 			this.name = uservo.getName();
 			this.type = uservo.getType();
 			this.grade = uservo.getGrade();
@@ -73,7 +75,18 @@ public class User {
 		return permission;
 	}
 
+	public static String calcTime(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
+		String s=df.format(new Date());
+		return s;
+	}
 	
+	public static String calcPreciseTime(){
+		//计算精确到秒的时间
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
+		String s=df.format(new Date());
+		return s;
+	}
 
 	
 }

@@ -17,11 +17,13 @@ public class StoreDataServiceHelper implements DataServiceHelper{
     private StoreDataServiceHelper(){
     }
     
-    public String getServiceName() {
+    @Override
+	public String getServiceName() {
 		return serviceName;
 	}
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	storeDataService = (StoreDataService)remote;
     }
     

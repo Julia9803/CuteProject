@@ -17,10 +17,12 @@ public class CashExpenseListDataServiceHelper implements DataServiceHelper{
 	private CashExpenseListDataServiceHelper(){
 	}
 	
+	@Override
 	public String getServiceName(){
 		return serviceName;
 	}
 	
+	@Override
 	public void setRemote(Remote remote){
 		cashExpenseListDataService = (CashExpenseListDataService)remote;
 	}

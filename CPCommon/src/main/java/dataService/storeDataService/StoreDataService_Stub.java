@@ -8,10 +8,10 @@ import java.util.LinkedList;
 import PO.AlarmListPO;
 import PO.PresentListPO;
 import PO.ReportListPO;
-import util.State;
 import PO.StoreLogPO;
 import PO.StorePO;
 import util.GreatListType;
+import util.State;
 import util.StoreListType;
 
 public class StoreDataService_Stub implements StoreDataService{
@@ -53,31 +53,31 @@ public class StoreDataService_Stub implements StoreDataService{
 		po1.currentNum=36;
 		po1.goodsID="G160_20171223F";
 		po1.goodsName="小灯佩奇";
-		po1.listID="KCBJD_20171223001";
+		po1.id="KCBJD_20171223001";
 		AlarmListPO po2=new AlarmListPO();
 		po2.alarmNum=70;
 		po2.currentNum=3;
 		po2.goodsID="G16_20171223T";
 		po2.goodsName="小熊维尼";
-		po2.listID="KCBJD_20171223002";
+		po2.id="KCBJD_20171223002";
 		AlarmListPO po3=new AlarmListPO();
 		po3.alarmNum=5;
 		po3.currentNum=4;
 		po3.goodsID="G444444444";
 		po3.goodsName="小灯1";
-		po3.listID="KCBJD_111444111444111";
+		po3.id="KCBJD_111444111444111";
 		AlarmListPO po4=new AlarmListPO();
 		po4.alarmNum=10;
 		po4.currentNum=1;
 		po4.goodsID="22222";
-		po4.listID="L112233";
+		po4.id="L112233";
 		po4.goodsName="大灯";
 		AlarmListPO po5=new AlarmListPO();
 		po5.alarmNum=45;
 		po5.currentNum=6;
 		po5.goodsID="G44477";
 		po5.goodsName="小灯2";
-		po5.listID="L_20170228_0011";
+		po5.id="L_20170228_0011";
 		LinkedList<AlarmListPO> list=new LinkedList<AlarmListPO>();
 		list.add(po1);
 		list.add(po2);
@@ -172,8 +172,19 @@ public class StoreDataService_Stub implements StoreDataService{
 		po1.price=410.35;
 		po1.time="2017-12-23 23:45:54";
 		po1.type=GreatListType.SALE;
+
+		StoreLogPO po2=new StoreLogPO ();
+		po2.id="55544L";
+		po2.name="大灯";
+		po2.num=40;
+		po2.price=64.25;
+		po2.time="2017-12-30";
+		po2.type=GreatListType.STOCK_RETURN;
+
+
 		ArrayList<StoreLogPO> arr=new ArrayList<StoreLogPO>();
 		arr.add(po1);
+		arr.add(po2);
 		return arr;
 	}
 

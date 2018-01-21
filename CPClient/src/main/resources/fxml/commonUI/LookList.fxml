@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.commonUI.LookListController">
+  <children>
+      <Pane prefHeight="132.0" prefWidth="1000.0" style="-fx-background-color: PINK;" AnchorPane.bottomAnchor="518.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="29.0" layoutY="7.0" prefHeight="50.0" prefWidth="136.0" text="单据查看" textFill="#755050">
+               <font>
+                  <Font name="Bodoni MT Black Italic" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="approve" layoutX="779.0" layoutY="76.0" mnemonicParsing="false" onAction="#onApprove" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: lightyellow;" text="批量通过" textFill="#c64444">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="filter" layoutX="211.0" layoutY="76.0" mnemonicParsing="false" onAction="#onFilter" style="-fx-background-color: lightyellow;" text="条件筛选" textFill="#c64444">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="comboBox" layoutX="29.0" layoutY="77.0" prefWidth="150.0" />
+            <Button fx:id="open" layoutX="661.0" layoutY="76.0" mnemonicParsing="false" onAction="#open" prefHeight="33.0" prefWidth="102.0" style="-fx-background-color: lightyellow;" text="查看单据" textFill="#c64444">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ScrollPane layoutY="126.0" prefHeight="548.0" prefViewportHeight="468.0" prefViewportWidth="953.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="132.0">
+         <content>
+            <VBox fx:id="vBox" layoutX="177.0" layoutY="154.0" prefHeight="591.0" prefWidth="1005.0" style="-fx-background-color: white;" />
+         </content>
+      </ScrollPane>
+  </children>
+  </AnchorPane>

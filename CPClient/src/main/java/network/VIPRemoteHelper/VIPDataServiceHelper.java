@@ -19,11 +19,13 @@ public class VIPDataServiceHelper implements DataServiceHelper {
     private VIPDataServiceHelper(){
     }
 
-    public String getServiceName(){
+    @Override
+	public String getServiceName(){
         return serviceName;
     }
 
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
         vipDataService = (VIPDataService)remote;
     }
 

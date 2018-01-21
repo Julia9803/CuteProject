@@ -43,6 +43,7 @@ public class PresentForSumListController {
 	
 	public void deleteFromPresentList(PresentForSumVO vo){
 		this.presentForSumList.remove(vo);
+		service.delete(vo.getId());
 		this.refresh();
 	}
 	

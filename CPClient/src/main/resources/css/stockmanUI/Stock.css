@@ -1,3 +1,7 @@
+@font-face {
+    src: url('/font/MyFont.otf');
+}
+
 .button {
      -fx-background-color: transparent;
      -fx-text-fill: #9f353a;

@@ -13,6 +13,8 @@ import util.State;
 * 
 */
 public class ListPO implements Serializable{
+	
+	private static final long serialVersionUID = 6571259727395966114L;
 	/**
 	 * 单据编号
 	 */

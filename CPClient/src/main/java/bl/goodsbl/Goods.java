@@ -1,16 +1,13 @@
 package bl.goodsbl;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
 import PO.GoodsPO;
 import VO.goodsVO.GoodsVO;
-import VO.storeVO.StoreVO;
-import bl.storebl.Store_Interface;
-import bl.storebl.Store_InterfaceImpl;
 import dataService.goodsDataService.GoodsDataService;
 import network.goodsRemoteHelper.GoodsDataServiceHelper;
 import resultmessage.ResultMessage;
-
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 
 /**
  * Created by julia98 on 2017/12/14.
@@ -20,16 +17,19 @@ public class Goods {
     GoodsDataService goodsDataService = GoodsDataServiceHelper.getInstance().getGoodsDataService();
 
     public String newGoodsID(GoodsVO vo) throws RemoteException{
-    	    Store_Interface store_interface = new Store_InterfaceImpl();
-        store_interface.addStoreItem(voToStoreVO(goodsVO));
         return goodsDataService.newGoodsID(voToPO(vo));
     }
 
     public ArrayList<GoodsVO> findGoods(String info, String type) throws RemoteException {
         ArrayList<GoodsPO> findGoodsList = (ArrayList<GoodsPO>) goodsDataService.findGoods(info,type);
         ArrayList<GoodsVO> retFindGoodsList = new ArrayList<>();
+        if( findGoodsList!=null){
+        	//为防止空指针报错，加一条断言语句
         for(int i = 0;i<findGoodsList.size();i++){
             retFindGoodsList.add(poToVO(findGoodsList.get(i)));
+        }
+        }else{
+        	System.out.println("没有找到对应商品！");
         }
         return retFindGoodsList;
     }
@@ -60,11 +60,6 @@ public class Goods {
             ,0
             ,0
             ,0);
-
-    private StoreVO voToStoreVO(GoodsVO goodsVO){
-        StoreVO storeVO = new StoreVO(goodsVO.getGoodsName(),goodsVO.getGoodsID(),5,0);
-        return storeVO;
-    }
 
     public GoodsPO voToPO(GoodsVO goodsVO){
         GoodsPO po = new GoodsPO(goodsVO.getGoodsID()

@@ -12,7 +12,7 @@
          <children>
             <Label fx:id="name" prefHeight="30.0" prefWidth="68.0" />
             <Label prefHeight="30.0" prefWidth="32.0" text="×" />
-            <TextField fx:id="amount" maxHeight="31.0" minHeight="25.0" prefHeight="30.0" prefWidth="37.0" text="1" />
+            <Label fx:id="amount" maxHeight="31.0" minHeight="25.0" prefHeight="30.0" prefWidth="37.0" text="1" />
             <Button fx:id="deleteBtn" minHeight="30.0" mnemonicParsing="false" onAction="#delete" prefHeight="399.0" prefWidth="60.0" text="删除">
                <font>
                   <Font size="16.0" />

@@ -3,6 +3,7 @@ package ui.managerUI;
 import VO.presentVO.PresentVO;
 import blservice.presentblservice.PresentForSumBLService;
 import resultmessage.DataRM;
+import ui.commonUI.PromptHelper;
 
 /**     
 * @author 李安迪
@@ -31,7 +32,7 @@ public class PresentForSumNewStrategy implements Strategy{
 		if(id>=0)
 		sumController.setId(id);
 		else{
-			sumController.showInformationDialog(DataRM.FAILED);
+			PromptHelper.showPrompt(DataRM.FAILED);
 		}
 
 		

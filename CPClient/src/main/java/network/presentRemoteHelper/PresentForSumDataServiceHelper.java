@@ -16,7 +16,8 @@ public class PresentForSumDataServiceHelper implements DataServiceHelper{
     private PresentForSumDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	presentForSumDataService = (PresentForSumDataService)remote;
     }
     

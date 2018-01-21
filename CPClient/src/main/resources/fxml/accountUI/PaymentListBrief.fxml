@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="921.0" style="-fx-background-color: #FFB5B5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.accountUI.list.payment.PaymentListBriefController">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-1.0">
+         <image>
+            <Image url="@../../img/lamp1.JPG" />
+         </image>
+      </ImageView>
+      <Label fx:id="listID" layoutX="267.0" layoutY="25.0" text="SDK-yyyyMMdd-xxxxx" textFill="#000000a1" />
+      <Label fx:id="VIPName" layoutX="371.0" layoutY="89.0" text="客户名字">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalAmount" layoutX="611.0" layoutY="85.0" text="¥2350" textFill="#e12121">
+         <font>
+            <Font name="AdobeHebrew-Regular" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="810.0" layoutY="150.0" mnemonicParsing="false" onAction="#onOpenListBtnClicked" prefHeight="27.0" prefWidth="85.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="查看详情" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="operator" layoutX="678.0" layoutY="23.0" text="操作员" textFill="#d06d21">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="listState" layoutX="785.0" layoutY="21.0" prefHeight="23.0" prefWidth="110.0" text="审核状态在此">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="593.0" layoutY="22.0" prefHeight="23.0" prefWidth="62.0" text="操作员">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

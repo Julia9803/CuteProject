@@ -28,9 +28,11 @@ public class GoodsInSalePO implements Serializable{
 		this.goodsName = goodsName;
 		this.amount = amount;
 	}
+	@SuppressWarnings("unused")
 	private int getAutoId() {
 		return autoId;
 	}
+	@SuppressWarnings("unused")
 	private void setAutoId(int autoId) {
 		this.autoId = autoId;
 	}

@@ -3,7 +3,11 @@ package PO;
 import java.io.Serializable;
 
 public class OperationPO implements Serializable{
-     public String opID;//操作编号
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -392417320435290720L;
+	public String opID;//操作编号
      public String time ;//操作时间
      public String operator ;//操作员
      public String opCategory;//操作类型

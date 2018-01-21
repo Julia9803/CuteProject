@@ -49,7 +49,6 @@ public class GoodsSearchResultController {
 					try {
 						cell = loader.load();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 	   		cellList.add(controller);		
@@ -64,8 +63,23 @@ public class GoodsSearchResultController {
 	
 	@FXML public void onSureBtnClicked(){
 		for(GoodsSearchResultCellController controller: cellList){
-			if(controller.checkBox.isSelected())
-				singlePresentEditableController.addToPresentList(controller.vo);
+			if(controller.checkBox.isSelected()){
+				String id = controller.id.getText();
+				String name = controller.name.getText();
+				int amount = 1;
+				try{
+					amount = Integer.parseInt(controller.amountTextField.getText());
+				}catch(Exception e){
+					try {
+						new PromptWin("数字格式错误");
+						System.out.println("错误哦");
+					} catch (IOException e1) {
+						// TODO promptwin是否可用？	re:1、这个异常不知道什么时候会出现 2、递归抛异常恐怕用不了了
+						e1.printStackTrace();
+					}
+				}
+				singlePresentEditableController.addToPresentList(new GoodsInSaleVO(id,name,amount));
+			}
 		}
 
 		root.getScene().getWindow().hide();

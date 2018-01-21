@@ -7,17 +7,23 @@ package util;
 * @description
 */
 public enum UserGrade {
-	General(1),
-	Manager(2);
+	General(1,"普通人员"),
+	Manager(2,"经理");
 	
 	private final int grade;
+	private final String name;
 	
-	private UserGrade(int grade){
+	private UserGrade(int grade,String name){
 		this.grade = grade;
+		this.name = name;
 	}
 	
-	public int getName(){
+	public int getGrade(){
 		return this.grade;
+	}
+	
+	public String getName(){
+		return this.name;
 	}
 	
 }

@@ -13,6 +13,10 @@ import util.VIPGrade;
 * @description 针对不同级别的用户制定促销策略（赠品、价格折让、 赠送代金劵）
 */
 public class PresentForMembershipPO extends PresentPO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3809196455229133401L;
 	public PresentForMembershipPO(){}
 	public PresentForMembershipPO(int id,Date startTime, Date finishTime, double sum, List<GoodsInSalePO> presentList,
 			PresentState state,double voucher,VIPGrade grade,double rebateInPresentForMembership) {

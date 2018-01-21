@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import PO.PresentForSumPO;
-import dataHelper.BasicUtil;
-import dataHelper.CriterionClause;
-import dataHelper.CriterionClauseGenerator;
-import dataHelper.HibernateCriterionClauseGenerator;
-import dataHelper.HibernateOrderClauseGenerator;
-import dataHelper.HibernateUtil;
-import dataHelper.OrderClause;
-import dataHelper.OrderClauseGenerator;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.CriterionClauseGenerator;
+import dataHelper.service.OrderClauseGenerator;
+import dataHelper.serviceImpl.CriterionClause;
+import dataHelper.serviceImpl.HibernateCriterionClauseGenerator;
+import dataHelper.serviceImpl.HibernateOrderClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
+import dataHelper.serviceImpl.OrderClause;
 import dataService.presentDataService.PresentForSumDataService;
 import resultmessage.DataRM;
 import util.PresentState;
@@ -26,6 +26,10 @@ import util.PresentState;
 public class PresentForSumDataServiceImpl extends UnicastRemoteObject implements PresentForSumDataService{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4709322489737866730L;
 	BasicUtil<PresentForSumPO> util;
 	CriterionClauseGenerator criterionClauseGenerator;
 	OrderClauseGenerator orderClauseGenerator;		//TODO 记得初始化

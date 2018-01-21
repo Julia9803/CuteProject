@@ -25,6 +25,7 @@ import util.PresentState;
 public class PresentForSumDataServiceImplTest {
     GoodsInSalePO gpo = new GoodsInSalePO("1","abc",100);
     List<GoodsInSalePO> gpolist = new ArrayList<>();
+    @SuppressWarnings("deprecation")
     PresentForSumPO po = new PresentForSumPO(1,Date.from(Instant.EPOCH), new Date(217,11,29),1, gpolist,PresentState.SAVE,1);
     List<PresentForSumPO> ppo = new ArrayList<>();
     @Test
@@ -36,9 +37,7 @@ public class PresentForSumDataServiceImplTest {
     }
 
     @Test
-    public void e_deletePresentForSum() throws Exception {
-        PresentForSumDataServiceImpl service = new PresentForSumDataServiceImpl();
-       
+    public void e_deletePresentForSum() throws Exception {      
         assertEquals(DataRM.SUCCESS,new PresentForSumDataServiceImpl().deletePresentForSum(1));
     }
 //

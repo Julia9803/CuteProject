@@ -1,22 +1,21 @@
 package dataServiceImpl.presentImpl;
 
-import PO.GoodsInSalePO;
-import PO.PresentForMembershipPO;
-import resultmessage.DataRM;
-
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
-
-import util.PresentState;
-import util.VIPGrade;
+import static org.junit.Assert.assertEquals;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+import PO.GoodsInSalePO;
+import PO.PresentForMembershipPO;
+import resultmessage.DataRM;
+import util.PresentState;
+import util.VIPGrade;
 
 /**
  * Created by julia98 on 2017/12/29.
@@ -26,7 +25,8 @@ public class PresentForMembershipDataServiceImplTest {
     List<PresentForMembershipPO> list = new ArrayList<>();
     GoodsInSalePO gpo = new GoodsInSalePO("1","abc",100);
     List<GoodsInSalePO> gpolist = new ArrayList<>();
-    PresentForMembershipPO po = new PresentForMembershipPO(22, Date.from(Instant.EPOCH),new Date(217,6,15),1,gpolist, PresentState.SAVE,1, VIPGrade.GradeOne,1);
+    @SuppressWarnings("deprecation")
+	PresentForMembershipPO po = new PresentForMembershipPO(22, Date.from(Instant.EPOCH),new Date(217,6,15),1,gpolist, PresentState.SAVE,1, VIPGrade.GradeOne,1);
 
 
     @Test

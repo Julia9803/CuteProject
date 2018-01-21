@@ -3,7 +3,6 @@ package network.saleRemoteHelper;
 import java.rmi.Remote;
 
 import dataService.saleDataService.SaleListDataService;
-import dataService.saleDataService.SaleUniDataService;
 import network.DataServiceHelper;
 
 
@@ -22,7 +21,8 @@ public class SaleListDataServiceHelper implements DataServiceHelper{
     private SaleListDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	SaleListDataService = (SaleListDataService)remote;
     }
     

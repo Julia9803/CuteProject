@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="PO.PresentResultPO">
+	      <id name="id">  
+	      <!-- 自动生成的id -->
+         <generator class="native" />  
+      </id>  
+      <!-- 已知的商品id -->
+      <list name = "presentId" cascade = "all" lazy = "false">
+      	<key column = "parentId"/>
+      	<index column = "index_"/>
+      	<element type = "java.lang.Integer" /> 
+      </list>
+      <property name="voucher"/>
+      			<list name="presentList" cascade ="all" lazy = "false">
+				<key column="saleid" />
+				<index column="index_"></index><!-- 注意index是数据库中的关键字要避免与其冲突，此处index_对应元素在List中的索引 -->  
+				<one-to-many class="PO.GoodsInSalePO"/>
+			</list>
+		<property name= "sum"/>	
+      
+   </class> 
+</hibernate-mapping>   

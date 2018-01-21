@@ -11,7 +11,7 @@
 		<property name="operatorId"/>
 		<property name="state"/>
 		<property name="day"/>
-			<joined-subclass name="PO.SalesmanListPO">
+	<joined-subclass name="PO.SalesmanListPO">
 	<key column = "salesmanListId"/>
 		<property name="operatorGrade"/>
 		<property name="memberID" />
@@ -20,7 +20,7 @@
 		<property name="warehouse"/>
 		<property name="notes"/>
 					<!-- 组分中包括的集合 -->
-			<list name="SaleListItems" cascade ="all">
+		<list name="SaleListItems" cascade ="all" lazy = "false">
 				<key column="salesmanListid" />
 				<index column="index_"></index><!-- 注意index是数据库中的关键字要避免与其冲突，此处index_对应元素在List中的索引 -->  
 				<one-to-many class="PO.SalesmanItemPO" />
@@ -34,6 +34,8 @@
 			<property name="sumBeforeRebate" />
 			<property name="rebate" />
 			<property name="voucher" />
+	        <property name="memberGrade"/>	        
+	        <many-to-one name="presentResultPO"  cascade ="all" lazy = "false" unique = "true" class="PO.PresentResultPO" column = "listid"/>   
 		</joined-subclass>
 
 		<joined-subclass name="PO.SaleReturnListPO">
@@ -48,12 +50,18 @@
 			<!-- 注意这里表明了子类和父类的共有属性 -->
 			<key column="parentId" />
 		</joined-subclass>
-		
+
 		<joined-subclass name="PO.StockReturnListPO">
 			<!-- 注意这里表明了子类和父类的共有属性 -->
 			<key column="parentId" />
-		</joined-subclass>
-	</joined-subclass>
+	</joined-subclass>	
+
+     </joined-subclass>	
+
+
+
+
+
 		<joined-subclass name="PO.account.FinanceListPO">
 			<key column="listId"/>
 			<property name="totalAmount"/>
@@ -64,14 +72,42 @@
 				<property name="VIPName"/>
 				
 				<list name="transferItem" cascade ="all" lazy = "false">
-					<key column="collectionListId" />
-					<index column="indexInList" />
+					<key column="CollectionListId" />
+					<index column="indexInCollectionList" />
 					<one-to-many class="PO.account.TransferItemPO" />
 				</list>
 				
 			</joined-subclass>
 			
+			<joined-subclass name="PO.account.PaymentListPO">
+				<key column="listId" />
+				<property name="VIPID"/>
+				<property name="VIPName"/>
+				
+				<list name="transferItem" cascade ="all" lazy = "false">
+					<key column="PaymentListId" />
+					<index column="indexInPaymentList" />
+					<one-to-many class="PO.account.TransferItemPO" />
+				</list>
+				
+			</joined-subclass>
+			
+			<joined-subclass name="PO.account.CashExpenseListPO">
+				<key column="listId" />
+				<property name="account"/>
+				
+				<list name="entryItem" cascade ="all" lazy = "false">
+					<key column="CashExpenseListId" />
+					<index column="indexInList" />
+					<one-to-many class="PO.account.EntryItemPO" />
+				</list>
+				
+			</joined-subclass>
+			
 		</joined-subclass>
-		
+	
+	
+	
 	</class>
+	
 </hibernate-mapping>

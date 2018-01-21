@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.collections.*?>
@@ -8,91 +9,147 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="6.0" layoutY="118.0" prefHeight="459.0" prefWidth="921.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Pane layoutY="6.0" prefHeight="59.0" prefWidth="921.0">
+      <ScrollPane maxHeight="1.7976931348623157E308" prefHeight="450.0" prefWidth="927.0">
+         <content>
+            <Pane prefHeight="624.0" prefWidth="927.0">
                <children>
-                  <Label fx:id="VIPName" layoutX="211.0" layoutY="46.0" prefHeight="27.0" prefWidth="92.0" text="客户名字">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="VIPID" layoutX="325.0" layoutY="46.0" prefHeight="27.0" prefWidth="92.0" text="客户编号">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="operator" layoutX="762.0" layoutY="18.0" prefHeight="23.0" prefWidth="105.0" text="操作员名字">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="selectVIPBtn" layoutX="130.0" layoutY="41.0" mnemonicParsing="false" onAction="#selectVIP" text="选择" />
-                  <Label layoutX="548.0" layoutY="47.0" text="默认仓库" />
-                  <Label fx:id="listID" layoutX="570.0" layoutY="16.0" prefHeight="27.0" prefWidth="177.0" text="SKD-yyyymmdd-00000">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <ScrollPane hbarPolicy="NEVER" layoutX="87.0" layoutY="133.0" maxHeight="250.0" maxWidth="700.0" minHeight="250.0" minWidth="700.0" prefHeight="250.0" prefWidth="700.0">
-              <content>
-                <AnchorPane maxHeight="250.0" maxWidth="700.0" minHeight="250.0" minWidth="700.0" prefHeight="250.0" prefWidth="700.0">
-                    <children>
-                        <VBox prefHeight="250.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pane layoutY="6.0" prefHeight="59.0" prefWidth="921.0">
+                     <children>
+                        <Label fx:id="VIPName" layoutX="322.0" layoutY="47.0" prefHeight="27.0" prefWidth="92.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="VIPID" layoutX="426.0" layoutY="46.0" prefHeight="27.0" prefWidth="92.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="operator" layoutX="812.0" layoutY="5.0" prefHeight="22.0" prefWidth="86.0" text="操作员名字">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="listID" layoutX="603.0" layoutY="3.0" prefHeight="27.0" prefWidth="209.0" text="SKD-yyyymmdd-00000">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numberErrorMessage" layoutX="659.0" layoutY="48.0" prefHeight="24.0" prefWidth="54.0" textFill="#e40808" />
+                        <Label layoutX="478.0" layoutY="4.0" prefHeight="24.0" prefWidth="49.0" text="仓库 " textFill="#938c8c" />
+                        <Label layoutX="306.0" layoutY="6.0" text="业务员" textFill="#938c8c" />
+                        <TextField fx:id="clerk" layoutX="359.0" layoutY="2.0" prefHeight="28.0" prefWidth="82.0" />
+                        <Button fx:id="selectVIPBtn" layoutX="199.0" layoutY="55.0" mnemonicParsing="false" onAction="#selectVIP" text="查找销售商" />
+                        <TextField fx:id="notesTextField" layoutX="576.0" layoutY="53.0" prefHeight="14.0" prefWidth="242.0" />
+                        <TextField layoutX="518.0" layoutY="1.0" prefHeight="28.0" prefWidth="80.0" text="默认仓库" />
+                     </children>
+                  </Pane>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="87.0" layoutY="148.0" maxHeight="250.0" maxWidth="700.0" minHeight="101.0" minWidth="700.0" prefHeight="249.0" prefWidth="700.0">
+                    <content>
+                      <AnchorPane prefHeight="223.0" prefWidth="700.0">
+                          <children>
+                              <VBox layoutX="-3.0" prefHeight="109.0" prefWidth="703.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <fx:include source="TableHead.fxml" />
+                                    <VBox fx:id="goodsListVBox" prefHeight="116.0" prefWidth="703.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <AnchorPane fx:id="saleListPane" layoutX="85.0" layoutY="417.0">
+                     <children>
+                        <Label fx:id="strategyTitle" layoutX="127.0" text="使用策略列表" textFill="#171717">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="403.0" layoutY="27.0">
                            <children>
-                              <fx:include source="TableHead.fxml" />
-                              <VBox fx:id="goodsListVBox" prefHeight="252.0" prefWidth="700.0" />
-                           </children></VBox>
+                              <ScrollPane layoutX="403.0" layoutY="27.0" prefHeight="127.0" prefViewportHeight="46.0" prefViewportWidth="702.0" prefWidth="303.0">
+                                 <content>
+                                    <VBox fx:id="presentListVBox" layoutX="87.0" layoutY="334.0" prefHeight="109.0" prefWidth="259.0" />
+                                 </content>
+                              </ScrollPane>
+                              <VBox layoutX="679.0" layoutY="39.0">
+                                 <children>
+                                    <Button fx:id="getPresentBtn" mnemonicParsing="false" onAction="#findPresent" text="获取策略" />
+                                    <Button layoutX="732.0" layoutY="39.0" mnemonicParsing="false" text="赠券金额" />
+                                    <Label fx:id="voucherInPresent" layoutX="776.0" layoutY="73.0" maxHeight="20.0" maxWidth="93.0" minHeight="20.0" minWidth="20.0" prefHeight="20.0" prefWidth="93.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label fx:id="presentListTitle" layoutX="517.0" text="赠品列表" textFill="#111010">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutX="1.0" layoutY="30.0" prefHeight="139.0" prefViewportHeight="36.0" prefViewportWidth="700.0" prefWidth="319.0">
+                           <content>
+                              <HBox fx:id="presentHBox" layoutX="86.0" layoutY="273.0" prefHeight="56.0" prefWidth="256.0" />
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
-              </content>
-            </ScrollPane>
-            <Pane layoutY="379.0" prefHeight="80.0" prefWidth="921.0">
-               <children>
-                  <Button fx:id="approveBtn" layoutX="518.0" layoutY="35.0" mnemonicParsing="false" onAction="#approve" onMouseClicked="#onSaveBtnClicked" text="通过">
+                  <Label layoutX="415.0" layoutY="120.0" text="商品列表" textFill="#111010">
                      <font>
                         <Font size="18.0" />
-                     </font></Button>
-                  <Button fx:id="rejectBtn" layoutX="649.0" layoutY="35.0" mnemonicParsing="false" onAction="#reject" text="不通过">
+                     </font></Label>
+                  <VBox prefHeight="50.0" prefWidth="179.0">
+                     <children>
+                        <HBox layoutX="718.0" layoutY="88.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label layoutX="718.0" layoutY="89.0" prefHeight="25.0" prefWidth="90.0" text="折让前总额" textFill="#938c8c">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalAmount" layoutX="750.0" layoutY="88.0" prefHeight="25.0" prefWidth="61.0" text="0" textAlignment="RIGHT" textFill="#e12121" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="717.0" layoutY="122.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label layoutX="717.0" layoutY="125.0" prefHeight="25.0" prefWidth="90.0" text="折让后总额" textFill="#938c8c">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="sumAfterRebateLabel" layoutX="719.0" layoutY="122.0" prefHeight="25.0" prefWidth="61.0" text="0" textAlignment="RIGHT" textFill="#e12121" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button fx:id="selectGoodsBtn" layoutX="199.0" layoutY="98.0" mnemonicParsing="false" onAction="#selectGoods" prefHeight="27.0" prefWidth="84.0" text="选择商品" />
+                  <TextField fx:id="searchGoodsField" layoutX="15.0" layoutY="96.0" prefHeight="31.0" prefWidth="165.0" promptText="请输入查询信息" />
+                  <Label fx:id="nullErrorMessage" layoutX="288.0" layoutY="99.0" prefHeight="24.0" prefWidth="83.0" textFill="#e40808" />
+                 <TextField fx:id="searchVIPField" layoutX="16.0" layoutY="54.0" prefHeight="33.0" prefWidth="164.0" promptText="请输入查询信息" />
+                  <Label layoutX="521.0" layoutY="62.0" text="备注" textFill="#938c8c" />
+                  <Label layoutX="521.0" layoutY="103.0" text="折让" textFill="#938c8c" />
+                  <TextField fx:id="rebateField" layoutX="576.0" layoutY="98.0" prefHeight="26.0" prefWidth="62.0" promptText="0" />
+                  <Label layoutX="662.0" layoutY="103.0" text="使用代金券" textFill="#938c8c" />
+                  <TextField fx:id="useVoucherField" layoutX="761.0" layoutY="97.0" prefHeight="28.0" prefWidth="58.0" promptText="0" />
+                  <Button fx:id="saveBtn" layoutX="305.0" layoutY="585.0" mnemonicParsing="false" onAction="#save" text="保存">
                      <font>
-                        <Font size="18.0" />
-                     </font></Button>
-                  <Label layoutX="194.0" layoutY="53.0" prefHeight="26.0" prefWidth="54.0" text="总额">
-                     <font>
-                        <Font size="20.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Label>
-                  <Label fx:id="totalAmount" layoutX="294.0" layoutY="53.0" prefHeight="26.0" prefWidth="105.0" text="0" textFill="#e12121">
+                  </Button>
+                  <Button fx:id="commitBtn" layoutX="415.0" layoutY="585.0" mnemonicParsing="false" onAction="#commit" text="提交">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Label>
-                  <Label layoutX="32.0" layoutY="14.0" text="备注" />
-                  <TextField fx:id="noteTextField" layoutX="85.0" layoutY="8.0" prefHeight="14.0" prefWidth="242.0" />
-                  <Button fx:id="cancelBtn" layoutX="767.0" layoutY="35.0" mnemonicParsing="false" onAction="#cancel" text="取消">
+                  </Button>
+                  <Button fx:id="cancelBtn" layoutX="534.0" layoutY="585.0" mnemonicParsing="false" onAction="#cancel" text="取消">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Label layoutX="480.0" layoutY="54.0" prefHeight="23.0" prefWidth="78.0" text="仓库 " textFill="#938c8c">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="46.0" layoutY="56.0" prefHeight="23.0" prefWidth="66.0" text="供应商" textFill="#938c8c">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="400.0" layoutY="100.0" text="商品列表" />
-            <Button fx:id="selectGoodsBtn" layoutX="539.0" layoutY="95.0" mnemonicParsing="false" onAction="#selectGoods" text="选择商品" />
-         </children>
-      </Pane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

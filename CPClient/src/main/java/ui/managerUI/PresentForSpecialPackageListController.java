@@ -42,6 +42,7 @@ public class PresentForSpecialPackageListController {
 	
 	public void deleteFromPresentList(PresentForSpecialPackageVO vo){
 		this.presentForSpecialPackageList.remove(vo);
+		service.delete(vo.getId());
 		this.refresh();
 	}
 	

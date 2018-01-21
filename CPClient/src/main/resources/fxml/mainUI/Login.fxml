@@ -30,24 +30,23 @@
             </LinearGradient>
          </textFill>
       </Label>      
-      <Label layoutX="116.0" layoutY="242.0" text="用户名">
+      <Label layoutX="143.0" layoutY="242.0" text="用户名">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="125.0" layoutY="295.0" text="密码">
+      <Label layoutX="152.0" layoutY="295.0" text="密码">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="loginBtn" layoutX="192.0" layoutY="343.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" onKeyPressed="#onLoginBtnClicked" prefHeight="27.0" prefWidth="72.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" text="Log In" AnchorPane.leftAnchor="200.0">
+      <Button fx:id="loginBtn" layoutX="264.0" layoutY="348.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" onKeyPressed="#onLoginBtnClicked" prefHeight="27.0" prefWidth="72.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" text="Log In" AnchorPane.leftAnchor="264.0">
          <font>
             <Font name="Helvetica" size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="usernameTxt" layoutX="236.0" layoutY="240.0" style="-fx-background-radius: 0.5;" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="236.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="240.0" />
-      <PasswordField fx:id="passwordTxt" layoutX="236.0" layoutY="293.0" AnchorPane.leftAnchor="236.0" AnchorPane.rightAnchor="164.0" />
+      <TextField fx:id="usernameTxt" layoutX="271.0" layoutY="240.0" style="-fx-background-radius: 0.5;" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="240.0" />
+      <PasswordField fx:id="passwordTxt" layoutX="271.0" layoutY="293.0" onAction="#onLoginBtnClicked" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="129.0" />
       <Label fx:id="usernameLabel" layoutX="433.0" layoutY="240.0" prefHeight="27.0" prefWidth="123.0" text="" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="40.0" />
       <Label fx:id="passwordLabel" layoutX="434.0" layoutY="293.0" prefHeight="27.0" prefWidth="123.0" text="" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="40.0" />
-      <Button fx:id="signupBtn" layoutX="307.0" layoutY="343.0" mnemonicParsing="false" text="Sign Up" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="200.0" />
    </children>
 </AnchorPane>

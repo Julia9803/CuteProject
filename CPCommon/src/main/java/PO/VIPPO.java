@@ -1,9 +1,9 @@
 package PO;
 
+import java.io.Serializable;
+
 import util.VIPGrade;
 import util.VIPUtil;
-
-import java.io.Serializable;
 
 public class VIPPO implements Serializable{
 
@@ -13,7 +13,7 @@ public class VIPPO implements Serializable{
 	private static final long serialVersionUID = 4481008031933977248L;
 	public String id; //编号
     public String category; //分类
-    String grade; //级别
+    VIPGrade grade; //级别
     String name; //姓名
     String phoneNumber;//电话号码
     String email; //电子邮箱
@@ -32,7 +32,7 @@ public class VIPPO implements Serializable{
     public VIPPO(String id, String category, String grade, String name, String phoneNumber, String email, String address, String postCode, double collection, double collectionLimit, double payment, String clerk, VIPUtil state){
         this.id = id;
         this.category = category;
-        this.grade = grade;
+        this.grade = VIPGrade.getVIPGradeByString(grade);
         this.name=name;
         this.phoneNumber=phoneNumber;
         this.email=email;
@@ -69,11 +69,11 @@ public class VIPPO implements Serializable{
         this.category = category;
     }
 
-    public String getGrade() {
+    public VIPGrade getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(VIPGrade grade) {
         this.grade = grade;
     }
 

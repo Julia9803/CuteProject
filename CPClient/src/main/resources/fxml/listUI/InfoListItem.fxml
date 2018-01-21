@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="172.0" prefWidth="609.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="172.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.commonUI.InfoListController">
    <children>
-      <Pane layoutX="-169.0" layoutY="-47.0" prefHeight="164.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="-169.0" layoutY="-47.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="609.0" style="-fx-border-color: gold; -fx-border-radius: 3px; -fx-border-image-width: 3px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="26.0" layoutY="50.0" prefHeight="20.0" prefWidth="84.0" text="单据类型：" />
             <Label fx:id="type" layoutX="133.0" layoutY="50.0" prefHeight="20.0" prefWidth="116.0" text="ListType" />

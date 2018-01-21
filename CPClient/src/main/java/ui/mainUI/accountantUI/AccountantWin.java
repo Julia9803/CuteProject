@@ -16,7 +16,6 @@ public class AccountantWin extends Stage{
 	public AccountantWin() throws IOException{
 		root = FXMLLoader.load(getClass().getResource("/fxml/mainUI/Accountant.fxml"));
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/css/mainUI/mainUI.css").toExternalForm());
 		scene.setFill(Color.TRANSPARENT);
 		this.setScene(scene);
 		this.initStyle(StageStyle.DECORATED);

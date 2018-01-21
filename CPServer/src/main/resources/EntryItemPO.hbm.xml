@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-http://www.hibernate.org/dtd/hibernate-mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="PO.account.EntryItemPO">
+	  <id name="autoId">  
+         <generator class="native" />  
+      </id>  
+      <property name="entryName"/>
+      <property name="amount"/>
+      <property name="note"/>
+       
+   </class> 
+</hibernate-mapping>   

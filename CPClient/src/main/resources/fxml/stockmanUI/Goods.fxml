@@ -95,9 +95,9 @@
                </image>
             </ImageView>
             <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="822.0" layoutY="78.0" onAction="#setSearchBtn" prefHeight="27.0" prefWidth="63.0" ripplerFill="#d30f0f" style="-fx-background-radius: 23; -fx-background-color: #ff7575;" text="查询" textFill="#f7e9e9" />
-            <JFXButton fx:id="goodsNameSearchBtn" buttonType="RAISED" layoutX="34.0" layoutY="77.0" onAction="#onGoodsNameSearchBtnClicked" prefHeight="29.0" prefWidth="63.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品名" textFill="#9f353a" />
-            <JFXButton fx:id="goodsTypeSearchBtn" buttonType="RAISED" layoutX="115.0" layoutY="77.0" onAction="#onGoodsTypeSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品型号" textFill="#9f353a" />
-            <JFXButton fx:id="goodsIDSearchBtn" buttonType="RAISED" layoutX="203.0" layoutY="77.0" onAction="#onGoodsIDSearchBtnClicked" prefHeight="29.0" prefWidth="72.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品编号" textFill="#9f353a" />
+            <JFXButton fx:id="goodsNameSearchBtn" buttonType="RAISED" layoutX="34.0" layoutY="76.0" onAction="#onGoodsNameSearchBtnClicked" prefHeight="32.0" prefWidth="85.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品名称" textFill="#9f353a" />
+            <JFXButton fx:id="goodsTypeSearchBtn" buttonType="RAISED" layoutX="129.0" layoutY="76.0" onAction="#onGoodsTypeSearchBtnClicked" prefHeight="32.0" prefWidth="85.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品型号" textFill="#9f353a" />
+            <JFXButton fx:id="goodsIDSearchBtn" buttonType="RAISED" layoutX="224.0" layoutY="76.0" onAction="#onGoodsIDSearchBtnClicked" prefHeight="32.0" prefWidth="85.0" ripplerFill="#dd0808" style="-fx-border-color: #9f353a; -fx-border-radius: 17;" text="商品编号" textFill="#9f353a" />
          </children></Pane>
       <Pane layoutX="216.0" layoutY="310.0" prefHeight="435.0" prefWidth="196.0" style="-fx-background-color: #FFB5B5;">
          <children>

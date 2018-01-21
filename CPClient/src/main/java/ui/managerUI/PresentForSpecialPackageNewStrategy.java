@@ -2,8 +2,8 @@ package ui.managerUI;
 
 import VO.presentVO.PresentVO;
 import blservice.presentblservice.PresentForSpecialPackageBLService;
-import blservice.presentblservice.PresentForSumBLService;
 import resultmessage.DataRM;
+import ui.commonUI.PromptHelper;
 
 /**     
 * @author 李安迪
@@ -32,7 +32,7 @@ public class PresentForSpecialPackageNewStrategy implements Strategy{
 		if(id>=0)
 		specialPackageController.setId(id);
 		else{
-			specialPackageController.showInformationDialog(DataRM.FAILED);
+			PromptHelper.showPrompt(DataRM.FAILED);
 		}
 
 		

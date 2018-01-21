@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -17,11 +18,12 @@
             </Label>
             <TextField fx:id="searchTextField" layoutX="492.0" layoutY="67.0" />
             <Button fx:id="searchBtn" layoutX="699.0" layoutY="67.0" mnemonicParsing="false" onAction="#onSearchBtnClicked" text="查询" />
+            <Button fx:id="closeBtn" layoutX="811.0" layoutY="67.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" text="关闭" />
          </children>
       </Pane>
       <ScrollPane hbarPolicy="NEVER" layoutY="122.0" prefHeight="472.0" prefWidth="921.0">
         <content>
-             <VBox fx:id="vBox" prefHeight="464.0" prefWidth="910.0" />
+             <VBox fx:id="vBox" prefHeight="464.0" prefWidth="910.0" spacing="20.0" />
         </content>
       </ScrollPane>
    </children>

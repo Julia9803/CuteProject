@@ -29,7 +29,6 @@ public class StockListVO extends SalesmanListVO{
 			String memberName, String realOperator, String warehouse, String notes, List<SalesmanItemVO> saleListItems,
 			double sum) {
 		super(id, operator, operatorId, state, operatorGrade,memberID, memberName, realOperator, warehouse, notes, saleListItems, sum);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

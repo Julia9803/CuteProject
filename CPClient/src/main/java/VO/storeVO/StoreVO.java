@@ -21,7 +21,7 @@ public class StoreVO {
 		this.Num=Num;
 		
 	}
-	
+	public StoreVO(){};
 	public void calcAveragePrice(int oldNum,int adder,double oldPrice,double newPrice){
 		averagePrice=(oldNum*oldPrice+adder*newPrice)/(oldNum+adder);
 		

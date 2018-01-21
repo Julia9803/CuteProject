@@ -33,6 +33,9 @@ public class StoreListController {
 	StoreListType type;
 	
 	public void set(StoreListType type){
+		   if(vBox.getChildren().size()!=0){
+			   vBox.getChildren().remove(0, vBox.getChildren().size());
+			   }
          if(type.equals(StoreListType.ALARM)){
         	 typeLabel.setText("库存报警单");
         	 filter.setVisible(false);
@@ -106,12 +109,29 @@ public class StoreListController {
 	
 	protected void initCombobox(){
 		//把状态筛选条件给初始化了。
+		combobox.getItems().clear();
 		ArrayList<String> comboboxArr=new ArrayList<String>();
-		comboboxArr.add("全部单据");
+		//comboboxArr.add("全部单据");
 		comboboxArr.add("草稿单");
 		comboboxArr.add("已提交单");
 		comboboxArr.add("已过审单");
 		comboboxArr.add("未过审单");
 		combobox.getItems().addAll(comboboxArr);
+	}
+    
+	@FXML public void onFilter (){
+		if(combobox.getSelectionModel().getSelectedIndex()==0){
+			this.state=State.IsDraft;
+		}else if(combobox.getSelectionModel().getSelectedIndex()==1){
+			this.state=State.IsCommitted;
+		}else if(combobox.getSelectionModel().getSelectedIndex()==2){
+			this.state=State.IsApproved;
+		}else if(combobox.getSelectionModel().getSelectedIndex()==3){
+			this.state=State.IsRefused;
+		}
+		set(this.type);
+	}
+	@FXML public void Find(){
+		
 	}
 }

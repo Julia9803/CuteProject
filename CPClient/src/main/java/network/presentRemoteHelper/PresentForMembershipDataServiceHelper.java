@@ -17,7 +17,8 @@ public class PresentForMembershipDataServiceHelper implements DataServiceHelper{
     private PresentForMembershipDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	presentForMembershipDataService = (PresentForMembershipDataService)remote;
     }
     

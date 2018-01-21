@@ -1,14 +1,16 @@
 package ui.stockmanUI;
 
-import blservice.goodsblservice.GoodsBLService;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import VO.goodsVO.GoodsCategoryVO;
+import blservice.goodsblservice.GoodsBLService;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.layout.AnchorPane;
 
 
 public class NewGoodsORCategoryController {

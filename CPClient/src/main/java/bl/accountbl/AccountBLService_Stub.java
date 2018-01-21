@@ -13,13 +13,15 @@ import VO.accountVO.PaymentListVO;
 import VO.accountVO.TransferItemVO;
 import VO.goodsVO.GoodsVO;
 import blservice.accountblservice.AccountBLService;
+import blservice.accountblservice.AccountManagementService;
+import resultmessage.ApproveRM;
 import resultmessage.CommitListRM;
 import resultmessage.DeleteListRM;
 import resultmessage.ResultMessage;
 import resultmessage.SaveListRM;
 import util.State;
 
-public class AccountBLService_Stub implements AccountBLService{
+public class AccountBLService_Stub implements AccountBLService, AccountManagementService{
 	
 	protected static final GoodsVO goodsvo = null;
 	protected static final VIPVO vipvo = null;
@@ -238,6 +240,48 @@ public class AccountBLService_Stub implements AccountBLService{
 
 		System.out.println(list.size());
 		return list;
+	}
+
+	@Override
+	public void endService() {
+		
+	}
+
+	@Override
+	public ApproveRM approve(FinanceListVO vo) {
+		return null;
+	}
+
+	@Override
+	public void reject(FinanceListVO vo) {
+		
+	}
+
+	@Override
+	public List<AccountVO> getAllAccount() {
+		List<AccountVO> list = new ArrayList<AccountVO>();
+		list.add(accountvo);
+		return list;
+	}
+
+	@Override
+	public void saveAllAccount(List<AccountVO> l) {
+		
+	}
+
+	@Override
+	public AccountVO getAccount(String accountName) {
+		return null;
+	}
+
+	@Override
+	public void update(AccountVO vo) {
+		
+	}
+
+	@Override
+	public FinanceListVO getList(String id) {
+		return null;
 	}
 	
 	

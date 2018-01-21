@@ -13,8 +13,9 @@
         <property name="connection.characterEncoding">UTF-8</property>
 		<!-- Assume CPdb is the database name -->
 		<property name="hibernate.connection.url">
-<!--		<![CDATA[jdbc:mysql://localhost:3306/CPdb?useUnicode=true&characterEncoding=utf8&amp;serverTimezone=UTC]]>-->
-		jdbc:mysql://localhost:3306/CPdb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC
+<!--		[CDATA[jdbc:mysql://localhost:3306/CPdb?useUnicode=true&characterEncoding=utf8&amp;serverTimezone=UTC]]-->
+ 		jdbc:mysql://localhost:3306/CPdb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false
+<!--		jdbc:mysql://rm-2ze2p651tei9u00zgso.mysql.rds.aliyuncs.com:3306/CPdb?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false -->
 		</property>
 		<property name="hibernate.connection.username">
 			root
@@ -37,7 +38,7 @@
 		<mapping resource="GoodsInSalePO.hbm.xml" />
 
 		<mapping resource="SalesmanItemPO.hbm.xml" />
-
+				<mapping resource="PresentResultPO.hbm.xml" />
 <!-- 	<mapping resource="SalesmanListPO.hbm.xml" /> -->	
 
 
@@ -47,11 +48,26 @@
 
 		
 		<!-- for package account -->
+		<mapping resource="AccountPO.hbm.xml" />
 		<mapping resource="TransferItemPO.hbm.xml" />
-
-
+		<mapping resource="EntryItemPO.hbm.xml" />
+		
+		<!--for package user  -->
+		<mapping resource="UserPO.hbm.xml" />
+		<mapping resource="MessagePO.hbm.xml" />
+		
+		
 		<mapping resource="ListPO.hbm.xml" />
 		
+		
+		
+        <mapping class="PO.InfoListPO"/>
+        <mapping class="PO.ReportListPO"/>
+        <mapping class="PO.StoreLogPO"/>
+		<mapping class="PO.PresentListPO"/>
+		<mapping class="PO.AlarmListPO"/>
+		<mapping class="PO.StorePO"/>
+		<mapping class="PO.StoreListID"/>
 
 	</session-factory>
 </hibernate-configuration>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="145.0" prefWidth="695.0" style="-fx-background-color: #a0e7e2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="titleLabel" layoutX="73.0" layoutY="12.0" prefHeight="42.0" prefWidth="199.0" text="title" textFill="#d06d21">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="486.0" layoutY="21.0" prefHeight="23.0" prefWidth="130.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="contentTextArea" editable="false" layoutX="42.0" layoutY="73.0" prefHeight="51.0" prefWidth="567.0" style="-fx-background-color: #ccea85; -fx-font-size: 15;" text="content&#10;&#10;" />
+   </children>
+</Pane>

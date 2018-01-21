@@ -65,6 +65,12 @@ public abstract class PresentVO {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+	@Override
+	public String toString() {
+		return "PresentVO [id=" + id + ", startTime=" + startTime + ", finishTime=" + finishTime + "]";
+	}
 	
 	
 

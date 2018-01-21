@@ -17,7 +17,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="123.0" prefHeight="463.0" prefWidth="892.0">
+      <Pane layoutX="15.0" layoutY="123.0" prefHeight="463.0" prefWidth="892.0" style="-fx-background-color: white;">
          <children>
             <Label layoutX="42.0" layoutY="26.0" prefHeight="24.0" prefWidth="112.0" text="单据编号：" textFill="#1c24f5">
                <font>

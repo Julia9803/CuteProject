@@ -7,12 +7,11 @@ import java.util.List;
 
 import PO.GoodsInSalePO;
 import PO.PresentForSpecialPackagePO;
-import PO.PresentForSumPO;
-import dataHelper.BasicUtil;
-import dataHelper.CriterionClause;
-import dataHelper.CriterionClauseGenerator;
-import dataHelper.HibernateCriterionClauseGenerator;
-import dataHelper.HibernateUtil;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.CriterionClauseGenerator;
+import dataHelper.serviceImpl.CriterionClause;
+import dataHelper.serviceImpl.HibernateCriterionClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
 import dataService.presentDataService.PresentForSpecialPackageDataService;
 import resultmessage.DataRM;
 import util.PresentState;
@@ -23,6 +22,10 @@ import util.PresentState;
 * @description
 */
 public class PresentForSpecialPackageDataServiceImpl extends UnicastRemoteObject implements PresentForSpecialPackageDataService{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8679644519921157361L;
 	BasicUtil<PresentForSpecialPackagePO> util;
 	CriterionClauseGenerator criterionClauseGenerator;
 	
@@ -77,14 +80,13 @@ public class PresentForSpecialPackageDataServiceImpl extends UnicastRemoteObject
 	@Override
 	public List<PresentForSpecialPackagePO> getPresentForSpecialPackage(List<GoodsInSalePO> goodsList)
 			throws RemoteException {
-		// TODO Auto-generated method stub
-		String id;
+
 		List<String> idList = new ArrayList<String>();
 		for(GoodsInSalePO po : goodsList){
 			idList.add(po.getId());
 		}
 		List<CriterionClause> criterionChildList = new ArrayList<CriterionClause>();
-		criterionChildList = criterionClauseGenerator.generateExactAsChildCriterion(criterionChildList,"id",(List)idList);
+		criterionChildList = criterionClauseGenerator.generateExactAsChildCriterion(criterionChildList,"id",idList);
 		List<CriterionClause> criterionParentList = new ArrayList<CriterionClause>();
 		criterionParentList = criterionClauseGenerator.generateExactCriterion(criterionParentList,"state", PresentState.SAVE);
 		criterionParentList = criterionClauseGenerator.generateCurrentTimeInRangeCriterion(criterionParentList);

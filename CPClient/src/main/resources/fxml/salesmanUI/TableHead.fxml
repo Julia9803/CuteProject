@@ -5,58 +5,17 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="30.0" maxWidth="700.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="31.0" maxWidth="730.0" minHeight="30.0" minWidth="612.0" prefHeight="31.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox maxHeight="-Infinity" maxWidth="700.0" minHeight="-Infinity" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="730.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="idLabel" prefHeight="30.0" prefWidth="102.0" text="商品编号" wrapText="true">
-                <font>
-                  <Font size="14.0" />
-               </font>
-               </Label>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label fx:id="nameLabel" prefHeight="30.0" prefWidth="83.0" text="名称" wrapText="true">
-                           <font>
-                  <Font size="14.0" />
-               </font>
-               </Label>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label fx:id="typeLabel" prefHeight="30.0" prefWidth="60.0" text="型号">
-                          <font>
-                  <Font size="14.0" />
-               </font>
-               </Label>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label prefHeight="30.0" prefWidth="56.0" text="×">
-                           <font>
-                  <Font size="14.0" />
-               </font>
-               </Label>
-            <TextField fx:id="amountTextField" editable="false" maxHeight="42.0" minHeight="10.0" prefHeight="30.0" prefWidth="75.0" text="数量">
-                          <font>
-                  <Font size="14.0" />
-               </font>
-               </TextField>
-            <TextField fx:id="priceTextField" editable="false" minHeight="15.0" prefHeight="30.0" prefWidth="81.0" text="单价">
-                           <font>
-                  <Font size="14.0" />
-               </font>
-               </TextField>
-            <Label fx:id="sumLabel" prefHeight="30.0" prefWidth="61.0" text="金额">
-                           <font>
-                  <Font size="14.0" />
-               </font>
-               </Label>
-            <TextField fx:id="notesTextField" editable="false" minHeight="15.0" prefHeight="30.0" prefWidth="263.0" text="备注">
-                           <font>
-                  <Font size="14.0" />
-               </font>
-               </TextField>
-            <Button fx:id="deleteBtn" disable="true" minHeight="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="80.0" text="删除">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
+            <Label fx:id="idLabel" prefHeight="30.0" prefWidth="84.0" text="商品编号" textFill="#938c8c" wrapText="true" />
+            <Label fx:id="nameLabel" prefHeight="39.0" prefWidth="69.0" text="名称" textFill="#938c8c" wrapText="true" />
+            <Label fx:id="typeLabel" prefHeight="33.0" prefWidth="68.0" text="型号" textFill="#938c8c" />
+            <Label fx:id="amountTextField" prefHeight="31.0" prefWidth="73.0" text="数量" textFill="#938c8c" />
+            <Label fx:id="priceTextField" prefHeight="31.0" prefWidth="76.0" text="单价" textFill="#938c8c" />
+            <Label fx:id="sumLabel" prefHeight="32.0" prefWidth="73.0" text="金额" textFill="#938c8c" />
+            <Label fx:id="notesTextField" prefHeight="31.0" prefWidth="176.0" text="备注" textFill="#938c8c" />
          </children>
       </HBox>
    </children>

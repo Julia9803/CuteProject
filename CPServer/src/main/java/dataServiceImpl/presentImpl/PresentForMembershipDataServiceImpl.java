@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import PO.PresentForMembershipPO;
-import dataHelper.BasicUtil;
-import dataHelper.CriterionClause;
-import dataHelper.CriterionClauseGenerator;
-import dataHelper.HibernateCriterionClauseGenerator;
-import dataHelper.HibernateOrderClauseGenerator;
-import dataHelper.HibernateUtil;
-import dataHelper.OrderClause;
-import dataHelper.OrderClauseGenerator;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.CriterionClauseGenerator;
+import dataHelper.service.OrderClauseGenerator;
+import dataHelper.serviceImpl.CriterionClause;
+import dataHelper.serviceImpl.HibernateCriterionClauseGenerator;
+import dataHelper.serviceImpl.HibernateOrderClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
+import dataHelper.serviceImpl.OrderClause;
 import dataService.presentDataService.PresentForMembershipDataService;
 import resultmessage.DataRM;
 import util.PresentState;
@@ -26,6 +26,10 @@ import util.VIPGrade;
 */
 public class PresentForMembershipDataServiceImpl extends UnicastRemoteObject implements PresentForMembershipDataService{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6249895128068142011L;
 	/* (non-Javadoc)
 	 * @see dataService.presentDataService.PresentForMembershipDataService#insert()
 	 */

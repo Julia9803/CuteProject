@@ -17,10 +17,12 @@ public class CollectionListDataServiceHelper implements DataServiceHelper{
 	private CollectionListDataServiceHelper(){
 	}
 	
+	@Override
 	public String getServiceName(){
 		return serviceName;
 	}
 	
+	@Override
 	public void setRemote(Remote remote){
 		collectionListDataService = (CollectionListDataService)remote;
 	}

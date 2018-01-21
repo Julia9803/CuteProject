@@ -7,21 +7,24 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
-import PO.account.CollectionListPO;
 import network.VIPRemoteHelper.VIPDataServiceHelper;
+import network.accountRemoteHelper.AccountDataServiceHelper;
+import network.accountRemoteHelper.CashExpenseListDataServiceHelper;
 import network.accountRemoteHelper.CollectionListDataServiceHelper;
+import network.accountRemoteHelper.PaymentListDataServiceHelper;
 import network.goodsRemoteHelper.GoodsDataServiceHelper;
+import network.listRemoteHelper.ListDataServiceHelper;
 import network.presentRemoteHelper.PresentForMembershipDataServiceHelper;
 import network.presentRemoteHelper.PresentForSpecialPackageDataServiceHelper;
 import network.presentRemoteHelper.PresentForSumDataServiceHelper;
-
 import network.saleRemoteHelper.SaleListDataServiceHelper;
 import network.saleRemoteHelper.SaleProjectionDataServiceHelper;
 import network.saleRemoteHelper.SaleReturnListDataServiceHelper;
 import network.saleRemoteHelper.StockListDataServiceHelper;
 import network.saleRemoteHelper.StockReturnListDataServiceHelper;
-
-import util.State;
+import network.storeRemoteHelper.StoreDataServiceHelper;
+import network.userRemoteHelper.MessageDataServiceHelper;
+import network.userRemoteHelper.UserDataServiceHelper;
 
 /**
  * 连接服务器的类，在这里将每个DataService与对应的RemoteHelper进行连接
@@ -39,30 +42,36 @@ public class ServerConnector {
 	}
 	
 	private void addServices(){
-//		dataServiceHelpers.add(StoreDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(PaymentListDataServiceHelper.getInstance());
+		dataServiceHelpers.add(StoreDataServiceHelper.getInstance());
+		dataServiceHelpers.add(ListDataServiceHelper.getInstance());
 		
 		
+		dataServiceHelpers.add(AccountDataServiceHelper.getInstance());
 		dataServiceHelpers.add(CollectionListDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(PaymentListDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(CashExpenseListDataServiceHelper.getInstance());
+		dataServiceHelpers.add(PaymentListDataServiceHelper.getInstance());
+		dataServiceHelpers.add(CashExpenseListDataServiceHelper.getInstance());
+		
+		
+		dataServiceHelpers.add(UserDataServiceHelper.getInstance());
+		dataServiceHelpers.add(MessageDataServiceHelper.getInstance());
 		
 		
 		dataServiceHelpers.add(PresentForMembershipDataServiceHelper.getInstance());
 		dataServiceHelpers.add(PresentForSpecialPackageDataServiceHelper.getInstance());
 		dataServiceHelpers.add(PresentForSumDataServiceHelper.getInstance());
-		
+
 		
 		dataServiceHelpers.add(GoodsDataServiceHelper.getInstance());
 		dataServiceHelpers.add(VIPDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(StockReturnListDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(StockListDataServiceHelper.getInstance());
+		
+		
+		dataServiceHelpers.add(StockReturnListDataServiceHelper.getInstance());
+		dataServiceHelpers.add(StockListDataServiceHelper.getInstance());
 		dataServiceHelpers.add(SaleListDataServiceHelper.getInstance());
-//		dataServiceHelpers.add(SaleReturnListDataServiceHelper.getInstance());
+		dataServiceHelpers.add(SaleReturnListDataServiceHelper.getInstance());
 		dataServiceHelpers.add(SaleProjectionDataServiceHelper.getInstance());
 
 		
-		//哈哈，巧妙的设计了一番，每个helper只需在这里add一下就行了
 	}
 	
 	 
@@ -86,28 +95,11 @@ public class ServerConnector {
 			}
 			
 		}
-		
-//		System.setSecurityManager(new SecurityManager()); 		//TODO 这句有什么用吗？我这里没有这句是正常的 re： debug时加的，没用就删了吧
-		
+			
 	}
 	
 	public static void main(String [] args){
 		new ServerConnector();
-//		testCollectionService();
 	}
 	
-	
-	//TODO delete it when bl finish!
-	public static void testCollectionService(){
-		CollectionListPO po = new CollectionListPO();
-		po.setId("SKD-20171229-00002");
-		po.setState(State.IsCommitted);
-		po.setTotalAmount(20);
-		try {
-//			System.out.println(CollectionListDataServiceHelper.getInstance().getDataService().getNewListId());
-			System.out.println(CollectionListDataServiceHelper.getInstance().getDataService().insert(po));
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-	}
 }

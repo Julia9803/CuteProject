@@ -37,7 +37,7 @@ public class PresentForSpecialPackageBLServiceImpl implements PresentForSpecialP
 			return null;
 		}
 		List<PresentForSpecialPackageVO> volist = new ArrayList<PresentForSpecialPackageVO>();
-		
+		if(polist != null)
 		for(PresentForSpecialPackagePO po : polist){
 			volist.add(poToVo(po));
 		}
@@ -54,6 +54,7 @@ public class PresentForSpecialPackageBLServiceImpl implements PresentForSpecialP
 		List<PresentForSpecialPackagePO> polist;
 		try {
 			List<GoodsInSalePO> goodsPoList = new ArrayList<GoodsInSalePO>();
+			if(goodsList != null)
 			for(GoodsInSaleVO vo :goodsList){
 			goodsPoList.add(GoodsInSaleVoTransPo.GoodsInSaleVoToPo(vo));
 			}
@@ -63,7 +64,7 @@ public class PresentForSpecialPackageBLServiceImpl implements PresentForSpecialP
 			return null;
 		}
 		List<PresentForSpecialPackageVO> volist = new ArrayList<PresentForSpecialPackageVO>();
-		
+		if(polist != null)
 		for(PresentForSpecialPackagePO po : polist){
 			volist.add(poToVo(po));
 		}

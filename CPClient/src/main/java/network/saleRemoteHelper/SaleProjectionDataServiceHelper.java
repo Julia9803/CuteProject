@@ -21,7 +21,8 @@ public class SaleProjectionDataServiceHelper implements DataServiceHelper{
     private SaleProjectionDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	saleProjectionDataService = (SaleProjectionDataService)remote;
     }
     

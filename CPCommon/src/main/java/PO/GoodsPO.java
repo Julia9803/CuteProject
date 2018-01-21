@@ -1,8 +1,8 @@
 package PO;
 
-import util.GoodsUtil;
-
 import java.io.Serializable;
+
+import util.GoodsUtil;
 
 public class GoodsPO implements Serializable{
 	/**

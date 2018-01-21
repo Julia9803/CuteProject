@@ -42,6 +42,7 @@ public class PresentForMembershipListController {
 	
 	public void deleteFromPresentList(PresentForMembershipVO vo){
 		this.presentForMembershipList.remove(vo);
+		service.delete(vo.getId());
 		this.refresh();
 	}
 	

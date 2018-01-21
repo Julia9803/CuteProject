@@ -1,13 +1,23 @@
 package PO;
 
-import  javax.persistence.*;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="AlarmListPO")
-public class AlarmListPO {
-    @Id @GeneratedValue
+public class AlarmListPO implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6401586978907261654L;
+
+	@Id 
     @Column(name="id")
-    public  String listID;
+    public  String id;
 
     @Column(name="alarmNum")
     public int alarmNum;
@@ -21,5 +31,7 @@ public class AlarmListPO {
 
     @Column(name="goodsName")
     public String goodsName;
+
+    public AlarmListPO(){}
 
 }

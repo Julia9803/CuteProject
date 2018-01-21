@@ -3,7 +3,6 @@ package ui.managerUI;
 import java.util.List;
 
 import VO.GoodsInSaleVO;
-import resultmessage.DataRM;
 
 /**     
 * @author 李安迪
@@ -42,11 +41,7 @@ public interface SinglePresentEditableController extends SinglePresentController
 	 * 更新显示的赠品列表
 	 */
 	void refresh();
-	/**
-	 * @param rm
-	 * 显示普通信息对话框
-	 */
-	void showInformationDialog(DataRM rm);
+
 	/**
 	 * @return 赠品清单或商品清单
 	 */

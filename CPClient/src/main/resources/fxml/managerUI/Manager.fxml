@@ -16,24 +16,14 @@
          <children>
             <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
             <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
-            <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      审批" textFill="#9f353a">
-              <items>
-                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="ui.saleUI.Sale.css" text="单据1" />
-                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
-              </items>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </MenuButton>
             <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      查看" textFill="#9f353a">
                <font>
                   <Font size="18.0" />
                </font>
                <items>
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据1" />
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单据2" />
-                  <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;" text="单        据         3" />
+                  <MenuItem fx:id="InfoListBtn" mnemonicParsing="false" onAction="#openInfoLists" style="-fx-background-color: transparent;" text="经营历程表" />
+                  <MenuItem fx:id="BussinessSituationBtn" mnemonicParsing="false" onAction="#openBussinessSituationList" style="-fx-background-color: transparent;" text="经营情况表" />
+                  <MenuItem fx:id="SalesDetailsBtn" mnemonicParsing="false" onAction="#openSalesDetailsList" style="-fx-background-color: transparent;" text="销售明细表" />
                </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
@@ -74,6 +64,6 @@
             <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
          </effect>
       </Circle>
-      <BorderPane fx:id="centerPane" layoutX="121.0" layoutY="95.0" prefHeight="705.0" prefWidth="1066.0" />
+      <BorderPane fx:id="centerPane" layoutX="171.0" layoutY="114.0" prefHeight="659.0" prefWidth="988.0" />
    </children>
 </AnchorPane>

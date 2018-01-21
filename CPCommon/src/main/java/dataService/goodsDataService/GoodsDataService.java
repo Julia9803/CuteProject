@@ -1,12 +1,12 @@
 package dataService.goodsDataService;
-import PO.GoodsCategoryPO;
-import PO.GoodsPO;
-import resultmessage.ResultMessage;
-
 import java.io.Serializable;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
+
+import PO.GoodsCategoryPO;
+import PO.GoodsPO;
+import resultmessage.ResultMessage;
 
 public interface GoodsDataService extends Remote,Serializable {
     public int newGoodsCategoryAutoId(GoodsCategoryPO po) throws RemoteException;

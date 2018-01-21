@@ -11,7 +11,7 @@
          <children>
             <Label fx:id="name" prefHeight="30.0" prefWidth="68.0" />
             <Label prefHeight="30.0" prefWidth="32.0" text="×" />
-            <TextField fx:id="amount" editable="false" maxHeight="31.0" minHeight="25.0" prefHeight="30.0" prefWidth="96.0" />
+            <Label fx:id="amount" maxHeight="31.0" minHeight="25.0" prefHeight="30.0" prefWidth="96.0" />
          </children>
       </HBox>
    </children>

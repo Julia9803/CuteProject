@@ -23,9 +23,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="filter" layoutX="7.0" layoutY="78.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="83.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #9f353a;" text="条件筛选" textFill="#9f353a" />
+            <Button fx:id="filter" layoutX="7.0" layoutY="78.0" mnemonicParsing="false" onAction="#onFilter" prefHeight="32.0" prefWidth="83.0" style="-fx-background-radius: 23; -fx-border-radius: 23; -fx-border-color: #9f353a;" text="条件筛选" textFill="#9f353a" />
             <TextField fx:id="findTextField" layoutX="603.0" layoutY="79.0" style="-fx-background-radius: 23; -fx-border-radius: 23;" />
-            <Button fx:id="findButton" layoutX="830.0" layoutY="79.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="查询" textFill="WHITE" />
+            <Button fx:id="findButton" layoutX="830.0" layoutY="79.0" mnemonicParsing="false" onAction="#Find" prefHeight="27.0" prefWidth="83.0" style="-fx-background-radius: 23; -fx-background-color: #ff7575; -fx-border-radius: 23;" text="查询" textFill="WHITE" />
             <ComboBox fx:id="combobox" layoutX="108.0" layoutY="79.0" prefWidth="150.0" />
          </children></Pane>
      

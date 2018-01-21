@@ -1,9 +1,9 @@
 package network.goodsRemoteHelper;
 
+import java.rmi.Remote;
+
 import dataService.goodsDataService.GoodsDataService;
 import network.DataServiceHelper;
-
-import java.rmi.Remote;
 
 /**
  * Created by julia98 on 2017/12/13.
@@ -19,11 +19,13 @@ public class GoodsDataServiceHelper implements DataServiceHelper{
     private GoodsDataServiceHelper(){
     }
 
-    public String getServiceName(){
+    @Override
+	public String getServiceName(){
         return serviceName;
     }
 
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
         goodsDataService = (GoodsDataService)remote;
     }
 

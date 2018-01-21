@@ -3,11 +3,14 @@ package PO.account;
 import java.io.Serializable;
 
 public class TransferItemPO implements Serializable{
+	
+	private static final long serialVersionUID = -3113721492822533131L;
 	private int autoId;	//数据库中自动生成的id
 	private String account;
 	private double amount;
 	private String note;
 	
+	public TransferItemPO(){};
 	public TransferItemPO(String account, double amount, String note){
 		this.account = account;
 		this.amount = amount;

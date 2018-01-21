@@ -1,7 +1,6 @@
 package blservice.VIPblservice;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 import VO.VIPVO.VIPVO;
@@ -15,7 +14,7 @@ import resultmessage.ResultMessage;
 public interface VIPBLService {
 	/**
 	 * 前置条件	用户选择新建客户
-     * 后置条件	系统显示客户编号
+     * 后置条件	系统返回客户编号
 	 * @return VIP ID
 	 */
 	public String newVIPID(VIPVO vo) throws RemoteException;

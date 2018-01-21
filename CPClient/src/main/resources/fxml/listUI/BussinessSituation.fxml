@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="546.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.commonUI.BussinessSituationController">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="929.0" style="-fx-background-color: #eecde0;">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label fx:id="title" layoutX="55.0" layoutY="23.0" text="经营情况表">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="116.0" prefHeight="430.0" prefWidth="929.0">
+         <children>
+            <Label layoutX="34.0" layoutY="27.0" prefHeight="37.0" prefWidth="134.0" text="商品报溢收入：" textFill="#e81212">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b1" layoutX="185.0" layoutY="27.0" prefHeight="37.0" prefWidth="104.0" text="497.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="84.0" prefHeight="37.0" prefWidth="151.0" text="折让后销售收入：" textFill="#e81212">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b2" layoutX="185.0" layoutY="84.0" prefHeight="37.0" prefWidth="104.0" text="1036.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="142.0" prefHeight="37.0" prefWidth="151.0" text="进货退货收入：" textFill="#e81212">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b3" layoutX="185.0" layoutY="142.0" prefHeight="37.0" prefWidth="104.0" text="25.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="27.0" prefHeight="37.0" prefWidth="134.0" text="商品报损支出：" textFill="#11ee32">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b7" layoutX="526.0" layoutY="27.0" prefHeight="37.0" prefWidth="104.0" text="140.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="84.0" prefHeight="37.0" prefWidth="134.0" text="进货支出：" textFill="#11ee32">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="142.0" prefHeight="37.0" prefWidth="134.0" text="销售退货支出：" textFill="#11ee32">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b8" layoutX="526.0" layoutY="90.0" prefHeight="37.0" prefWidth="104.0" text="460.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b9" layoutX="526.0" layoutY="142.0" prefHeight="37.0" prefWidth="104.0" text="890.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="206.0" prefHeight="37.0" prefWidth="104.0" text="折让总额：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="206.0" prefHeight="37.0" prefWidth="134.0" text="赠出商品总额：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="261.0" prefHeight="37.0" prefWidth="104.0" text="总收入：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="372.0" layoutY="261.0" prefHeight="37.0" prefWidth="104.0" text="总支出：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="316.0" prefHeight="37.0" prefWidth="104.0" text="利润值：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b4" layoutX="185.0" layoutY="206.0" prefHeight="37.0" prefWidth="104.0" text="190.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b5" layoutX="185.0" layoutY="261.0" prefHeight="37.0" prefWidth="104.0" text="1748">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b6" layoutX="185.0" layoutY="316.0" prefHeight="37.0" prefWidth="104.0" text="28">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b10" layoutX="526.0" layoutY="206.0" prefHeight="37.0" prefWidth="104.0" text="230.00">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="b11" layoutX="526.0" layoutY="261.0" prefHeight="37.0" prefWidth="104.0" text="1720">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="toExcelBtn" layoutX="402.0" layoutY="320.0" onAction="#toExcel" prefHeight="37.0" prefWidth="134.0" ripplerFill="#11edc7" style="-fx-background-color: PINK;" text="导出数据" />
+            <Label fx:id="rmLabel" layoutX="591.0" layoutY="329.0" prefHeight="30.0" prefWidth="311.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

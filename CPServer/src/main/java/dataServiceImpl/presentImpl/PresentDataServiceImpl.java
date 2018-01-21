@@ -17,6 +17,11 @@ import util.VIPGrade;
 */
 public class PresentDataServiceImpl implements PresentDataService {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3002962547427658593L;
+
 	/* (non-Javadoc)
 	 * @see dataService.presentDataService.PresentDataService#get()
 	 */

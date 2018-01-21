@@ -2,7 +2,6 @@ package blservice.saleblservice;
 
 import java.util.List;
 
-import PO.SalesmanListPO;
 import VO.saleVO.SalesmanListVO;
 import resultmessage.DataRM;
 
@@ -14,9 +13,17 @@ import resultmessage.DataRM;
 public interface SaleUniBLService {
 	public String getId();
 	public DataRM delete(String id);
-	public DataRM approve(SalesmanListVO vo);
+//	public DataRM approve(SalesmanListVO vo);
 	public DataRM reject(SalesmanListVO vo);
 	public DataRM save(SalesmanListVO vo);
 	public DataRM commit(SalesmanListVO vo);
 	public List<SalesmanListVO> openAllDraft();
+	
+	public SalesmanListVO get(String id);
+	/**
+	 * @param vo
+	 * @param isWriteoff 是否为红冲单
+	 * @return
+	 */
+	DataRM approve(SalesmanListVO vo, boolean isWriteoff);
 }

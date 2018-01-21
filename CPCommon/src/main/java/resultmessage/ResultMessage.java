@@ -13,6 +13,7 @@ public enum ResultMessage {
     TRUE,//判断为真
     FALSE;//判断为假
 	
+	@Override
 	public String toString() {
         switch (this) {
             case SUCCESS:

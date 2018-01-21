@@ -6,6 +6,7 @@ import VO.ListVO;
 import util.State;
 import util.UserGrade;
 
+
 public abstract class SalesmanListVO extends ListVO{
 	/**
 	 * 操作员等级 
@@ -19,10 +20,7 @@ public abstract class SalesmanListVO extends ListVO{
 	  * 客户名
 	  */
 	 String memberName;
-	 /**
-	  * 客户等级
-	  */
-	 
+
 	 /**
 	  * 业务员名字
 	  */

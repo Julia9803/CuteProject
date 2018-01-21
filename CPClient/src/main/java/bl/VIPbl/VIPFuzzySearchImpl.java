@@ -1,15 +1,17 @@
 package bl.VIPbl;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
+
 import VO.VIPVO.VIPVO;
 import blservice.VIPblservice.VIPBLService;
-
-import java.rmi.RemoteException;
-import java.util.List;
+import blservice.VIPblservice.VIPFuzzySearch;
 
 /**
  * Created by julia98 on 2017/12/26.
  */
-public class VIPFuzzySearchImpl implements VIPFuzzySearch{
+public class VIPFuzzySearchImpl implements VIPFuzzySearch {
 
     VIPBLService vipblService = new VIPBLServiceImpl();
     /**
@@ -57,91 +59,101 @@ public class VIPFuzzySearchImpl implements VIPFuzzySearch{
     }
 
     /**
-     * 在进货商中以会员ID模糊查找
+     * 在供货商中以会员ID模糊查找
      *
      * @param idInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInIDOnlySeller(String idInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("进货商");
+        List<VIPVO> list1 = getVIPInType("供货商");
         List<VIPVO> list2 = getVIPInID(idInfo);
-        return magicMethod(list1,list2);
+       return magicMethod(list1,list2);
+
     }
 
     /**
-     * 在进货商中以会员姓名模糊查找
+     * 在供货商中以会员姓名模糊查找
      *
      * @param nameInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInNameOnlySeller(String nameInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("进货商");
+    List<VIPVO> list1 = getVIPInType("供货商");
         List<VIPVO> list2 = getVIPInName(nameInfo);
-        return magicMethod(list1,list2);
+     return magicMethod(list1,list2);
     }
 
     /**
-     * 在进货商中以会员电话模糊查找
+     * 在供货商中以会员电话模糊查找
      *
      * @param phoneNumberInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInPhoneNumberOnlySeller(String phoneNumberInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("进货商");
+       List<VIPVO> list1 = getVIPInType("供货商");
         List<VIPVO> list2 = getVIPInPhoneNumber(phoneNumberInfo);
-        return magicMethod(list1,list2);
+       return magicMethod(list1,list2);
+
     }
 
     /**
-     * 在销售商中以会员ID模糊查找
+     * 在经销商中以会员ID模糊查找
      *
      * @param idInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInIDOnlyRetailer(String idInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("销售商");
+        List<VIPVO> list1 = getVIPInType("经销商");
         List<VIPVO> list2 = getVIPInID(idInfo);
-        return magicMethod(list1,list2);
+        List<VIPVO> result = magicMethod(list1,list2);
+        System.out.println(result);
+        return result;
     }
 
     /**
-     * 在销售商中以会员姓名模糊查找
+     * 在经销商中以会员姓名模糊查找
      *
      * @param nameInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInNameOnlyRetailer(String nameInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("销售商");
+        List<VIPVO> list1 = getVIPInType("经销商");
         List<VIPVO> list2 = getVIPInName(nameInfo);
-        return magicMethod(list1,list2);
+        List<VIPVO> result = magicMethod(list1,list2);
+        System.out.println(result);
+        return result;
     }
 
     /**
-     * 在销售商中以会员电话模糊查找
+     * 在经销商中以会员电话模糊查找
      *
      * @param phoneNumberInfo
      * @return 符合条件的会员列表
      */
     @Override
     public List<VIPVO> getVIPInPhoneNumberOnlyRetailer(String phoneNumberInfo) throws RemoteException {
-        List<VIPVO> list1 = getVIPInType("销售商");
+        List<VIPVO> list1 = getVIPInType("经销商");
         List<VIPVO> list2 = getVIPInPhoneNumber(phoneNumberInfo);
-        return magicMethod(list1,list2);
+        List<VIPVO> result = magicMethod(list1,list2);
+        System.out.println(result);
+        return result;
     }
 
     private List<VIPVO> magicMethod(List<VIPVO> list1,List<VIPVO> list2){
-        List<VIPVO> list = null;
+        List<VIPVO> list = new ArrayList<VIPVO>();
+        if(list1 != null && list2 != null){
         for(int i =0;i<list1.size();i++){
             for(int j = 0;j<list2.size();j++) {
-                if (list1.get(i) == list2.get(j)) {
+                if (list1.get(i).equals(list2.get(j))) {
                     list.add(list1.get(i));
                 }
             }
+        }
         }
         return list;
     }

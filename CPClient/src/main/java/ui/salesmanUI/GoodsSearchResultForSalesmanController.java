@@ -1,6 +1,7 @@
 package ui.salesmanUI;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import VO.saleVO.SalesmanItemVO;
@@ -39,6 +40,7 @@ public class GoodsSearchResultForSalesmanController {
 		// TODO Auto-generated constructor stub
 		this.list = goodsList;
 		this.parentController = parentController;
+		this.cellList = new ArrayList<>();
 	}
 	
 	@FXML void initialize(){
@@ -48,7 +50,7 @@ public class GoodsSearchResultForSalesmanController {
 	   				    new GoodsSearchResultCellForSalesmanController(vo);
 	   		 FXMLLoader loader = new FXMLLoader(
 	   				    getClass().getResource(
-	   				        "/fxml/commonUI/GoodsSearchResultCell.fxml"));
+	   				        "/fxml/commonUI/GoodsSearchResultCellWithPrice.fxml"));
 	   				loader.setController(controller);
 	   				HBox cell = null;
 					try {
@@ -69,8 +71,18 @@ public class GoodsSearchResultForSalesmanController {
 	
 	@FXML public void onSureBtnClicked(){
 		for(GoodsSearchResultCellForSalesmanController controller: cellList){
-			if(controller.checkBox.isSelected())
-				parentController.addToList(controller.vo);
+			if(controller.checkBox.isSelected()){
+				String id = controller.id.getText();
+				String name = controller.name.getText();
+				String type= controller.vo.getType();
+				double price = Double.parseDouble(controller.priceTextField.getText());
+				int amount = Integer.parseInt(controller.amountTextField.getText());
+				double sum = price*amount;
+				String notes = controller.notesTextField.getText();
+				System.out.println(new SalesmanItemVO(id,name,type,price,amount,sum,notes));
+				//如果有重复，添加后来的，删除最初的
+				parentController.addToList(new SalesmanItemVO(id,name,type,price,amount,sum,notes));
+			}
 		}
 
 		root.getScene().getWindow().hide();

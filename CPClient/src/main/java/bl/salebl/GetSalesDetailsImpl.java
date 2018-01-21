@@ -15,7 +15,8 @@ public class GetSalesDetailsImpl implements GetSalesDetails{
 	
 	@Override
 	public ArrayList<SalesDetailListVO> getSalesDetail() {
-	    List<SaleListVO> list = (List)impl.openAllDraft();
+	    @SuppressWarnings({ "rawtypes", "unchecked" })
+		List<SaleListVO> list = (List)impl.openAllDraft();
 		return SaleToDetail(list);
 	}
 	/**

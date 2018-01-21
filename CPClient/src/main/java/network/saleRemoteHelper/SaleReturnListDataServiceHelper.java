@@ -20,7 +20,8 @@ public class SaleReturnListDataServiceHelper implements DataServiceHelper{
     private SaleReturnListDataServiceHelper(){
     }
     
-    public void setRemote(Remote remote){
+    @Override
+	public void setRemote(Remote remote){
     	SaleReturnListDataService = (SaleReturnListDataService)remote;
     }
     

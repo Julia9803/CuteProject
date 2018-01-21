@@ -16,6 +16,7 @@ public class InfoListVO {
         this.operator=operator;
         
     }
+    
 
 
 }

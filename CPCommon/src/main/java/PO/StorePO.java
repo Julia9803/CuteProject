@@ -1,6 +1,10 @@
 package PO;
-import  javax.persistence.*;
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="StorePO")
@@ -14,7 +18,7 @@ public class StorePO  implements Serializable{
 
 
 
-	@Id @GeneratedValue
+	@Id
 	@Column(name="ID")
 	public String ID;  //商品ID
 
@@ -30,7 +34,7 @@ public class StorePO  implements Serializable{
 	@Column(name="averagePrice")
 	public double averagePrice;//库存均价
 
-
+    public StorePO(){}
 
 
 }

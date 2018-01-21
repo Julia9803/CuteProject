@@ -12,6 +12,11 @@ import util.PresentState;
 * @description 赠送策略。特价包
 */
 public class PresentForSpecialPackagePO extends PresentPO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1700301293157435401L;
+
 	public PresentForSpecialPackagePO(int id,Date startTime, Date finishTime, List<GoodsInSalePO> presentList,
 			PresentState state,double priceReduction) {
 		super(id,startTime, finishTime,presentList,state);

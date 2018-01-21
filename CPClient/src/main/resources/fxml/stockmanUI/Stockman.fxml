@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.effect.*?>
@@ -14,58 +15,67 @@
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.stockmanUI.StockmanController">
    <children>
-      <BorderPane fx:id="centerPane" layoutX="135.0" layoutY="95.0" prefHeight="705.0" prefWidth="1066.0" />
+      <BorderPane fx:id="centerPane" layoutX="202.0" layoutY="141.0" prefHeight="604.0" prefWidth="999.0" />
       <fx:include source="../commonUI/Background.fxml" />
       <VBox layoutX="13.0" layoutY="74.0" prefHeight="730.0" prefWidth="122.0" style="-fx-background-color: #ff7575;">
          <children>
             <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
             <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="#9f353a" />
-            <MenuButton fx:id="newBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      新建" textFill="#9f353a">
-              <items>
-                <MenuItem fx:id="newPresentListBtn" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="ui.saleUI.Sale.css" text="库存赠送单" />
-                <MenuItem fx:id="newStockOverflowListBtn" mnemonicParsing="false" onAction="#newStockOverflowList" style="-fx-background-color: transparent;" text="库存报溢单" />
-                  <MenuItem fx:id="newStockLostListBtn" mnemonicParsing="false" onAction="#newStockLostList" style="-fx-background-color: transparent;" text="库存报损单" />
-              </items>
+            <JFXButton fx:id="newBtn" alignment="BOTTOM_LEFT" onAction="#setNewBtn" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="  新建" textFill="#9f353a">
                <font>
                   <Font size="18.0" />
                </font>
-            </MenuButton>
-            <MenuButton fx:id="lookBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      查看" textFill="#9f353a">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <items>
-                  <MenuItem fx:id="lookPresentListBtn" mnemonicParsing="false" onAction="#lookPresentList" style="-fx-background-color: transparent;" styleClass="ui.saleUI.Sale.css" text="库存赠送单" />
-                  <MenuItem fx:id="lookStockOverflowListBtn" mnemonicParsing="false" onAction="#lookStockOverflowList" style="-fx-background-color: transparent;" text="库存报溢单" />
-                  <MenuItem fx:id="lookStockLostListBtn" mnemonicParsing="false" onAction="#lookStockLostList" style="-fx-background-color: transparent;" text="库存报损单" />
-                  <MenuItem fx:id="lookAlarmListBtn" mnemonicParsing="false" onAction="#lookAlarmList" style="-fx-background-color: transparent;" text="库存报警单" />
-               </items>
-            </MenuButton>
-            <MenuButton fx:id="personBtn" mnemonicParsing="false" popupSide="RIGHT" prefHeight="57.0" prefWidth="122.0" style="-fx-background-color: transparent;" text="      个人" textFill="#9f353a">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <items>
-                  <MenuItem fx:id="messageBtn" mnemonicParsing="false" style="-fx-background-color: transparent;" text="消息" />
-                  <MenuItem fx:id="personalInfoBtn" mnemonicParsing="false" style="-fx-background-color: transparent;" text="个人信息" />
-               </items>
-            </MenuButton>
-            <JFXButton fx:id="goodsManageBtn" onAction="#goodsManage" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="商品" textFill="#9f353a">
-               <font>
-                  <Font size="18.0" />
-               </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../img/new.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
-            <JFXButton fx:id="draftBtn" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="库存" textFill="#9f353a">
+            <JFXButton fx:id="lookBtn" alignment="BOTTOM_LEFT" onAction="#setLookBtn" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="  查看" textFill="#9f353a">
                <font>
                   <Font size="18.0" />
                </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../img/navLook.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="goodsManageBtn" alignment="BOTTOM_LEFT" onAction="#goodsManage" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="  商品" textFill="#9f353a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../img/navGoods.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="draftBtn" alignment="BOTTOM_LEFT" onAction="#StoreCheck" prefHeight="63.0" prefWidth="122.0" ripplerFill="WHITE" text="  库存" textFill="#9f353a">
+               <font> 
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../img/navStore.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
          </children>
       </VBox>
-      <Circle fill="#5cfeff99" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
+      <Circle fill="#d9683199" layoutX="107.0" layoutY="87.0" opacity="0.67" radius="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeWidth="0.0">
          <effect>
             <DropShadow blurType="GAUSSIAN" color="#c74242cf" height="0.0" radius="6.2675" width="27.07" />
          </effect>
       </Circle>
+      <JFXDrawersStack fx:id="drawersStack" layoutX="136.0" layoutY="166.0" prefHeight="635.0" prefWidth="1064.0" />
    </children>
 </AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="459.0" maxWidth="921.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="459.0" prefWidth="921.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane minHeight="61.0" minWidth="921.0" prefHeight="61.0" prefWidth="921.0">
+               <children>
+                  <JFXButton fx:id="backBtn" buttonType="RAISED" layoutX="832.0" layoutY="-1.0" onAction="#back" prefHeight="31.0" prefWidth="82.0" text="返回" />
+               </children>
+            </Pane>
+            <ScrollPane maxHeight="450.0" maxWidth="930.0" minHeight="375.0" minWidth="918.0" prefHeight="403.0" prefViewportHeight="429.0" prefViewportWidth="921.0" prefWidth="921.0">
+               <content>
+                  <VBox fx:id="vBox" maxHeight="1.7976931348623157E308" maxWidth="918.0" minHeight="404.0" minWidth="918.0" prefWidth="918.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -2,8 +2,8 @@ package ui.managerUI;
 
 import VO.presentVO.PresentVO;
 import blservice.presentblservice.PresentForMembershipBLService;
-import blservice.presentblservice.PresentForSumBLService;
 import resultmessage.DataRM;
+import ui.commonUI.PromptHelper;
 
 /**     
 * @author 李安迪
@@ -32,7 +32,7 @@ public class PresentForMembershipNewStrategy implements Strategy{
 		if(id>=0)
 		membershipController.setId(id);
 		else{
-			membershipController.showInformationDialog(DataRM.FAILED);
+			PromptHelper.showPrompt(DataRM.FAILED);
 		}
 
 		

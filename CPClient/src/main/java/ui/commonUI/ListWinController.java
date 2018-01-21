@@ -11,6 +11,7 @@ public abstract class ListWinController implements SonController{
 	@FXML protected Label operator;
 	
 
+	@Override
 	public void setParentController(ParentController controller){
 		parentController = controller;
 	};

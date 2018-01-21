@@ -3,7 +3,6 @@ package ui.managerUI;
 import VO.GoodsInSaleVO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 /**     
 * @author 李安迪
@@ -12,10 +11,11 @@ import javafx.scene.control.TextField;
 */
 public class PresentNoEditCellController {
 	@FXML Label name;
-	@FXML TextField amount;
+	@FXML Label amount;
 	
 	private GoodsInSaleVO vo;
 	
+	@SuppressWarnings("unused")
 	private SinglePresentController controller;
 	/**
 	 * @param presentForSumController

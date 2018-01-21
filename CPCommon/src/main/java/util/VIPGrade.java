@@ -20,6 +20,10 @@ public enum VIPGrade implements Serializable{
 	VIPGrade(int grade){
 		this.grade = grade;
 	}
+	@Override
+	public String toString() {
+		return "" + grade;	
+	}
 	
     public static VIPGrade getVIPGradeByString(String s) {
     	int i = Integer.parseInt(s);

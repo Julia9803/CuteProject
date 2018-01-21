@@ -4,7 +4,6 @@ import VO.GoodsInSaleVO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 /**     
 * @author 李安迪
@@ -13,10 +12,10 @@ import javafx.scene.control.TextField;
 */
 public class PresentEditCellController {
 	@FXML Label name;
-	@FXML TextField amount;
+	@FXML Label amount;
 	@FXML Button deleteBtn;
 	
-	private final String INIT_AMOUNT= "1";
+
 	
 	protected GoodsInSaleVO vo;
 	
@@ -32,16 +31,19 @@ public class PresentEditCellController {
 
 	@FXML void initialize(){
 		name.setText(vo.getGoodsName());
-		amount.setText(INIT_AMOUNT);
+		amount.setText(vo.getAmount()+"");
+
+		
 	}
 	@FXML void delete(){
-		//每次删除的时候删除vo,因为并没有保存vo中amount域的更改
+
 		controller.deleteFromPresentList(vo);
 	}
 	
 	boolean isValid(){
 		//检查总额合法性
 		String amountInString = amount.getText();
+		@SuppressWarnings("unused")
 		double amount = 0;
 		try{
 			amount = Double.parseDouble(amountInString);

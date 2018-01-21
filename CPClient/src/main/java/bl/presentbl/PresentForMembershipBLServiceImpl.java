@@ -41,7 +41,7 @@ public class PresentForMembershipBLServiceImpl implements PresentForMembershipBL
 			return null;
 		}
 		List<PresentForMembershipVO> volist = new ArrayList<PresentForMembershipVO>();
-		
+		if(polist != null)
 		for(PresentForMembershipPO po : polist){
 			volist.add(poToVo(po));
 		}
@@ -63,7 +63,7 @@ public class PresentForMembershipBLServiceImpl implements PresentForMembershipBL
 			return null;
 		}
 		List<PresentForMembershipVO> volist = new ArrayList<PresentForMembershipVO>();
-		
+		if(polist != null)
 		for(PresentForMembershipPO po : polist){
 			volist.add(poToVo(po));
 		}

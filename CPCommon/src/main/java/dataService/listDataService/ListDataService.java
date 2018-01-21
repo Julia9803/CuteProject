@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import PO.InfoListPO;
 public interface ListDataService extends  Remote,Serializable {
-	public void addInfoList(InfoListPO po);
-	public void removeInfoList(String id);
-	public void changeToApproved(String id);
-	public ArrayList<InfoListPO> openInfoList();
-	public ArrayList<InfoListPO> openApproved();
+	public void addInfoList(InfoListPO po) throws RemoteException;
+	public void removeInfoList(String id) throws RemoteException;
+	public void changeToApproved(String id) throws RemoteException;
+	public ArrayList<InfoListPO> openInfoList() throws RemoteException;
+	public ArrayList<InfoListPO> openApproved() throws RemoteException;
 	
 }

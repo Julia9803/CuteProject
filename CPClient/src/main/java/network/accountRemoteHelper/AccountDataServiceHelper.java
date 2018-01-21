@@ -3,9 +3,11 @@ package network.accountRemoteHelper;
 import java.rmi.Remote;
 
 import dataService.accountDataService.AccountDataService;
+import network.DataServiceHelper;
 
-public class AccountDataServiceHelper {
+public class AccountDataServiceHelper implements DataServiceHelper{
 	private AccountDataService accountDataService ;
+	private static final String serviceName = "AccountDataService";
 	
 	private static AccountDataServiceHelper accountRemoteHelper = new AccountDataServiceHelper();
 	public static AccountDataServiceHelper getInstance(){
@@ -15,12 +17,18 @@ public class AccountDataServiceHelper {
 	private AccountDataServiceHelper(){
 	}
 	
+	@Override
 	public void setRemote(Remote remote){
 		accountDataService = (AccountDataService)remote;
 	}
 	
-	public AccountDataService getAccountDataService(){
+	public AccountDataService getDataService(){
 		return accountDataService;
+	}
+
+	@Override
+	public String getServiceName() {
+		return serviceName;
 	}
 	
 }

@@ -13,7 +13,12 @@ import util.UserGrade;
 * @description
 */
 public class StockListPO extends SalesmanListPO implements Serializable{
-//	/*
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4116844864907373957L;
+
+	//	/*
 //	 * 单据编号
 //	 */
 //	String id;

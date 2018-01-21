@@ -10,6 +10,10 @@ import java.util.List;
 */
 public abstract class StockmanListPO extends ListPO implements Serializable{
 	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8692654327132109789L;
+	/**
 	  * 商品清单
 	  */
 	 List<StockmanItemPO> SaleListItems;

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="921.0" stylesheets="@../../css/forms/Forms.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.accountUI.AccountManageWinController">
+   <children>
+      <Pane prefHeight="79.0" prefWidth="921.0">
+         <children>
+            <Label layoutX="34.0" layoutY="14.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #4F9D9D;" />
+            <Label layoutX="55.0" layoutY="23.0" text="账户管理">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="118.0" prefHeight="476.0" prefWidth="921.0">
+         <children>
+            <Pane layoutY="6.0" prefHeight="59.0" prefWidth="921.0">
+               <children>
+                  <Label layoutX="195.0" layoutY="18.0" prefHeight="23.0" prefWidth="41.0" text="账户" textFill="#938c8c">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addAccountBtn" layoutX="728.0" layoutY="15.0" mnemonicParsing="false" onAction="#onAddAccountBtnClicked" text="添加" />
+                  <TextField fx:id="newAccountBalanceTextField" layoutX="515.0" layoutY="16.0" promptText="余额" />
+                  <TextField fx:id="newAccountNameTextField" layoutX="294.0" layoutY="16.0" promptText="账户名" />
+               </children>
+            </Pane>
+            <ScrollPane hbarPolicy="NEVER" layoutX="189.0" layoutY="76.0" prefHeight="287.0" prefWidth="531.0">
+              <content>
+                <AnchorPane prefHeight="276.0" prefWidth="529.0">
+                	<children>
+                        <TableView fx:id="accountListTableView" layoutX="2.0" opacity="0.68" prefHeight="276.0" prefWidth="525.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="account" prefWidth="292.0" text="银行账户" />
+                              <TableColumn fx:id="balance" prefWidth="180.0" text="余额" />
+                              <TableColumn fx:id="deleted" prefWidth="50.0" text="删除" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Pane layoutY="379.0" prefHeight="97.0" prefWidth="921.0">
+               <children>
+                  <Button fx:id="saveBtn" layoutX="610.0" layoutY="34.0" mnemonicParsing="false" onAction="#onSaveBtnClicked" text="保存">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Button fx:id="closeBtn" layoutX="480.0" layoutY="34.0" mnemonicParsing="false" onAction="#onCloseBtnClicked" text="关闭">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

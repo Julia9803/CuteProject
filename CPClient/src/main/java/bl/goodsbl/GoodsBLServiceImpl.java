@@ -1,14 +1,13 @@
 package bl.goodsbl;
 
+import java.rmi.RemoteException;
+import java.util.List;
+
 import VO.goodsVO.GoodsCategoryVO;
 import VO.goodsVO.GoodsVO;
 import blservice.goodsblservice.GoodsBLService;
 import network.goodsRemoteHelper.GoodsDataServiceHelper;
 import resultmessage.ResultMessage;
-
-import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by julia98 on 2017/12/11.

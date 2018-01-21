@@ -7,25 +7,26 @@ import java.util.List;
 
 import PO.SaleListPO;
 import PO.SalesmanListPO;
-import dataHelper.BasicUtil;
-import dataHelper.CriterionClause;
-import dataHelper.CriterionClauseGenerator;
-import dataHelper.HibernateCriterionClauseGenerator;
-import dataHelper.HibernateUtil;
+import dataHelper.service.BasicUtil;
+import dataHelper.service.CriterionClauseGenerator;
+import dataHelper.serviceImpl.CriterionClause;
+import dataHelper.serviceImpl.HibernateCriterionClauseGenerator;
+import dataHelper.serviceImpl.HibernateUtil;
 import dataService.saleDataService.SaleListDataService;
-import dataService.saleDataService.SaleUniDataService;
 import resultmessage.DataRM;
-import util.PresentState;
 import util.State;
 
 /**     
 * @author 李安迪
 * @date 2017年12月25日
 * @description 销售单的基础数据库操作
-* TODO 单据在表单包的注册，审批，以及通知等功能
 */
 public class SaleListDataServiceImpl extends UnicastRemoteObject implements SaleListDataService{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8464252525213602493L;
 	BasicUtil<SaleListPO> util;
 	//	BasicUtil<SaleListPO> util;
 	CriterionClauseGenerator criterionClauseGenerator;
@@ -53,10 +54,7 @@ public class SaleListDataServiceImpl extends UnicastRemoteObject implements Sale
 	 */
 	@Override
 	public DataRM delete(String id) throws RemoteException {
-		// TODO Auto-generated method stub
-		SaleListPO po = (SaleListPO)(util.get(id));
-		po.setState(State.IsDeleted);
-		return util.update(po);
+		return util.delete(id);
 	}
 
 	/* (non-Javadoc)
@@ -106,9 +104,27 @@ public class SaleListDataServiceImpl extends UnicastRemoteObject implements Sale
 		l = criterionClauseGenerator.generateExactCriterion(l,"state",State.IsDraft);
 		System.out.println(l);
 		System.out.println("before query");
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		List<SalesmanListPO> list = (List)util.Query(l);
 		System.out.println("before return");
 		System.out.println(list);
 		return list;
+	}
+
+	/* (non-Javadoc)
+	 * @see dataService.saleDataService.SaleUniDataService#get(java.lang.String)
+	 */
+	@Override
+	public SalesmanListPO get(String id) throws RemoteException {
+		// TODO Auto-generated method stub
+		List<CriterionClause> l = new ArrayList<CriterionClause>();
+		l = criterionClauseGenerator.generateExactCriterion(l,"id",id);
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		List<SalesmanListPO> list = (List)util.Query(l);
+		if(list.size() == 1){
+			return list.get(0);
+		}else
+			
+		return null;
 	}
 }

@@ -17,10 +17,12 @@ public class PaymentListDataServiceHelper implements DataServiceHelper{
 	private PaymentListDataServiceHelper(){
 	}
 	
+	@Override
 	public String getServiceName(){
 		return serviceName;
 	}
 	
+	@Override
 	public void setRemote(Remote remote){
 		paymentListDataService = (PaymentListDataService)remote;
 	}

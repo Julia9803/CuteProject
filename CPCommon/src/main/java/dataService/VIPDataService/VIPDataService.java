@@ -1,12 +1,11 @@
 package dataService.VIPDataService;
-import PO.VIPPO;
-import resultmessage.ResultMessage;
-
 import java.io.Serializable;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
+
+import PO.VIPPO;
+import resultmessage.ResultMessage;
 
 public interface VIPDataService extends Remote,Serializable{
     /**
@@ -19,6 +18,9 @@ public interface VIPDataService extends Remote,Serializable{
     /**
      * 前置条件	用户输入信息模糊查找客户
      * 后置条件	系统显示模糊查找后符合要求的客户列表
+     * 
+     * 经测试，info为null时，返回空list；info为""时，返回全部
+     * 
      * @param info
      * @param type
      * @return

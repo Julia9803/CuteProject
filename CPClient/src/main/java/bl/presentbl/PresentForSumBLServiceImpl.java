@@ -41,7 +41,7 @@ public class PresentForSumBLServiceImpl implements PresentForSumBLService {
 		}
 		System.out.println("polist"+polist);
 		
-		
+		if(polist != null)
 		for(PresentForSumPO po : polist){
 			System.out.println(po.getState());
 			volist.add(poToVo(po));

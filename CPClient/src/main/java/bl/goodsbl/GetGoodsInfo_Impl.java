@@ -11,16 +11,23 @@ public class GetGoodsInfo_Impl implements GetGoodsInfo {
      */
 	@Override
 	public ArrayList<String> getModel_byID(ArrayList<String> id) {
-		//根据商品ID 获得商品的型号
-		
-		return null;
+		//Goods goods=new Goods();
+		ArrayList<String> ret=new ArrayList<String>();
+		for(int i=0;i<id.size();i++){
+			ret.add("1");
+		}
+		return ret;
 	}
 
 	@Override
 	public ArrayList<String> getDate_byID(ArrayList<String> id) {
 		// 根据商品ID 获得商品的出厂日期
+		ArrayList<String> ret=new ArrayList<String>();
+		for(int i=0;i<id.size();i++){
+			ret.add("2018-01");
+		}
+		return ret;
 		
-		return null;
 	}
 
 }

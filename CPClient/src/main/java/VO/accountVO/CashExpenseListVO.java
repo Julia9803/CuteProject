@@ -1,5 +1,6 @@
 package VO.accountVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import util.State;
@@ -26,9 +27,15 @@ public class CashExpenseListVO extends FinanceListVO{
 		this.account = account;
 	}
 	public List<EntryItemVO> getEntryItem() {
-		return entryItem;
+		if(entryItem == null)
+			return null;
+		else
+			return new ArrayList<EntryItemVO>(entryItem);
 	}
 	public void setEntryItem(List<EntryItemVO> entryItem) {
-		this.entryItem = entryItem;
+		if(entryItem == null)
+			this.entryItem = null;
+		else
+			this.entryItem = new ArrayList<EntryItemVO>(entryItem);
 	}
 }
